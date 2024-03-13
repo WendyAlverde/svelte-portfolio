@@ -3,18 +3,18 @@
 :root {
 	background-color: white;
 	/* Maintenant si on fait met une taille : 500px/16px = 31,25rem  tout s'armonise en concéquence donc plus d'autre px dans le reste du projet*/
-	
 	font-size: 16px;
+    /* Toutes les couleurs utilisées sur le site */
+    --color-body: #00330d;
+    --background-body: #ffffff;
+    --color-hero: #548072;
+    --color-passagesouris: #0ace0a;
+    --texte-clair: #d6e7e1;
+    --background-entete: #eef7f4; 
 }
 
-.container {
-    width: 31.25rem;
-    margin: 2rem auto;
-    padding: 2rem;
-    background: rgb(212, 57, 218);
+*{
+    box-sizing: border-box;
 }
-nav ul {
-display: flex;
-gap: 2rem;
-}
+
 

@@ -1,5 +1,5 @@
-import './normalize.css'
-import './app.css'
+import './css/normalize.css'
+import './css/app.css'
 import App from './App.svelte'
 
 const app = new App({
