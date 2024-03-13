@@ -11,7 +11,7 @@
     width: 31.25rem;
     margin: 2rem auto;
     padding: 2rem;
-    background: lightgray;
+    background: rgb(212, 57, 218);
 }
 nav ul {
 display: flex;
