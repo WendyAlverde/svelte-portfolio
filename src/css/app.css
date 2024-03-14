@@ -5,11 +5,11 @@
 	/* Maintenant si on fait met une taille : 500px/16px = 31,25rem  tout s'armonise en concéquence donc plus d'autre px dans le reste du projet*/
 	font-size: 16px;
     /* Toutes les couleurs utilisées sur le site */
-    --color-body: #00330d;
+    --color-text: #00330d;
     --background-body: #ffffff;
     --color-hero: #548072;
     --color-passagesouris: #0ace0a;
-    --texte-clair: #d6e7e1;
+    --text-clair: #d6e7e1;
     --background-entete: #eef7f4; 
 }
 
@@ -19,11 +19,11 @@
 
 body {
     background-color: var(--background-body);
-    color: var(--color-body);
+    color: var(--color-text);
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: var(--color-body);
+    color: var(--color-text);
 }
 
 li {
@@ -57,7 +57,7 @@ header .logo {
 }
 
 header a {
-    color: var(--color-body);
+    color: var(--color-text);
 }
 
 header a:hover {
@@ -92,7 +92,7 @@ header a:hover {
     content: "";
     width: 1.3rem;
     height: 0.2rem;
-    background-color: var(--color-body);
+    background-color: var(--color-text);
     position: absolute;
 }
 

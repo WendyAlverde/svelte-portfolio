@@ -1,4 +1,4 @@
-import './css/normalize.css'
+import './css/reset.css'
 import './css/app.css'
 import App from './App.svelte'
 
