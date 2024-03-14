@@ -34,14 +34,112 @@ a {
     text-decoration: none;
 }
 
-/* Ne restera pas à la fin */
-.banniere {
-    background: #EBB300;
-    border: 2px solid #D47E00;
-    box-shadow: 0 0 5px #D47E00; /*Ombre*/
+.d-flex { 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Header */
+header { 
+    background: var(--background-entete);
+    border-bottom: 1px solid #eee;
+    /*box-shadow: 0 0 5px #548072; /*Ombre à remettre lorsque bannière enlevé*/
     position: sticky;
     top: 0;
     z-index: 1;
-    text-align: center;
+}
+
+header .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+header a {
+    color: var(--color-body);
+}
+
+header a:hover {
+    color: var(--color-passagesouris);
+}
+
+.socials {
+    display: flex;
+}
+.socials li {
+    margin-bottom: 0;
+}
+.socials a {
+    padding: 0 2px;
+}
+.socials .icon {
+    height: 1.1rem;
+}
+/* Burger */
+.burger {
+    background: none;
+    border: none;
+    width: 2.1rem;
+    height: 2.1rem;
+    cursor: pointer;
+    position: relative;
+    margin-left: 1rem;
+}
+
+.burger .bar, .burger .bar::before, .burger .bar::after {
+    display: block;
+    content: "";
+    width: 1.3rem;
+    height: 0.2rem;
+    background-color: var(--color-body);
+    position: absolute;
+}
+
+.burger .bar::before {
+    transform: translateY(-0.5rem);
+}
+
+.burger .bar::after {
+    transform: translateY(0.5rem);
+}
+
+/* Ne restera pas à la fin */
+.banniere {
+    background: #EBB300;
+    border: 0.2rem solid #D47E00;
+    box-shadow: 0 0 0.3rem #D47E00; /*Ombre*/
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 /* Ne restera pas à la fin */
+
+@media screen and (max-width: 425px) { /*Mobile*/
+
+}
+
+@media screen and (min-width: 426px) and (max-width: 768px) { /*Tablette*/
+    header .logo {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+    }
+
+    header li {
+        font-size: 1.5rem;
+        padding: 0 .5rem;
+    }
+}
+
+@media screen and (min-width: 769px) { /*PC*/
+    header .logo {
+        font-size: 2rem;
+        letter-spacing: 2px;
+    }
+    header li {
+        font-size: 2rem;
+        padding: 0.5rem;
+    }
+
+}
+
