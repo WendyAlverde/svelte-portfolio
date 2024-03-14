@@ -11,11 +11,11 @@
   
 const routes = {
   "/": Home,
-  "/contact": Contact,
   "/portfolio": Portfolio,
-  "/legal-notices": LegalNotices,
+  "/contact": Contact,
   "/cv": CV,
-  "*": NotFound,
+  "/legal-notices": LegalNotices,
+  "/*": NotFound,
 }
 
 </script>

@@ -17,4 +17,31 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: var(--background-body);
+    color: var(--color-body);
+}
 
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-body);
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Ne restera pas à la fin */
+.banniere {
+    background: #EBB300;
+    border: 2px solid #D47E00;
+    box-shadow: 0 0 5px #D47E00; /*Ombre*/
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    text-align: center;
+}
+/* Ne restera pas à la fin */

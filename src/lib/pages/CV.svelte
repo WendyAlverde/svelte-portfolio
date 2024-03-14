@@ -1,5 +1,6 @@
 <script>
-    import '../../css/cv.css'
+    // Si je l'appele ici il est aussi utilisé sur le reste du site 
+    // import '../../css/cv.css'
 </script>
      
         <main>
