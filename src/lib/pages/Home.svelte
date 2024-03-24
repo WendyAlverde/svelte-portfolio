@@ -63,7 +63,7 @@
         <div class="item">
             <h3>Compétences en développement</h3>
             <!-- Changer cette partie -->
-            <!-- <div class="progressbar">
+            <div class="progressbar">
                 <div class="bar" data-width="70">HTML</div>
             </div>
             <div class="progressbar">
@@ -78,6 +78,6 @@
             <h3>Compétences en conception graphique</h3>
             <div class="progressbar">
                 <div class="bar" data-width="90">Piskel</div>
-            </div> -->
+            </div>
         </div>
     </section>

@@ -3,11 +3,11 @@
     // import '../../css/cv.css'
     import {link} from "svelte-spa-router"
 </script>
-     
+    
         <main>
             <section id="containerPerso">
                 <div class="left">
-                    <img src="../../assets/images/IMG_20221102_141254.jpg" alt="Photo de profil de Wendy Alverde">
+                    <img src="../../assets/images/IMG_20221102_141254.webp" alt="Photo de profil de Wendy Alverde">
                     <!-- Ajout d'une photo perso (en webp)--> 
                 </div>
                 <div class="right">
@@ -26,22 +26,28 @@
                         <li>
                             <!-- Voir pour mettre les images et icons en bdd -->
                             <svg class="icon" src="" ></svg>
-                            alverdew@gmail.com</li> 
+                            alverdew@gmail.com
+                        </li> 
+                        <li>
+                            <svg class="icon" src="../../icons/phone-solid.svg"></svg>
+                            0784588343
+                        </li>
                         <li>
                             <svg class="icon" src="" ></svg>
-                            0784588343</li>
+                            25 ans
+                        </li>
                         <li>
                             <svg class="icon" src="" ></svg>
-                           25 ans</li>
+                            Rohr
+                        </li>
                         <li>
                             <svg class="icon" src="" ></svg>
-                            Rohr</li>
+                            Permis B
+                        </li>
                         <li>
                             <svg class="icon" src="" ></svg>
-                            Permis B</li>
-                        <li>
-                            <svg class="icon" src="" ></svg>
-                            Véhicule personnel</li>
+                            Véhicule personnel
+                        </li>
                     </ul>
                     <h3>Socials</h3>
                     <ul>

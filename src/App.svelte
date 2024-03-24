@@ -16,8 +16,6 @@
   
 const routes = {
   "/": Home,
-  "/#about": Home,
-  "/#skills": Home,
   "/portfolio": Portfolio,
   "/contact": Contact,
   "/cv": CV,
