@@ -17,7 +17,7 @@
             <ul class="socials">
                 <li>
                     <a href="https://www.linkedin.com/in/wendy-alverde-850761237/" alt="Lien vers mon profil LinkedIn" target="_blank">
-                        <svg class="icon" src="../../assets/icons/linkedin-in.svg"></svg>
+                        <svg class="icon" src="../public/icons/linkedin-in.svg"></svg>
                     </a>
                 </li>
                 <li>

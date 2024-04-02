@@ -12,7 +12,7 @@
             <ul class="socials list-unstyled">
                 <li>
                     <a href="https://www.linkedin.com/in/wendy-alverde-850761237/" target="_blank">
-                        <svg></svg>
+                        <svg class="icon" src="../public/icons/linkedin-in.svg"></svg>
                     </a>
                 </li>
                 <li>
