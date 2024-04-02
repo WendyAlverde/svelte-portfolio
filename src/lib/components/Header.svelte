@@ -17,17 +17,17 @@
             <ul class="socials">
                 <li>
                     <a href="https://www.linkedin.com/in/wendy-alverde-850761237/" alt="Lien vers mon profil LinkedIn" target="_blank">
-                        <svg class="icon" src="../public/icons/linkedin-in.svg"></svg>
+                        <img src="../public/icons/linkedin-in.svg" alt="">
                     </a>
                 </li>
                 <li>
                     <a href="https://github.com/WendyAlverde" target="_blank" alt="Lien vers mon profil GitHub">
-                        <svg class="icon" src="../../assets/icons/discord.svg"></svg>
+                        <img src="../public/icons/github.svg" alt="">
                     </a>
                 </li>
                 <li>
                     <a href="https://www.instagram.com/chat_push/" target="_blank" alt="Lien vers mon profil LinkedIn">
-                        <svg class="icon" src="../../assets/icons/instagram.svg"></svg>
+                        <img src="../public/icons/instagram.svg" alt="">
                     </a>
                 </li>
             </ul>

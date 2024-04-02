@@ -72,7 +72,6 @@ header a:hover {
 
 /* A revoir dès lorsque les svg seront mis */
 .socials {
-    border: solid 1px red;
     display: flex;
 }
 .socials li {
@@ -126,6 +125,8 @@ header a:hover {
 }
 /* Ne restera pas à la fin */
 
+
+
 @media screen and (max-width: 425px) { /*Mobile*/
 
 }
@@ -156,4 +157,9 @@ header a:hover {
 
 p {
     margin: 1rem;
+}
+
+/* about */
+.left img {
+    width: 10rem;
 }

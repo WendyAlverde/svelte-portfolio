@@ -8,13 +8,13 @@
             <div class="hero__item right">
                 <div class="troisphotos">
                     <div class="photo photo1">
-                        <img src="./img/Nature1.jpg" loading="lazy" alt="Sol mousseux proche du Petit Geroldseck, mai 2023 - Photographe Wendy Alverde">
+                        <!-- <img src="../public/image/Nature1.jpg" loading="lazy" alt="Sol mousseux proche du Petit Geroldseck, mai 2023 - Photographe Wendy Alverde"> -->
                     </div>
                     <div class="photo photo2">
-                        <img src="./img/TourTelegrapheChappe.jpg" loading="lazy" alt="Tour du Télégraphe Chappe de Saverne, mai 2023 - Photographe Wendy Alverde">
+                        <!-- <img src="./img/TourTelegrapheChappe.jpg" loading="lazy" alt="Tour du Télégraphe Chappe de Saverne, mai 2023 - Photographe Wendy Alverde"> -->
                     </div>
                     <div class="photo photo3">
-                        <img src="./img/MontBlanc.jpg" loading="lazy" alt="Mont-Blanc, mars 2023 - Photographe Wendy Alverde">
+                        <!-- <img src="./img/MontBlanc.jpg" loading="lazy" alt="Mont-Blanc, mars 2023 - Photographe Wendy Alverde"> -->
                     </div>
                 </div>
             </div>
@@ -22,7 +22,7 @@
     </section>
     <section id="about">
         <div class="grid__item left">
-            <img src="./img/IMG_20221102_141254.jpg" loading="lazy" alt="Wendy Alverde - Apprentie développeuse">
+            <img src="../public/images/IMG_20221102_141254.jpg" loading="lazy" alt="Wendy Alverde - Apprentie développeuse">
         </div>
         <div class="grid__item right">
             <h2 class="section-title">À propos</h2>
