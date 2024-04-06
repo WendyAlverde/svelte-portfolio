@@ -27,12 +27,6 @@ const routes = {
 
 <div class="container"> 
   <Header />
-  <Router {routes} />
+    <Router {routes} />
   <Footer />
 </div>
-
-
-
-<style>
-  /* Ne concerne que app Svelte */
-</style>
