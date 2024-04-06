@@ -1,7 +1,12 @@
-/* Style à porté global  */
+/** ================== Start Global style ================== **/
+* {
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none; 
+}
+
 /* root est au même niveau qu'HTML */
 :root {
-	background-color: white;
 	/* Maintenant si on fait met une taille : 500px/16px = 31,25rem  tout s'armonise en concéquence donc plus d'autre px dans le reste du projet*/
 	font-size: 16px;
     /* Toutes les couleurs utilisées sur le site */
@@ -13,24 +18,40 @@
     --background-entete: #eef7f4; 
 }
 
-* {
-    box-sizing: border-box;
-    list-style: none;
-    text-decoration: none; 
-}
-
 body {
     background-color: var(--background-body);
     color: var(--color-text);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    line-height: 1.5;
 }
 
 h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
     text-align: center;
     color: var(--color-text);
     text-transform: uppercase;
 }
 
-/* Header */
+h1 {
+    color: var(--text-clair);
+    font-size: 1.8rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+}
+
+p {
+    margin: 1rem;
+}
+
+
+/** ================== End Global style ================== **/
+/** ================== Start Header ================== **/
 header { 
     background: var(--background-entete);
     border-bottom: 1px solid #eee;
@@ -54,13 +75,12 @@ nav {
     position: fixed;
     top: 3.4rem;
     left: 110%;
-    width: 0;
     overflow: hidden;
-    opacity: 0;
     height: calc(100vh -3.4rem);
     background: var(--background-entete);
     transition: all 0.4s ease-out;
 }
+
 
 header a  {
     color: var(--color-text);
@@ -70,19 +90,18 @@ header a:hover {
     color: var(--color-passagesouris);
 }
 
-/* A revoir dès lorsque les svg seront mis */
 .socials {
     display: flex;
 }
-.socials li {
-    margin-bottom: 0;
-}
+
 .socials a {
-    padding: 0 2px;
+    padding: 0 0.4rem;
 }
+
 .socials .icon {
-    height: 1.1rem;
+    height: 1.2rem;
 }
+
 /* Burger */
 .burger {
     background: none;
@@ -124,13 +143,14 @@ header a:hover {
     text-align: center;
 }
 /* Ne restera pas à la fin */
+/** ================== End Header ================== **/
 
-
-
-@media screen and (max-width: 425px) { /*Mobile*/
-
+/* about */
+.left img {
+    width: 10rem;
 }
 
+/** ================== Start Responsive ================== **/
 @media screen and (min-width: 426px) and (max-width: 768px) { /*Tablette*/
     header .logo {
         font-size: 1.5rem;
@@ -153,13 +173,13 @@ header a:hover {
         padding: 0.5rem;
     }
 
+    nav .menu {
+        display: flex;/*1*/
+        flex-direction: row;/*2*/
+        justify-content: space-around;/*3*/
+        padding-top: 1rem;
+    }
+    
+
 }
 
-p {
-    margin: 1rem;
-}
-
-/* about */
-.left img {
-    width: 10rem;
-}
