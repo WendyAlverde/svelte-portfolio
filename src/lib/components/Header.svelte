@@ -41,3 +41,121 @@
         <p>SITE EN CONSTRUCTION</p>
     </div>
 </header>
+
+<style lang="scss">
+    header { 
+        background: var(--background-entete);
+        border-bottom: 1px solid #eee;
+        border-radius: 0.3rem;
+        box-shadow: 0 0 5px #548072; 
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        margin-bottom: 1rem;
+    }
+
+    header .logo {
+        font-family: 'Playfair Display', serif;
+        letter-spacing: 1px;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: fixed;
+        top: 3.4rem;
+        left: 110%;
+        overflow: hidden;
+        // height: calc(100vh -3.4rem);
+        background: var(--background-entete);
+        transition: all 0.4s ease-out;
+    }
+
+
+    header a  {
+        color: var(--color-text);
+    }
+
+    header a:hover {
+        color: var(--color-passagesouris);
+    }
+
+    .socials {
+        display: flex;
+    }
+
+    /* Burger */
+    .burger {
+        background: none;
+        border: none;
+        width: 2.1rem;
+        height: 2.1rem;
+        cursor: pointer;
+    }
+
+    .burger .bar, .burger .bar::before, .burger .bar::after {
+        display: block;
+        content: "";
+        width: 1.3rem;
+        height: 0.2rem;
+        background-color: var(--color-text);
+        position: absolute;
+    }
+
+    .burger .bar::before {
+        transform: translateY(-0.5rem);
+    }
+
+    .burger .bar::after {
+        transform: translateY(0.5rem);
+    }
+    /* Ne restera pas à la fin */
+    .banniere {
+        background: #EBB300;
+        border: 0.2rem solid #D47E00;
+        border-radius: 0.3rem;
+        box-shadow: 0 0 0.3rem #D47E00; /*Ombre*/
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .banniere p {
+        text-align: center;
+    }
+    /* Ne restera pas à la fin */
+
+    @media screen and (min-width: 426px) and (max-width: 768px) { /*Tablette*/
+        header .logo {
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        header li {
+            font-size: 1.5rem;
+            padding: 0 .5rem;
+        }
+    }
+
+    @media screen and (min-width: 769px) { /*PC*/
+        header .logo {
+            font-size: 2rem;
+            letter-spacing: 2px;
+        }
+        header li {
+            font-size: 2rem;
+            padding: 0.5rem;
+        }
+
+        nav .menu {
+            display: flex;/*1*/
+            flex-direction: row;/*2*/
+            justify-content: space-around;/*3*/
+            padding-top: 1rem;
+        }
+        
+
+    }
+</style>

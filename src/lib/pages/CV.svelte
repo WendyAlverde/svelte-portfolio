@@ -12,13 +12,13 @@
 </script>
     
     <main>
+        <h1>Mon Curriculum Vitae</h1>
         <section id="containerPerso">
             <div class="left">
-                <img src="../../assets/images/IMG_20221102_141254.webp" alt="Photo de profil de Wendy Alverde">
+                <img src="" alt="Photo de profil de Wendy Alverde">
                 <!-- Ajout d'une photo perso (en webp)--> 
             </div>
-            <div class="right">
-                <h1>Curriculum Vitae</h1> 
+            <div class="right"> 
                 <p> de Wendy Alverde</p><!-- h1 en haut, subtitle juste en dessous centré -->
                 <h2>Intégratrice web</h2>
             </div>      
@@ -26,49 +26,49 @@
 
         <section id="containerInfos">
             <div class="left"><!-- Description -->
-                <p>À la recherche d'un poste d'Intégratrice Web aux alentours de Colmar dès <em>juin 2024</em>. À cette date j'aurais reçu mon <em>Titre Professionnel niveau Bac+2 de Développeuse Web et Web Mobile</em>.</p>
+                <p>À la recherche d'un poste d'Intégratrice Web aux alentours de Colmar dès <em>juin 2024</em>. À cette date j'aurais passé mon <em>Titre Professionnel niveau Bac+2 de Développeuse Web et Web Mobile</em>.</p>
             </div>
             <div class="right"><!-- Info perso -->
                 <ul>
                     <li>
                         <!-- Voir pour mettre les images et icons en bdd -->
-                        <svg class="icon" src={at}></svg>
+                        <img class="icon" src={at}>
                         alverdew@gmail.com
                     </li> 
                     <li>
-                        <svg class="icon" src={phone}></svg>
+                        <img class="icon" src={phone}>
                         0784588343
                     </li>
                     <li>
-                        <svg class="icon" src={calendar}></svg>
+                        <img class="icon" src={calendar}>
                         25 ans
                     </li>
                     <li>
-                        <svg class="icon" src={house}></svg>
+                        <img class="icon" src={house}>
                         Rohr
                     </li>
                     <li>
-                        <svg class="icon" src={card}></svg>
+                        <img class="icon" src={card}>
                         Permis B
                     </li>
                     <li>
-                        <svg class="icon" src={car}></svg>
+                        <img class="icon" src={car}>
                         Véhicule personnel
                     </li>
                 </ul>
                 <h3>Socials</h3>
                 <ul>
                     <li>
-                        <svg class="icon" src="" ></svg>
-                        <a href={linkedin} alt="Lien vers mon profil LinkedIn">@wendy-alverde</a>
+                        <img class="icon" src={linkedin} >
+                        <a href="https://www.linkedin.com/in/wendy-alverde" alt="Lien vers mon profil LinkedIn">@wendy-alverde</a>
                     </li>
                     <li>
-                        <svg class="icon" src="" ></svg>
-                        <a href={github} alt="Lien vers mon profil GitHub">WendyAlverde</a>
+                        <img class="icon" src={github} >
+                        <a href="https://github.com/WendyAlverde" alt="Lien vers mon profil GitHub">WendyAlverde</a>
                     </li>
                     <li>
-                        <svg class="icon" src="" ></svg>
-                        <a href={instagram} alt="Lien vers mon profil Instagram">chat_push</a>
+                        <img class="icon" src={instagram} >
+                        <a href="https://www.instagram.com/chat_push/" alt="Lien vers mon profil Instagram">chat_push</a>
                     </li>
                 </ul>
             </div>
@@ -213,47 +213,55 @@
     </main> 
 
 <style>
+    * {
+        box-sizing: border-box;
+    }
 
-* {
-    box-sizing: border-box;
-}
+    main {
+        background-color: #eef7f4;
+        text-align: center;
+    }
 
-main {
-    background-color: #eef7f4;
-    text-align: center; /*A changer selon les partie de texte*/
-    padding: 1.8rem 1.9rem 1.2rem 1.9rem; /*A changer quand il y aura header et footer*/
-}
+    /* Permet de faire un condensé plutôt que répété les même choses dans chaques tagname, id, class */
+    #containerPerso, #containerInfos, #containerInteret, #containerExperience, #langues {
+        background-color: #d6e7e1;
+        box-shadow: 0.3rem 0.3rem 0.3rem #9ab4ab;
+        border-radius: 0.3rem;
+        margin-bottom: 1rem;
+    }
 
-/* Permet de faire un condensé plutôt que répété les même choses dans chaques tagname, id, class */
-#containerPerso, #containerInfos, #containerInteret, #containerExperience, #langues {
-    background-color: #d6e7e1;
-    box-shadow: 0.3rem 0.3rem 0.3rem #9ab4ab;
-    border-radius: 0.3rem;
-    margin: 0px 0px 20px;
-    display: flex;  
-}
+    /* Les titres, span, em */
+    h1, h2, h3 {
+        font-weight: bold;
+        padding: 0.6rem;
+        margin: 0.6rem;
+        color: var(--blue-green);
+    }
 
-.right, .left {
-    width: 8rem;
-}
+    h2, h3 {
+        color: #019233;  
+    }
 
-/* Les titres, span, em */
-h1, h2, h3 {
-    font-weight: bold;
-    padding: 0.6rem;
-    margin: 0.6rem;
-}
+    h4, em {
+        font-weight: bold;
+    }
 
-h2, h3 {
-    color: #019233;  
-}
+    span {
+        color: #019233;
+    }
 
-h4, em {
-    font-weight: bold;
-}
+    img {
+        width: 1rem;
+    }
 
-span {
-    color: #019233;
-}
+
+
+    @media screen and (min-width: 426px) and (max-width: 768px) { /*Tablette*/
+        
+    }
+
+    @media screen and (min-width: 769px) { /*PC*/
+
+    }
 
 </style>
