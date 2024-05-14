@@ -1,6 +1,4 @@
 <script>
-    // Si je l'appele ici il est aussi utilisé sur le reste du site 
-    // import '../../css/cv.css'
     import {link} from "svelte-spa-router"
 </script>
     
