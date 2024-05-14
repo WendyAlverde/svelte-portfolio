@@ -1,45 +1,34 @@
-# Installer un nouveau template Svelte, le routeur et initialiser Git
+# Mon portfolio
 
-## Une série de commandes pour commencer :
+Je me présente tout en vous montrant mes projets.
 
-cette commande crée un dossier "svelte-portfolio" dans lequel elle va préparer Svelte
-Nous pouvons choisir un autre nom pour notre dossier, à notre convenace. Ce sera ce dossier que nous transmettrons sur GitHub
-`npm create vite@latest svelte-portfolio -- --template svelte -y`
+## Marche à suivre
 
-`cd svelte-portfolio`
+### Première fois sur le projet
 
-`npm install`
-en attendant une version 4 stable du router, on bloque sur des versions en dessous grace au tilde (~) avant le numéro de version.
+- Cloner le repo
+- Ouvrir le repo dans VSC
+- Puis faire la commande : ```npm install``` pour l'installation de Svelte
 
-`npm install svelte-spa-router@~3.3.0`
+### Travailler sur le repo
 
-Ici, très important, on initialise Git en prévision du déploiement (déploiement d'après le repo GitHub)
-`git init && git add -A && git commit -m "Initial commit"`
+- On va sur la branche dev : ```git checkout dev```
+- On fait un ```git pull``` pour récupérer le travail de la branche
+- On créer une branche de la nouvelle fonctionnalité : ```git checkout -b nom-de-la-fonctionnalite```
+- On lancer la commande ```npm run dev``` à partir du repo
+- Quand on push la branche on fait un ```git push origin nom-de-la-branche```
+- Si la fonctionnalité fonctionne on fait une Pull-Request sur GitHub
 
-Puis on lance le serveur de dev avec vite (on appelle un script depuis package.json)
-`npm run dev`
+### Pull Request
 
-Puis on nettoie le code par défaut du template avant de commencer : 
-vider `App.svelte` et `app.css`, supprimer `Counter.svelte` dans le dossier `lib`
+- On fait une Pull Request seulement lorsque toutes les fonctionnalitées de notre branche **fonctionne**
+- Lorsqu'on fait la Pull Request on pense à vérifier où on veut merge donc dans **dev**
+  - Dans la Pull-Request on met une description de se qui a été fait
 
-Nous avons besoin d'un reset pour nos css, afin d'harmoniser le rendu entre les navigateurs (on a choisi `normalize.css` mais il en existe d'autres) 
-on l'appellera depuis `main.js`, en première position.
+## Les conventions de nommage
 
-Vos styles vont dans app.css, ou bien en interne dans un composant svelte entre les balises `<style>...</style>`, les styles sont alors appliqués uniquement au composant qui les embarque (Sur le Web : "svelte scoped css" pour approfondir la question)
-
-## C'est à vous de jouer maintenant, créez votre site !
-
-
-# Déploiement et mises à jour
-
-Push du repo local sur github
-
-Le repo doit etre "public"
-
-Relier votre compte Vercel à votre compte github
-
-Choisissez depuis Vercel le repo à déployer
-
-choisir son domaine, par exemple votrenom.vercel.app, ou bien configurer un nom de domaine de premier niveau que vous pouvez acquérir pour 15e/an environ
-
-Déployez !
+- On nomme les **dossiers** en minuscule et on évite les acronymes
+- On nomme les **fichiers** en camel case => conventionDeNommage
+- On nomme les **commits** en anglais et en kebab case => convention-de-nommage
+- On écrit les **commentaires** de code en anglais
+- On écrit les descriptions des Pull Request clairement en français
