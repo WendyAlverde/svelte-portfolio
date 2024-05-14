@@ -22,7 +22,6 @@ const routes = {
   "/legal-notices": LegalNotices,
   "*": NotFound,
 }
-
 </script>
 
 <div class="container"> 
