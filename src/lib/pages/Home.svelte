@@ -89,10 +89,14 @@
                 <div class="bar" data-width="90">Piskel</div>
             </div>
             <div class="progressbar">
+                <div class="bar" data-width="50">Figma</div>
+            </div>
+            <div class="progressbar">
                 <div class="bar" data-width="20">Photoshop</div>
             </div>
         </div>
     </section>
+
     <section id="portfolio">
         <h2>Portfolio</h2>
         <p>La programmation est la clé qui ouvre les portes du renouveau technologique, où l'imagination devient réalité et où les possibilités deviennent infinies.</p>

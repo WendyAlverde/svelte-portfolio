@@ -12,9 +12,11 @@
   import Contact from "./lib/pages/Contact.svelte";
   import CV from "./lib/pages/CV.svelte";
   import LegalNotices from "./lib/pages/LegalNotices.svelte";
+  // Import pages portfolio
+  import Ocook from "./lib/pages/pagesPortfolio/Ocook.svelte";
+  // Not Found
   import NotFound from "./lib/pages/NotFound.svelte";
-  // Importer nos pages de projets
-  import Ocook from "./lib/pages/projects/Ocook.svelte";
+
   
 const routes = {
   "/": Home,
