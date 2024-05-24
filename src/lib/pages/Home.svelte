@@ -1,20 +1,29 @@
+<script>
+    import {link} from "svelte-spa-router"
+    import profil from "../../assets/images/profil.webp"
+    import mousse from "../../assets/images/mousse.webp"
+    import tourtelegraphe from "../../assets/images/tourtelegraphe.webp"
+    import pissenlit from "../../assets/images/pissenlit.webp"
+</script>
+
+<main>
     <section id="hero">
         <div class="containerHero">
             <div class="hero__item left">
                 <h1>Intégratrice Web</h1>
-                <em class="subtitle">Bonjour, je m'appelle Wendy Alverde</em>
+                <p class="subtitle">Bonjour, je m'appelle Wendy Alverde</p>
                 <p>Passionnée par la création et l'optimisation d'interface utilisateur, je suis à la recherche d'un poste en tant qu'Intégratrice Web aux alentours de Colmar. </p>
             </div>
             <div class="hero__item right">
                 <div class="troisphotos">
                     <div class="photo photo1">
-                        <!-- <img src="../public/image/Nature1.jpg" loading="lazy" alt="Sol mousseux proche du Petit Geroldseck, mai 2023 - Photographe Wendy Alverde"> -->
+                        <img src={mousse} loading="lazy" alt="">
                     </div>
                     <div class="photo photo2">
-                        <!-- <img src="./img/TourTelegrapheChappe.jpg" loading="lazy" alt="Tour du Télégraphe Chappe de Saverne, mai 2023 - Photographe Wendy Alverde"> -->
+                        <img src={tourtelegraphe} loading="lazy" alt="">
                     </div>
                     <div class="photo photo3">
-                        <!-- <img src="./img/MontBlanc.jpg" loading="lazy" alt="Mont-Blanc, mars 2023 - Photographe Wendy Alverde"> -->
+                        <img src={pissenlit} loading="lazy" alt="">
                     </div>
                 </div>
             </div>
@@ -22,7 +31,7 @@
     </section>
     <section id="about">
         <div class="grid__item left">
-            <img src="../public/images/IMG_20221102_141254.jpg" loading="lazy" alt="Wendy Alverde - Apprentie développeuse">
+            <img src={profil} loading="lazy" alt="Profil de Wendy Alverde">
         </div>
         <div class="grid__item right">
             <h2 class="section-title">À propos</h2>
@@ -64,20 +73,55 @@
             <h3>Compétences en développement</h3>
             <!-- Changer cette partie -->
             <div class="progressbar">
-                <div class="bar" data-width="70">HTML</div>
+                <div class="bar" data-width="95">HTML</div>
             </div>
             <div class="progressbar">
-                <div class="bar" data-width="70">CSS</div>
+                <div class="bar" data-width="85">CSS</div>
             </div>
             <div class="progressbar">
-                <div class="bar" data-width="10">JAVASCRIPT</div>
+                <div class="bar" data-width="50">JAVASCRIPT</div>
             </div>
             <div class="progressbar">
-                <div class="bar" data-width="0">PHP</div>
+                <div class="bar" data-width="30">PHP</div>
             </div>
             <h3>Compétences en conception graphique</h3>
             <div class="progressbar">
                 <div class="bar" data-width="90">Piskel</div>
             </div>
+            <div class="progressbar">
+                <div class="bar" data-width="20">Photoshop</div>
+            </div>
         </div>
     </section>
+    <section id="portfolio">
+        <h2>Portfolio</h2>
+        <p>La programmation est la clé qui ouvre les portes du renouveau technologique, où l'imagination devient réalité et où les possibilités deviennent infinies.</p>
+        <!--Essai/impro : 3 photos collées avec petite marge entre elles. Sur la photo, le titre et un lien 'voir plus'. Lorsqu'on clique sur 'voir plus' renvoi à une autre page-->
+        <article>
+            <img src="" alt="">
+            <h3>O'Cook</h3>
+            <a href="/ocook" use:link></a>
+        </article>
+    </section>
+</main>
+
+<style lang="scss">
+    img {
+        width: 8rem;
+        height: 10rem;
+        object-fit: cover;
+    }
+
+    .containerHero {
+        background-color: var(--color-hero);
+    }
+
+    .containerHero p{
+        color: var(--text-clair);
+    }
+
+    .subtitle {
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+</style>
