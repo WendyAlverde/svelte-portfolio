@@ -13,6 +13,8 @@
   import CV from "./lib/pages/CV.svelte";
   import LegalNotices from "./lib/pages/LegalNotices.svelte";
   import NotFound from "./lib/pages/NotFound.svelte";
+  // Importer nos pages de projets
+  import Ocook from "./lib/pages/projects/Ocook.svelte";
   
 const routes = {
   "/": Home,
@@ -20,6 +22,7 @@ const routes = {
   "/contact": Contact,
   "/cv": CV,
   "/legal-notices": LegalNotices,
+  "/ocook": Ocook,
   "*": NotFound,
 }
 </script>
