@@ -12,6 +12,11 @@
   import Contact from "./lib/pages/Contact.svelte";
   import CV from "./lib/pages/CV.svelte";
   import LegalNotices from "./lib/pages/LegalNotices.svelte";
+  // Import pages portfolio
+  import OCook from "./lib/pages/pagesPortfolio/OCook.svelte";
+  import TicTacToe from "./lib/pages/pagesPortfolio/TicTacToe.svelte";
+
+  // Not Found
   import NotFound from "./lib/pages/NotFound.svelte";
   
 const routes = {
@@ -20,6 +25,8 @@ const routes = {
   "/contact": Contact,
   "/cv": CV,
   "/legal-notices": LegalNotices,
+  "/ocook": OCook,
+  "/tictactoe": TicTacToe,
   "*": NotFound,
 }
 </script>
