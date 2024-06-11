@@ -1,13 +1,14 @@
 <script>
     import {link} from "svelte-spa-router"
-    import linkedin from "../../assets/icons/site/linkedin.svg"
-    import github from "../../assets/icons/site/github.svg"
-    import instagram from "../../assets/icons/site/instagram.svg"
+    // import pictures
+    import linkedin from "../../assets/icons/site/socials/linkedin.svg"
+    import github from "../../assets/icons/site/socials/github.svg"
+    import instagram from "../../assets/icons/site/socials/instagram.svg"
 </script>
 
 <header role="banner">
-    <div class="container">
-        <div class="logo">Wendy Alverde</div>
+    <div class="container"> <!-- A retirer quand construction part -->
+        <a class="logo" href="/" use:link>Wendy Alverde</a>
         <nav role="navigation">
             <ul class="menu list-unstyled">
                 <li><a href="/" title="Cliquer pour aller sur la page d'accueil" use:link>Accueil</a></li>
@@ -16,29 +17,28 @@
                 <li><a href="/cv" title="Cliquer pour aller sur la page de mon curriculum vitae" use:link>Mon CV</a></li>
             </ul>
         </nav>
-        <div class="right">
-            <ul class="socials">
-                <li>
-                    <a href="https://www.linkedin.com/in/wendy-alverde-850761237/" alt="Lien vers mon profil LinkedIn" target="_blank">
-                        <img class="icon" src={linkedin} alt="Logo amenant sur le profil LinkedIn de Wendy Alverde">
-                    </a>
-                </li>
-                <li>
-                    <a href="https://github.com/WendyAlverde" target="_blank" alt="Lien vers mon profil GitHub">
-                        <img class="icon" src={github} alt="Logo amenant sur le profil GitHub de Wendy Alverde">
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.instagram.com/chat_push/" target="_blank" alt="Lien vers mon profil LinkedIn">
-                        <img class="icon" src={instagram} alt="Logo amenant sur le profil Instagram de Wendy Alverde">
-                    </a>
-                </li>
-            </ul>
-            <button aria-pressed="false" class="burger"><em class="bar"></em></button>
-        </div>
+        <ul class="socials">
+            <li>
+                <a href="https://www.linkedin.com/in/wendy-alverde-850761237/" alt="Lien vers mon profil LinkedIn" target="_blank">
+                    <img class="icon" src={linkedin} alt="Logo amenant sur le profil LinkedIn de Wendy Alverde">
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/WendyAlverde" target="_blank" alt="Lien vers mon profil GitHub">
+                    <img class="icon" src={github} alt="Logo amenant sur le profil GitHub de Wendy Alverde">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/chat_push/" target="_blank" alt="Lien vers mon profil LinkedIn">
+                    <img class="icon" src={instagram} alt="Logo amenant sur le profil Instagram de Wendy Alverde">
+                </a>
+            </li>
+        </ul>
+        <button aria-pressed="false" class="burger"><em class="bar"></em></button>
     </div>
     <div class="banniere">
         <p>SITE EN CONSTRUCTION</p>
+        <p class="little">Mobile first</p>
     </div>
 </header>
 
@@ -59,21 +59,31 @@
         letter-spacing: 1px;
     }
 
-    nav {
+    .container {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
+        padding: 1rem 0.5rem;
         align-items: center;
-        flex-direction: column;
-        position: fixed;
-        top: 3.4rem;
-        left: 110%;
+    }
+
+    a, ul {
+        margin-top: 0.6rem;
+    }
+
+    nav {
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        // flex-direction: column;
+        display: none;
+        // position: fixed;
+        // top: 3.4rem;
+        // left: 110%;
         overflow: hidden;
         // height: calc(100vh -3.4rem);
         background: var(--background-entete);
         transition: all 0.4s ease-out;
     }
-
-
     header a  {
         color: var(--color-text);
     }
@@ -111,7 +121,7 @@
     .burger .bar::after {
         transform: translateY(0.5rem);
     }
-    /* Ne restera pas à la fin */
+    /* ==== Ne restera pas à la fin ====  */
     .banniere {
         background: #EBB300;
         border: 0.2rem solid #D47E00;
@@ -125,7 +135,12 @@
     .banniere p {
         text-align: center;
     }
-    /* Ne restera pas à la fin */
+
+    .little {
+        font-size: 0.8rem;
+        margin-bottom: 0.3rem;
+    }
+    /* ==== Ne restera pas à la fin ==== */
 
     @media screen and (min-width: 426px) and (max-width: 768px) { /*Tablette*/
         header .logo {
@@ -136,6 +151,14 @@
         header li {
             font-size: 1.5rem;
             padding: 0 .5rem;
+        }
+
+        nav {
+            display: block;
+        }
+
+        .burger {
+            display: none;
         }
     }
 
@@ -149,13 +172,19 @@
             padding: 0.5rem;
         }
 
+        nav {
+            display: block;
+        }
+
+        .burger {
+            display: none;
+        }
+
         nav .menu {
             display: flex;/*1*/
             flex-direction: row;/*2*/
             justify-content: space-around;/*3*/
             padding-top: 1rem;
         }
-        
-
     }
 </style>
