@@ -4,6 +4,7 @@
     import pissenlit from "../../assets/icons/site/paysages/pissenlit.webp"
     import panier from "../../assets/icons/site/paysages/paniersoleil.webp"
     import montblanc from "../../assets/icons/site/paysages/montblanc.webp"
+    import engrenage from "../../assets/icons/site/home/engrenage.webp"
 </script>
 
 <main role="main">
@@ -39,18 +40,18 @@
         <p>Ainsi, je souhaite travailler en tant qu'<em>Intégratrice web</em>.</p> <!--Mettre texte aligné (<br> pour passer à la ligne à la fin de celle-ci, si besoin)-->
         <h3>Mes valeurs :</h3>
         <ul>
-            <li class="li1">Créativité : J'ai la capacité d'imaginer, concevoir et produire des idées originales et innovantes.</li>
-            <li class="li2">Plaisir : J'apprécie chaque aspect de mon travail, ce qui se reflète dans ma motivation, ma satisfaction et ma capacité à donner le meilleur de moi-même.</li>
-            <li class="li3">Responsabilité écologique : Je m'engage pour un travail respectueux de l'environnement en adoptant des pratiques durables et éco-responsables.</li>
-            <li class="li4">Rigueur : J'aborde chaque projet avec une attention méticuleuse aux détails et à la qualité de mon travail.</li>
+            <li class="li1"><em>Créativité</em> : J'ai la capacité d'imaginer, concevoir et produire des idées originales et innovantes.</li>
+            <li class="li2"><em>Plaisir</em> : J'apprécie chaque aspect de mon travail, ce qui se reflète dans ma motivation, ma satisfaction et ma capacité à donner le meilleur de moi-même.</li>
+            <li class="li3"><em>Responsabilité écologique</em> : Je m'engage pour un travail respectueux de l'environnement en adoptant des pratiques durables et éco-responsables.</li>
+            <li class="li4"><em>Rigueur</em> : J'aborde chaque projet avec une attention méticuleuse aux détails et à la qualité de mon travail.</li>
         </ul>              
     </section>
     <!-- Skills -->
     <section id="skills">
-        <div class="section-hearder">
+        <header>
             <h2 class="section-title">Mes compétences</h2>
             <p class="pskills">Grâce à mes expériences professionnelles, j'ai développé des compétences telles que l'autonomie, la minutie et la préoccupation pour la sécurité. Voici un aperçu de mes compétences acquises par passion et par auto-formation.</p>
-        </div>
+        </header>
         <div class="item">
             <h3>Domaines de compétences</h3>
             <ul>
@@ -133,10 +134,11 @@
     }
     // ====  About  ==== //
     #about {
-        margin: 1.5rem 0;
+        padding: 1.5rem 0;
         display: flex;
         align-items: center;
         flex-direction: column;
+        background-color: var(--text-clair);
     }
     .profilpicture {
         width: 12rem;
@@ -145,15 +147,22 @@
     h2 {
         margin-top: 1rem;
     }
+
+    h3 {
+        margin-top: 0.8rem;
+    }
     #about p  {
         word-spacing: 0.2rem;
     }
 
     em {
         font-weight: bold;
+    }    
+    li {
+        margin: 1rem;
     }
-
-    
-
-    
+    // ====  About  ==== //
+    header p {
+        font-weight: bold;
+    }
 </style>
