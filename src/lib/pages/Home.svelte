@@ -29,22 +29,21 @@
     </section>
     <!-- About -->
     <section id="about">
-        <div class="grid__item left">
-            <img class="profilpicture" src={profil} loading="lazy" alt="Profil de Wendy Alverde">
-        </div>
-        <div class="grid__item right">
-            <h2 class="section-title">À propos</h2>
-            <h3>Qui suis-je</h3>
-            
-            <p>Après avoir étudié en foresterie au Québec pendant 4 ans, j'ai développé un vif intérêt pour les <em>aspects informatiques</em>, tels que la photo-interprétation et la géomatique. De retour en France il y a 3 ans, je suis fascinée par les coulisses des <em>effets spéciaux</em> cinématographiques, les <em>mystères de la création des pages web et des jeux vidéo</em>. Au cours de l'année 2022, je me suis consacrée à une formation en autodidacte, en explorant diverses ressources telles que des <em>tutoriels sur YouTube</em> et des <em>cours en ligne sur OpenClassroom</em>. J'ai également suivi une formation intitulée 'Initiation aux métiers du numérique' avec le CCI Campus. En 2023, j'ai suivi de cours chez O'clock, pour passer le <em>Titre Professionnel de Développeur Web et Web Mobile</em> de niveau Bac+2 en juin 2024. Ainsi, je souhaite travailler en tant qu'<em>Intégratrice web</em>.</p> <!--Mettre texte aligné (<br> pour passer à la ligne à la fin de celle-ci, si besoin)-->
-            <h3>Mes valeurs :</h3>
-            <ul>
-                <li class="li1">Créativité : J'ai la capacité d'imaginer, concevoir et produire des idées originales et innovantes.</li>
-                <li class="li2">Plaisir : J'apprécie chaque aspect de mon travail, ce qui se reflète dans ma motivation, ma satisfaction et ma capacité à donner le meilleur de moi-même.</li>
-                <li class="li3">Responsabilité écologique : Je m'engage pour un travail respectueux de l'environnement en adoptant des pratiques durables et éco-responsables.</li>
-                <li class="li4">Rigueur : J'aborde chaque projet avec une attention méticuleuse aux détails et à la qualité de mon travail.</li>
-            </ul>              
-        </div>
+        <img class="profilpicture" src={profil} loading="lazy" alt="Profil de Wendy Alverde">
+        <h2 class="section-title">À propos</h2>
+        <h3>Qui suis-je</h3>
+        <p>Après avoir étudié en foresterie au Québec pendant 4 ans, j'ai développé un vif intérêt pour les <em>aspects informatiques</em>, tels que la photo-interprétation et la géomatique.</p>
+        <p> De retour en France il y a 3 ans, je suis fascinée par les coulisses des <em>effets spéciaux</em> cinématographiques et les <em>mystères de la création des pages web et des jeux vidéo</em>.</p>
+        <p>Au cours de l'année 2022 et 2023, je me suis consacrée à une formation en autodidacte, en explorant diverses ressources telles que des <em>tutoriels sur YouTube</em> et des <em>cours en ligne sur OpenClassroom</em>. J'ai également suivi une formation intitulée 'Initiation aux métiers du numérique' avec le CCI Campus de Strasbourg.</p>
+        <p>Fin 2023 à avril 2024, j'ai suivi les cours chez O'clock, pour passer le <em>Titre Professionnel de Développeur Web et Web Mobile</em> de niveau Bac+2 en juin 2024.</p>
+        <p>Ainsi, je souhaite travailler en tant qu'<em>Intégratrice web</em>.</p> <!--Mettre texte aligné (<br> pour passer à la ligne à la fin de celle-ci, si besoin)-->
+        <h3>Mes valeurs :</h3>
+        <ul>
+            <li class="li1">Créativité : J'ai la capacité d'imaginer, concevoir et produire des idées originales et innovantes.</li>
+            <li class="li2">Plaisir : J'apprécie chaque aspect de mon travail, ce qui se reflète dans ma motivation, ma satisfaction et ma capacité à donner le meilleur de moi-même.</li>
+            <li class="li3">Responsabilité écologique : Je m'engage pour un travail respectueux de l'environnement en adoptant des pratiques durables et éco-responsables.</li>
+            <li class="li4">Rigueur : J'aborde chaque projet avec une attention méticuleuse aux détails et à la qualité de mon travail.</li>
+        </ul>              
     </section>
     <!-- Skills -->
     <section id="skills">
@@ -99,7 +98,7 @@
 </main>
 
 <style lang="scss">
-    // ==== Hero  ==== //
+    // ====  Hero  ==== //
     #hero {
         background-color: var(--color-hero);
         display: flex;
@@ -117,7 +116,7 @@
     #hero p{
         color: var(--text-clair);
     }
-    // ==== Pictures  ==== //
+    // ====  Pictures  ==== //
     .troisPhotos {
         display: flex;
         justify-content: space-between;
@@ -132,11 +131,26 @@
         font-size: 0.8rem;
         margin: 0.3rem 0 1rem;
     }
+    // ====  About  ==== //
+    #about {
+        margin: 1.5rem 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .profilpicture {
+        width: 12rem;
+    }
+    
+    h2 {
+        margin-top: 1rem;
+    }
+    #about p  {
+        word-spacing: 0.2rem;
+    }
 
-
-
-    a {
-        color:black;
+    em {
+        font-weight: bold;
     }
 
     

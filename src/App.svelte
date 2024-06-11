@@ -29,8 +29,6 @@ const routes = {
 }
 </script>
 
-<div class="container"> 
   <Header />
     <Router {routes} />
   <Footer />
-</div>

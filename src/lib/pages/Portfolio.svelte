@@ -31,4 +31,7 @@
     #portfolio img{
         width: 5rem;
     }
+    a {
+        color:black;
+    }
 </style>

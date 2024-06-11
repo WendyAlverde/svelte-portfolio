@@ -38,6 +38,7 @@
     </div>
     <div class="banniere">
         <p>SITE EN CONSTRUCTION</p>
+        <p class="little">Mobile first</p>
     </div>
 </header>
 
@@ -83,11 +84,8 @@
         background: var(--background-entete);
         transition: all 0.4s ease-out;
     }
-
-
     header a  {
         color: var(--color-text);
-        font-weight: bold;
     }
 
     header a:hover {
@@ -123,7 +121,7 @@
     .burger .bar::after {
         transform: translateY(0.5rem);
     }
-    /* Ne restera pas à la fin */
+    /* ==== Ne restera pas à la fin ====  */
     .banniere {
         background: #EBB300;
         border: 0.2rem solid #D47E00;
@@ -137,7 +135,12 @@
     .banniere p {
         text-align: center;
     }
-    /* Ne restera pas à la fin */
+
+    .little {
+        font-size: 0.8rem;
+        margin-bottom: 0.3rem;
+    }
+    /* ==== Ne restera pas à la fin ==== */
 
     @media screen and (min-width: 426px) and (max-width: 768px) { /*Tablette*/
         header .logo {
