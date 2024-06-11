@@ -1,8 +1,9 @@
 <script>
     import {link} from "svelte-spa-router"
-    import linkedin from "../../assets/icons/site/linkedin.svg"
-    import github from "../../assets/icons/site/github.svg"
-    import instagram from "../../assets/icons/site/instagram.svg"
+    // import pictures
+    import linkedin from "../../assets/icons/site/socials/linkedin.svg"
+    import github from "../../assets/icons/site/socials/github.svg"
+    import instagram from "../../assets/icons/site/socials/instagram.svg"
 </script>
 
 <footer>
