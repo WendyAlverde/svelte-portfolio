@@ -1,21 +1,20 @@
 <script>
-    import {link} from "svelte-spa-router"
     // Import pictures
     import profil from "../../assets/icons/site/profil/profil.webp"
     import pissenlit from "../../assets/icons/site/paysages/pissenlit.webp"
     import panier from "../../assets/icons/site/paysages/paniersoleil.webp"
     import montblanc from "../../assets/icons/site/paysages/montblanc.webp"
-    import ocook from "../../assets/icons/site/portfolio/ocook-logo-blue.webp"
 </script>
 
-<main>
+<main role="main">
+    <!-- Profil -->
     <section id="hero">
         <div class="left">
             <h1>Intégratrice Web</h1>
             <p class="subtitle">Bonjour, je m'appelle Wendy Alverde</p>
             <p>Passionnée par la création et l'optimisation d'interface utilisateur, je suis à la recherche d'un poste en tant qu'Intégratrice Web aux alentours de Colmar. </p>
         </div>
-        <div class="troisphotos">
+        <div class="troisPhotos">
             <div class="photo photo1">
                 <img src={pissenlit} loading="lazy" alt="">
             </div>
@@ -26,7 +25,9 @@
                 <img src={montblanc} loading="lazy" alt="">
             </div>
         </div>
+        <p class="subtitlePicture" aria-hidden="true">Photographie prise par Wendy Alverde</p>
     </section>
+    <!-- About -->
     <section id="about">
         <div class="grid__item left">
             <img class="profilpicture" src={profil} loading="lazy" alt="Profil de Wendy Alverde">
@@ -45,6 +46,7 @@
             </ul>              
         </div>
     </section>
+    <!-- Skills -->
     <section id="skills">
         <div class="section-hearder">
             <h2 class="section-title">Mes compétences</h2>
@@ -94,65 +96,50 @@
             </div>
         </div>
     </section>
-
-    <section id="portfolio">
-        <h2>Portfolio</h2>
-        <p>La programmation est la clé qui ouvre les portes du renouveau technologique, où l'imagination devient réalité et où les possibilités deviennent infinies.</p>
-        <!--Essai/impro : 3 photos collées avec petite marge entre elles. Sur la photo, le titre et un lien 'voir plus'. Lorsqu'on clique sur 'voir plus' renvoi à une autre page-->
-        <div class="portfolio">
-            <article>
-                <img src={ocook} loading="lazy" alt="Logo du projet O'Cook">
-                <a href="/ocook" use:link>O'Cook</a>
-                <p>O'Cook est un blog de gastronomie et de critiques de restaurants, écrit par Alice Ocklecook. C'est un projet de groupe réalisé sous la méthode SCRUM en fin de formation avec l'école O'Clock.</p>
-            </article>
-            <article>
-                <img src="" alt="">
-                <a href="#">Projet 2</a>
-                <p></p>
-            </article>
-            <article>
-                <img src="" alt="">
-                <a href="#">Projet 3</a>
-                <p></p>
-            </article>
-        </div>
-    </section>
 </main>
 
 <style lang="scss">
+    // ==== Hero  ==== //
     #hero {
-        background-color: var( --color-hero);
+        background-color: var(--color-hero);
         display: flex;
         flex-direction: column;
-        align-items: center;
+        text-align: center;
+    }
+    h1 {
+        margin-top: 2rem;
+    }
+    .subtitle {
+        font-weight: bold;
+        font-size: 1.5rem;
+        margin: 2rem 0;
+    }
+    #hero p{
+        color: var(--text-clair);
+    }
+    // ==== Pictures  ==== //
+    .troisPhotos {
+        display: flex;
+        justify-content: space-between;
+        margin: 1rem 1rem 0;
     }
     .photo img {
-        width: 7rem;
-    }
-    img {
-        width: 8rem;
-        height: 10rem;
+        width: 5.5rem;
+        height: 3.5rem;
         object-fit: cover;
     }
-
-    .portfolio img{
-        width: 5rem;
+    .subtitlePicture {
+        font-size: 0.8rem;
+        margin: 0.3rem 0 1rem;
     }
+
+
 
     a {
         color:black;
     }
 
-    .containerHero {
-        background-color: var(--color-hero);
-    }
+    
 
-    .containerHero p{
-        color: var(--text-clair);
-    }
-
-    .subtitle {
-        font-weight: bold;
-        font-size: 1.5rem;
-    }
+    
 </style>

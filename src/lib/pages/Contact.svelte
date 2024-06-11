@@ -1,4 +1,4 @@
-<main>
+<main role="main">
     <h1>Contact</h1>
     <p>Formulaire de contact pas encore fonctionnel, à venir</p>
     <section id="contact">
