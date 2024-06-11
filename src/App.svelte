@@ -13,7 +13,7 @@
   import CV from "./lib/pages/CV.svelte";
   import LegalNotices from "./lib/pages/LegalNotices.svelte";
   // Import pages portfolio
-  import Ocook from "./lib/pages/pagesPortfolio/Ocook.svelte";
+  import Ocook from "./lib/pages/pagesPortfolio/OCook.svelte";
   // Not Found
   import NotFound from "./lib/pages/NotFound.svelte";
 

@@ -1,37 +1,35 @@
 <script>
     import {link} from "svelte-spa-router"
-    import profil from "../../assets/images/profil.webp"
-    import mousse from "../../assets/images/mousse.webp"
-    import tourtelegraphe from "../../assets/images/tourtelegraphe.webp"
-    import pissenlit from "../../assets/images/pissenlit.webp"
+    // Import pictures
+    import profil from "../../assets/icons/site/profil/profil.webp"
+    import pissenlit from "../../assets/icons/site/paysages/pissenlit.webp"
+    import panier from "../../assets/icons/site/paysages/paniersoleil.webp"
+    import montblanc from "../../assets/icons/site/paysages/montblanc.webp"
+    import ocook from "../../assets/icons/site/portfolio/ocook-logo-blue.webp"
 </script>
 
 <main>
     <section id="hero">
-        <div class="containerHero">
-            <div class="hero__item left">
-                <h1>Intégratrice Web</h1>
-                <p class="subtitle">Bonjour, je m'appelle Wendy Alverde</p>
-                <p>Passionnée par la création et l'optimisation d'interface utilisateur, je suis à la recherche d'un poste en tant qu'Intégratrice Web aux alentours de Colmar. </p>
+        <div class="left">
+            <h1>Intégratrice Web</h1>
+            <p class="subtitle">Bonjour, je m'appelle Wendy Alverde</p>
+            <p>Passionnée par la création et l'optimisation d'interface utilisateur, je suis à la recherche d'un poste en tant qu'Intégratrice Web aux alentours de Colmar. </p>
+        </div>
+        <div class="troisphotos">
+            <div class="photo photo1">
+                <img src={pissenlit} loading="lazy" alt="">
             </div>
-            <div class="hero__item right">
-                <div class="troisphotos">
-                    <div class="photo photo1">
-                        <img src={mousse} loading="lazy" alt="">
-                    </div>
-                    <div class="photo photo2">
-                        <img src={tourtelegraphe} loading="lazy" alt="">
-                    </div>
-                    <div class="photo photo3">
-                        <img src={pissenlit} loading="lazy" alt="">
-                    </div>
-                </div>
+            <div class="photo photo2">
+                <img src={panier} loading="lazy" alt="">
+            </div>
+            <div class="photo photo3">
+                <img src={montblanc} loading="lazy" alt="">
             </div>
         </div>
     </section>
     <section id="about">
         <div class="grid__item left">
-            <img src={profil} loading="lazy" alt="Profil de Wendy Alverde">
+            <img class="profilpicture" src={profil} loading="lazy" alt="Profil de Wendy Alverde">
         </div>
         <div class="grid__item right">
             <h2 class="section-title">À propos</h2>
@@ -101,19 +99,48 @@
         <h2>Portfolio</h2>
         <p>La programmation est la clé qui ouvre les portes du renouveau technologique, où l'imagination devient réalité et où les possibilités deviennent infinies.</p>
         <!--Essai/impro : 3 photos collées avec petite marge entre elles. Sur la photo, le titre et un lien 'voir plus'. Lorsqu'on clique sur 'voir plus' renvoi à une autre page-->
-        <article>
-            <img src="" alt="">
-            <h3>O'Cook</h3>
-            <a href="/ocook" use:link></a>
-        </article>
+        <div class="portfolio">
+            <article>
+                <img src={ocook} loading="lazy" alt="Logo du projet O'Cook">
+                <a href="/ocook" use:link>O'Cook</a>
+                <p>O'Cook est un blog de gastronomie et de critiques de restaurants, écrit par Alice Ocklecook. C'est un projet de groupe réalisé sous la méthode SCRUM en fin de formation avec l'école O'Clock.</p>
+            </article>
+            <article>
+                <img src="" alt="">
+                <a href="#">Projet 2</a>
+                <p></p>
+            </article>
+            <article>
+                <img src="" alt="">
+                <a href="#">Projet 3</a>
+                <p></p>
+            </article>
+        </div>
     </section>
 </main>
 
 <style lang="scss">
+    #hero {
+        background-color: var( --color-hero);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .photo img {
+        width: 7rem;
+    }
     img {
         width: 8rem;
         height: 10rem;
         object-fit: cover;
+    }
+
+    .portfolio img{
+        width: 5rem;
+    }
+
+    a {
+        color:black;
     }
 
     .containerHero {

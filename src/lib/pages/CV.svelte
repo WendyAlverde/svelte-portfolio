@@ -1,25 +1,28 @@
 <script>
     import {link} from "svelte-spa-router"
+     // Import pictures
     import at from "../../assets/icons/cv/at.svg"
     import calendar from "../../assets/icons/cv/calendar.svg"
     import car from "../../assets/icons/cv/car.svg"
     import house from "../../assets/icons/cv/house.svg"
     import card from "../../assets/icons/cv/id-card.svg"
     import phone from "../../assets/icons/cv/phone.svg"
-    import linkedin from "../../assets/icons/site/linkedin.svg"
-    import github from "../../assets/icons/site/github.svg"
-    import instagram from "../../assets/icons/site/instagram.svg"   
+    import profil from "../../assets/icons/site/profil/profil.webp"
+    // import socials
+    import linkedin from "../../assets/icons/site/socials/linkedin.svg"
+    import github from "../../assets/icons/site/socials/github.svg"
+    import instagram from "../../assets/icons/site/socials/instagram.svg"  
 </script>
     
     <main>
         <h1>Mon Curriculum Vitae</h1>
         <section id="containerPerso">
             <div class="left">
-                <img src="" alt="Photo de profil de Wendy Alverde">
+                <img class="profilpicture" src={profil} alt="Photo de profil de Wendy Alverde">
                 <!-- Ajout d'une photo perso (en webp)--> 
             </div>
             <div class="right"> 
-                <p> de Wendy Alverde</p><!-- h1 en haut, subtitle juste en dessous centré -->
+                <p> Wendy Alverde</p><!-- h1 en haut, subtitle juste en dessous centré -->
                 <h2>Intégratrice web</h2>
             </div>      
         </section>
@@ -212,7 +215,7 @@
         </section> 
     </main> 
 
-<style>
+<style lang="scss">
     * {
         box-sizing: border-box;
     }
@@ -254,7 +257,9 @@
         width: 1rem;
     }
 
-
+    .profilpicture {
+        width: 10rem;
+    }
 
     @media screen and (min-width: 426px) and (max-width: 768px) { /*Tablette*/
         
