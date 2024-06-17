@@ -4,7 +4,19 @@
     import pissenlit from "../../assets/icons/site/paysages/pissenlit.webp"
     import panier from "../../assets/icons/site/paysages/paniersoleil.webp"
     import montblanc from "../../assets/icons/site/paysages/montblanc.webp"
-    import engrenage from "../../assets/icons/site/home/engrenage.webp"
+    
+    import { onMount } from 'svelte';
+
+    onMount(() => {
+    document.querySelector('.html').style.width = '100%';
+    document.querySelector('.css').style.width = '95%';
+    document.querySelector('.javascript').style.width = '70%';
+    document.querySelector('.php').style.width = '35%';
+    document.querySelector('.piskel').style.width = '80%';
+    document.querySelector('.figma').style.width = '55%';
+    document.querySelector('.photoshop').style.width = '35%';
+    });
+
 </script>
 
 <main role="main">
@@ -50,9 +62,10 @@
     <section id="skills">
         <header>
             <h2 class="section-title">Mes compétences</h2>
-            <p class="pskills">Grâce à mes expériences professionnelles, j'ai développé des compétences telles que l'autonomie, la minutie et la préoccupation pour la sécurité. Voici un aperçu de mes compétences acquises par passion et par auto-formation.</p>
+            <p class="pskills">Grâce à mes expériences professionnelles, j'ai développé des compétences telles que l'autonomie, la minutie et la préoccupation pour la sécurité.</p>
+            <p class="pskills">Voici un aperçu de mes compétences acquises par passion et par auto-formation.</p>
         </header>
-        <div class="item">
+        <div class="itemskills">
             <h3>Domaines de compétences</h3>
             <ul>
                 <li>
@@ -73,26 +86,26 @@
             <h3>Compétences en développement</h3>
             <!-- Changer cette partie -->
             <div class="progressbar">
-                <div class="bar" data-width="95">HTML</div>
+                <div class="bar html" data-width="95">HTML</div>
             </div>
             <div class="progressbar">
-                <div class="bar" data-width="85">CSS</div>
+                <div class="bar css" data-width="85">CSS</div>
             </div>
             <div class="progressbar">
-                <div class="bar" data-width="50">JAVASCRIPT</div>
+                <div class="bar javascript" data-width="50">JAVASCRIPT</div>
             </div>
             <div class="progressbar">
-                <div class="bar" data-width="30">PHP</div>
+                <div class="bar php" data-width="30">PHP</div>
             </div>
             <h3>Compétences en conception graphique</h3>
             <div class="progressbar">
-                <div class="bar" data-width="90">Piskel</div>
+                <div class="bar piskel" data-width="90">Piskel</div>
             </div>
             <div class="progressbar">
-                <div class="bar" data-width="50">Figma</div>
+                <div class="bar figma" data-width="50">Figma</div>
             </div>
             <div class="progressbar">
-                <div class="bar" data-width="20">Photoshop</div>
+                <div class="bar photoshop" data-width="20">Photoshop</div>
             </div>
         </div>
     </section>
@@ -148,8 +161,10 @@
         margin-top: 1rem;
     }
 
-    h3 {
-        margin-top: 0.8rem;
+    #about h3, .item h3 {
+        margin-top: 1.2rem;
+        padding-top: 0.5rem;
+        border-top: 0.2rem solid var(--color-hero);
     }
     #about p  {
         word-spacing: 0.2rem;
@@ -161,8 +176,32 @@
     li {
         margin: 1rem;
     }
-    // ====  About  ==== //
+    // ====  Skills  ==== //
     header p {
         font-weight: bold;
+    }
+
+    .pskills {
+        text-align: center;
+        margin-bottom: 1.2rem;
+    }
+
+    .itemskills {
+        background-color: var(--text-clair);
+        padding: 1rem 0;
+    }
+    // ====  progress-bar  ==== //
+    .item {
+        margin: 1rem;
+        width: 90%;
+    }
+
+    .progressbar {
+        background-color: var(--background-entete);
+    }
+
+    .bar {
+        margin: 0.5rem 0;
+        padding: 0.3rem;
     }
 </style>
