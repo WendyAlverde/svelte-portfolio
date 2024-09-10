@@ -4,6 +4,19 @@
     import hautbarme from "../../assets/icons/site/paysages/hautbarme.webp"
     import panier from "../../assets/icons/site/paysages/paniersoleil.webp"
     import montblanc from "../../assets/icons/site/paysages/montblanc.webp"
+    
+    import { onMount } from 'svelte';
+  
+    // Progressbar dans compétences en développement
+    onMount(() => {
+    document.querySelector('.html').style.width = '100%';
+    document.querySelector('.css').style.width = '95%';
+    document.querySelector('.javascript').style.width = '70%';
+    document.querySelector('.php').style.width = '35%';
+    document.querySelector('.piskel').style.width = '80%';
+    document.querySelector('.figma').style.width = '55%';
+    document.querySelector('.photoshop').style.width = '35%';
+    });
 </script>
 
 <main>
@@ -50,7 +63,7 @@
         <header>
             <h2 class="section-title">Mes compétences</h2>
             <p class="pskills">Grâce à mes expériences professionnelles, j'ai développé des compétences telles que l'autonomie, la minutie et la préoccupation pour la sécurité.</p>
-            <p class="pskills"> Voici un aperçu de mes compétences acquises par passion et par auto-formation.</p>
+            <p class="pskills">Voici un aperçu de mes compétences acquises par passion et par auto-formation.</p>
         </header>
         <div class="itemskills">
             <h3>Domaines de compétences</h3>
@@ -170,8 +183,10 @@
         margin-top: 1rem;
     }
 
-    h3 {
-        margin-top: 0.8rem;
+    #about h3, .item h3 {
+        margin-top: 1.2rem;
+        padding-top: 0.5rem;
+        border-top: 0.2rem solid var(--color-hero);
     }
 
     em {
