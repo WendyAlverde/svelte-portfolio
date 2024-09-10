@@ -1,12 +1,13 @@
 <script>
     // Import pictures
     import profil from "../../assets/icons/site/profil/profil.webp"
-    import pissenlit from "../../assets/icons/site/paysages/pissenlit.webp"
+    import hautbarme from "../../assets/icons/site/paysages/hautbarme.webp"
     import panier from "../../assets/icons/site/paysages/paniersoleil.webp"
     import montblanc from "../../assets/icons/site/paysages/montblanc.webp"
     
     import { onMount } from 'svelte';
-
+  
+    // Progressbar dans compétences en développement
     onMount(() => {
     document.querySelector('.html').style.width = '100%';
     document.querySelector('.css').style.width = '95%';
@@ -16,10 +17,9 @@
     document.querySelector('.figma').style.width = '55%';
     document.querySelector('.photoshop').style.width = '35%';
     });
-
 </script>
 
-<main role="main">
+<main>
     <!-- Profil -->
     <section id="hero">
         <div class="left">
@@ -29,7 +29,7 @@
         </div>
         <div class="troisPhotos">
             <div class="photo photo1">
-                <img src={pissenlit} loading="lazy" alt="">
+                <img src={hautbarme} loading="lazy" alt="">
             </div>
             <div class="photo photo2">
                 <img src={panier} loading="lazy" alt="">
@@ -70,7 +70,7 @@
             <ul>
                 <li>
                     <h4>Programmation</h4>
-                    <p>Développement web et web mobile</p>
+                    <p>Développement web, web mobile et jeux vidéo</p>
                 </li>
                 <li>
                     <h4>Photographie</h4>
@@ -97,6 +97,9 @@
             <div class="progressbar">
                 <div class="bar php" data-width="30">PHP</div>
             </div>
+            <div class="progressbar">
+                <div class="bar construct3" data-width="50">Construct3</div>
+            </div>
             <h3>Compétences en conception graphique</h3>
             <div class="progressbar">
                 <div class="bar piskel" data-width="90">Piskel</div>
@@ -119,32 +122,39 @@
         flex-direction: column;
         text-align: center;
     }
+
     h1 {
         margin-top: 2rem;
     }
+
     .subtitle {
         font-weight: bold;
         font-size: 1.5rem;
         margin: 2rem 0;
     }
+
     #hero p{
         color: var(--text-clair);
     }
+
     // ====  Pictures  ==== //
     .troisPhotos {
         display: flex;
         justify-content: space-between;
         margin: 1rem 1rem 0;
     }
+
     .photo img {
         width: 5.5rem;
         height: 3.5rem;
         object-fit: cover;
     }
+
     .subtitlePicture {
         font-size: 0.8rem;
         margin: 0.3rem 0 1rem;
     }
+
     // ====  About  ==== //
     #about {
         padding: 1.5rem 0;
@@ -152,7 +162,19 @@
         align-items: center;
         flex-direction: column;
         background-color: var(--text-clair);
+
+        p {
+            text-align: justify;
+            word-spacing: 0.2rem;
+        }
+
+        h3 {
+            margin-top: 1.2rem;
+            padding-top: 0.5rem;
+            border-top: 0.2rem solid var(--color-hero); 
+        }
     }
+
     .profilpicture {
         width: 12rem;
     }
@@ -166,16 +188,15 @@
         padding-top: 0.5rem;
         border-top: 0.2rem solid var(--color-hero);
     }
-    #about p  {
-        word-spacing: 0.2rem;
-    }
 
     em {
         font-weight: bold;
-    }    
+    }
+
     li {
         margin: 1rem;
     }
+
     // ====  Skills  ==== //
     header p {
         font-weight: bold;
@@ -190,6 +211,7 @@
         background-color: var(--text-clair);
         padding: 1rem 0;
     }
+
     // ====  progress-bar  ==== //
     .item {
         margin: 1rem;
