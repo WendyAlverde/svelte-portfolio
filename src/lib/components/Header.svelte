@@ -6,10 +6,10 @@
     import instagram from "../../assets/icons/site/socials/instagram.svg"
 </script>
 
-<header role="banner">
+<header>
     <div class="container"> <!-- A retirer quand construction part -->
         <a class="logo" href="/" use:link>Wendy Alverde</a>
-        <nav role="navigation">
+        <nav>
             <ul class="menu list-unstyled">
                 <li><a href="/" title="Cliquer pour aller sur la page d'accueil" use:link>Accueil</a></li>
                 <li><a href="/portfolio" title="Cliquer pour aller sur la page portfolio" use:link>Portfolio</a></li>
@@ -19,7 +19,7 @@
         </nav>
         <ul class="socials">
             <li>
-                <a href="https://www.linkedin.com/in/wendy-alverde-850761237/" alt="Lien vers mon profil LinkedIn" target="_blank">
+                <a href="https://www.linkedin.com/in/wendy-alverde-850761237/" target="_blank" alt="Lien vers mon profil LinkedIn">
                     <img class="icon" src={linkedin} alt="Logo amenant sur le profil LinkedIn de Wendy Alverde">
                 </a>
             </li>
@@ -84,6 +84,7 @@
         background: var(--background-entete);
         transition: all 0.4s ease-out;
     }
+
     header a  {
         color: var(--color-text);
     }
@@ -121,6 +122,7 @@
     .burger .bar::after {
         transform: translateY(0.5rem);
     }
+
     /* ==== Ne restera pas à la fin ====  */
     .banniere {
         background: #EBB300;
@@ -141,26 +143,6 @@
         margin-bottom: 0.3rem;
     }
     /* ==== Ne restera pas à la fin ==== */
-
-    @media screen and (min-width: 426px) and (max-width: 768px) { /*Tablette*/
-        header .logo {
-            font-size: 1.5rem;
-            letter-spacing: 1px;
-        }
-
-        header li {
-            font-size: 1.5rem;
-            padding: 0 .5rem;
-        }
-
-        nav {
-            display: block;
-        }
-
-        .burger {
-            display: none;
-        }
-    }
 
     @media screen and (min-width: 769px) { /*PC*/
         header .logo {

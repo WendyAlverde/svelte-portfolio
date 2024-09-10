@@ -9,8 +9,7 @@
     });
 </script>
 
-<main role="main">
-<!-- <h2>Non trouvée ou fausse route</h2> -->
+<main>
 <a target="_blank" href="https://codepen.io/uiswarup/pen/XWGGyWQ">
     <div class="container">
         <div class="row">
