@@ -1,13 +1,12 @@
 <script>
     // Import pictures
     import profil from "../../assets/icons/site/profil/profil.webp"
-    import pissenlit from "../../assets/icons/site/paysages/pissenlit.webp"
+    import hautbarme from "../../assets/icons/site/paysages/hautbarme.webp"
     import panier from "../../assets/icons/site/paysages/paniersoleil.webp"
     import montblanc from "../../assets/icons/site/paysages/montblanc.webp"
-    import engrenage from "../../assets/icons/site/home/engrenage.webp"
 </script>
 
-<main role="main">
+<main>
     <!-- Profil -->
     <section id="hero">
         <div class="left">
@@ -17,7 +16,7 @@
         </div>
         <div class="troisPhotos">
             <div class="photo photo1">
-                <img src={pissenlit} loading="lazy" alt="">
+                <img src={hautbarme} loading="lazy" alt="">
             </div>
             <div class="photo photo2">
                 <img src={panier} loading="lazy" alt="">
@@ -50,14 +49,15 @@
     <section id="skills">
         <header>
             <h2 class="section-title">Mes compétences</h2>
-            <p class="pskills">Grâce à mes expériences professionnelles, j'ai développé des compétences telles que l'autonomie, la minutie et la préoccupation pour la sécurité. Voici un aperçu de mes compétences acquises par passion et par auto-formation.</p>
+            <p class="pskills">Grâce à mes expériences professionnelles, j'ai développé des compétences telles que l'autonomie, la minutie et la préoccupation pour la sécurité.</p>
+            <p class="pskills"> Voici un aperçu de mes compétences acquises par passion et par auto-formation.</p>
         </header>
-        <div class="item">
+        <div class="itemskills">
             <h3>Domaines de compétences</h3>
             <ul>
                 <li>
                     <h4>Programmation</h4>
-                    <p>Développement web et web mobile</p>
+                    <p>Développement web, web mobile et jeux vidéo</p>
                 </li>
                 <li>
                     <h4>Photographie</h4>
@@ -73,26 +73,29 @@
             <h3>Compétences en développement</h3>
             <!-- Changer cette partie -->
             <div class="progressbar">
-                <div class="bar" data-width="95">HTML</div>
+                <div class="bar html" data-width="95">HTML</div>
             </div>
             <div class="progressbar">
-                <div class="bar" data-width="85">CSS</div>
+                <div class="bar css" data-width="85">CSS</div>
             </div>
             <div class="progressbar">
-                <div class="bar" data-width="50">JAVASCRIPT</div>
+                <div class="bar javascript" data-width="50">JAVASCRIPT</div>
             </div>
             <div class="progressbar">
-                <div class="bar" data-width="30">PHP</div>
+                <div class="bar php" data-width="30">PHP</div>
+            </div>
+            <div class="progressbar">
+                <div class="bar construct3" data-width="50">Construct3</div>
             </div>
             <h3>Compétences en conception graphique</h3>
             <div class="progressbar">
-                <div class="bar" data-width="90">Piskel</div>
+                <div class="bar piskel" data-width="90">Piskel</div>
             </div>
             <div class="progressbar">
-                <div class="bar" data-width="50">Figma</div>
+                <div class="bar figma" data-width="50">Figma</div>
             </div>
             <div class="progressbar">
-                <div class="bar" data-width="20">Photoshop</div>
+                <div class="bar photoshop" data-width="20">Photoshop</div>
             </div>
         </div>
     </section>
@@ -106,32 +109,39 @@
         flex-direction: column;
         text-align: center;
     }
+
     h1 {
         margin-top: 2rem;
     }
+
     .subtitle {
         font-weight: bold;
         font-size: 1.5rem;
         margin: 2rem 0;
     }
+
     #hero p{
         color: var(--text-clair);
     }
+
     // ====  Pictures  ==== //
     .troisPhotos {
         display: flex;
         justify-content: space-between;
         margin: 1rem 1rem 0;
     }
+
     .photo img {
         width: 5.5rem;
         height: 3.5rem;
         object-fit: cover;
     }
+
     .subtitlePicture {
         font-size: 0.8rem;
         margin: 0.3rem 0 1rem;
     }
+
     // ====  About  ==== //
     #about {
         padding: 1.5rem 0;
@@ -139,7 +149,19 @@
         align-items: center;
         flex-direction: column;
         background-color: var(--text-clair);
+
+        p {
+            text-align: justify;
+            word-spacing: 0.2rem;
+        }
+
+        h3 {
+            margin-top: 1.2rem;
+            padding-top: 0.5rem;
+            border-top: 0.2rem solid var(--color-hero); 
+        }
     }
+
     .profilpicture {
         width: 12rem;
     }
@@ -151,18 +173,42 @@
     h3 {
         margin-top: 0.8rem;
     }
-    #about p  {
-        word-spacing: 0.2rem;
-    }
 
     em {
         font-weight: bold;
-    }    
+    }
+
     li {
         margin: 1rem;
     }
-    // ====  About  ==== /cd/
+
+    // ====  Skills  ==== //
     header p {
         font-weight: bold;
+    }
+
+    .pskills {
+        text-align: center;
+        margin-bottom: 1.2rem;
+    }
+
+    .itemskills {
+        background-color: var(--text-clair);
+        padding: 1rem 0;
+    }
+
+    // ====  progress-bar  ==== //
+    .item {
+        margin: 1rem;
+        width: 90%;
+    }
+
+    .progressbar {
+        background-color: var(--background-entete);
+    }
+
+    .bar {
+        margin: 0.5rem 0;
+        padding: 0.3rem;
     }
 </style>

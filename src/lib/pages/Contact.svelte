@@ -1,10 +1,10 @@
-<main role="main">
+<main>
     <h1>Contact</h1>
     <p>Formulaire de contact pas encore fonctionnel, à venir</p>
     <section id="contact">
         <div class="section-header">
             <h2 class="section-title">Contact</h2>
-            <p>Je cherche une entreprise pour l'apprentissage du BTS Services Informatiques aux Organisations, option Solutions Logicielles et Applications Métier. Si vous avez une offre à proposer ou une question, n'hésitez pas à utiliser le formulaire.</p>
+            <p>Je suis à la recherche d'une entreprise dynamique où je pourrai mettre mes compétences d'intégratrice web au service de projets innovants. Titulaire du titre professionnel de développeur web et web mobile depuis juin 2024.</p>
             <p>Utilisable prochainement</p>
         </div>
         <form action="contact.php" class="form">
