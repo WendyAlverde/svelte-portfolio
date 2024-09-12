@@ -1,25 +1,25 @@
 <script>
     // Import pictures
+    // hero
     import profil from "../../assets/icons/site/profil/profil.webp"
     import pissenlit from "../../assets/icons/site/paysages/pissenlit.webp"
     import panier from "../../assets/icons/site/paysages/paniersoleil.webp"
     import montblanc from "../../assets/icons/site/paysages/montblanc.webp"
-    
-    import { onMount } from 'svelte';
-
-    onMount(() => {
-    document.querySelector('.html').style.width = '100%';
-    document.querySelector('.css').style.width = '95%';
-    document.querySelector('.javascript').style.width = '70%';
-    document.querySelector('.php').style.width = '35%';
-    document.querySelector('.piskel').style.width = '80%';
-    document.querySelector('.figma').style.width = '55%';
-    document.querySelector('.photoshop').style.width = '35%';
-    });
-
+    // skills
+    import figma from "../../assets/icons/site/home/imgskills/figma.webp"
+    import github from "../../assets/icons/site/home/imgskills/github.webp"
+    import css from "../../assets/icons/site/home/imgskills/css.webp"
+    import html from "../../assets/icons/site/home/imgskills/html.webp"
+    import javascript from "../../assets/icons/site/home/imgskills/javascript.webp"
+    import svelte from "../../assets/icons/site/home/imgskills/svelte.webp"
+    import vercel from "../../assets/icons/site/home/imgskills/vercel.webp"
+    import vsc from "../../assets/icons/site/home/imgskills/vsc.webp"
+    import construct3 from "../../assets/icons/site/home/imgskills/construct3.webp"
+    import piskel from "../../assets/icons/site/home/imgskills/piskel.webp"
+    import photoshop from "../../assets/icons/site/home/imgskills/photoshop.webp"
 </script>
 
-<main role="main">
+<main>
     <!-- Profil -->
     <section id="hero">
         <div class="left">
@@ -45,13 +45,15 @@
         <img class="profilpicture" src={profil} loading="lazy" alt="Profil de Wendy Alverde">
         <h2 class="section-title">À propos</h2>
         <h3>Qui suis-je</h3>
-        <p>Après avoir étudié en foresterie au Québec pendant 4 ans, j'ai développé un vif intérêt pour les <em>aspects informatiques</em>, tels que la photo-interprétation et la géomatique.</p>
-        <p> De retour en France il y a 3 ans, je suis fascinée par les coulisses des <em>effets spéciaux</em> cinématographiques et les <em>mystères de la création des pages web et des jeux vidéo</em>.</p>
-        <p>Au cours de l'année 2022 et 2023, je me suis consacrée à une formation en autodidacte, en explorant diverses ressources telles que des <em>tutoriels sur YouTube</em> et des <em>cours en ligne sur OpenClassroom</em>. J'ai également suivi une formation intitulée 'Initiation aux métiers du numérique' avec le CCI Campus de Strasbourg.</p>
-        <p>Fin 2023 à avril 2024, j'ai suivi les cours chez O'clock, pour passer le <em>Titre Professionnel de Développeur Web et Web Mobile</em> de niveau Bac+2 en juin 2024.</p>
-        <p>Ainsi, je souhaite travailler en tant qu'<em>Intégratrice web</em>.</p> <!--Mettre texte aligné (<br> pour passer à la ligne à la fin de celle-ci, si besoin)-->
+        <section class="text">
+            <p>Après avoir étudié en foresterie au Québec pendant 4 ans, j'ai développé un vif intérêt pour les <em>aspects informatiques</em>, tels que la photo-interprétation et la géomatique.</p>
+            <p> De retour en France il y a 3 ans, je suis fascinée par les coulisses des <em>effets spéciaux</em> cinématographiques et les <em>mystères de la création des pages web et des jeux vidéo</em>.</p>
+            <p>Au cours de l'année 2022 et 2023, je me suis consacrée à une formation en autodidacte, en explorant diverses ressources telles que des <em>tutoriels sur YouTube</em> et des <em>cours en ligne sur OpenClassroom</em>. J'ai également suivi une formation intitulée 'Initiation aux métiers du numérique' avec le CCI Campus de Strasbourg.</p>
+            <p>Fin 2023 à avril 2024, j'ai suivi les cours chez O'clock, pour passer le <em>Titre Professionnel de Développeur Web et Web Mobile</em> de niveau Bac+2 en juin 2024.</p>
+            <p>Ainsi, je souhaite travailler en tant qu'<em>Intégratrice web</em>.</p> <!--Mettre texte aligné (<br> pour passer à la ligne à la fin de celle-ci, si besoin)-->
+        </section>
         <h3>Mes valeurs :</h3>
-        <ul>
+        <ul class="text">
             <li class="li1"><em>Créativité</em> : J'ai la capacité d'imaginer, concevoir et produire des idées originales et innovantes.</li>
             <li class="li2"><em>Plaisir</em> : J'apprécie chaque aspect de mon travail, ce qui se reflète dans ma motivation, ma satisfaction et ma capacité à donner le meilleur de moi-même.</li>
             <li class="li3"><em>Responsabilité écologique</em> : Je m'engage pour un travail respectueux de l'environnement en adoptant des pratiques durables et éco-responsables.</li>
@@ -84,34 +86,28 @@
         </div>
         <div class="item">
             <h3>Compétences en développement</h3>
-            <!-- Changer cette partie -->
-            <div class="progressbar">
-                <div class="bar html" data-width="95">HTML</div>
-            </div>
-            <div class="progressbar">
-                <div class="bar css" data-width="85">CSS</div>
-            </div>
-            <div class="progressbar">
-                <div class="bar javascript" data-width="50">JAVASCRIPT</div>
-            </div>
-            <div class="progressbar">
-                <div class="bar php" data-width="30">PHP</div>
+            <div class="imgskills">
+                <img src={html} loading="lazy" alt="Logo HTML">
+                <img src={css} loading="lazy" alt="Logo CSS">
+                <img src={javascript} loading="lazy" alt="Logo Javascript">
+                <img src={github} loading="lazy" alt="Logo Github">
+                <img src={vsc} loading="lazy" alt="Logo VSCode">
+                <img src={construct3} loading="lazy" alt="Logo Construct3">
             </div>
             <h3>Compétences en conception graphique</h3>
-            <div class="progressbar">
-                <div class="bar piskel" data-width="90">Piskel</div>
-            </div>
-            <div class="progressbar">
-                <div class="bar figma" data-width="50">Figma</div>
-            </div>
-            <div class="progressbar">
-                <div class="bar photoshop" data-width="20">Photoshop</div>
+            <div class="imgskills">
+                <img src={piskel} loading="lazy" alt="Logo Piskel">
+                <img src={figma} loading="lazy" alt="Logo Figma">
+                <img src={photoshop} loading="lazy" alt="Logo Photoshop">
             </div>
         </div>
     </section>
 </main>
 
 <style lang="scss">
+    .text {
+        padding: 1rem;
+    }
     // ====  Hero  ==== //
     #hero {
         background-color: var(--color-hero);
@@ -190,18 +186,15 @@
         background-color: var(--text-clair);
         padding: 1rem 0;
     }
-    // ====  progress-bar  ==== //
+
+    .imgskils {
+        width: 6rem;
+        height: 6rem;
+        object-fit: cover;
+    }
+    // ====  logicels  ==== //
     .item {
         margin: 1rem;
         width: 90%;
-    }
-
-    .progressbar {
-        background-color: var(--background-entete);
-    }
-
-    .bar {
-        margin: 0.5rem 0;
-        padding: 0.3rem;
     }
 </style>
