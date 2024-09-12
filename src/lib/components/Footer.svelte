@@ -37,7 +37,7 @@
     </div>
 </footer>
 
-<style>
+<style lang="scss">
     footer { 
         background: var(--background-entete);
         border-bottom: 1px solid #eee;
@@ -52,8 +52,4 @@
         flex-direction: row;
         justify-content: center;
     }
-
-    
-
-    
 </style>

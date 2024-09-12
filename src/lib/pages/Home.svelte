@@ -1,10 +1,10 @@
 <script>
     // Import pictures
     // hero
-    import profil from "../../assets/icons/site/profil/profil.webp"
-    import pissenlit from "../../assets/icons/site/paysages/pissenlit.webp"
-    import panier from "../../assets/icons/site/paysages/paniersoleil.webp"
-    import montblanc from "../../assets/icons/site/paysages/montblanc.webp"
+    import profil from "../../assets/icons/site/home/profil/profil.webp"
+    import pissenlit from "../../assets/icons/site/home/paysages/pissenlit.webp"
+    import panier from "../../assets/icons/site/home/paysages/paniersoleil.webp"
+    import montblanc from "../../assets/icons/site/home/paysages/montblanc.webp"
     // skills
     import figma from "../../assets/icons/site/home/imgskills/figma.webp"
     import github from "../../assets/icons/site/home/imgskills/github.webp"
@@ -48,8 +48,8 @@
         <section class="text">
             <p>Après avoir étudié en foresterie au Québec pendant 4 ans, j'ai développé un vif intérêt pour les <em>aspects informatiques</em>, tels que la photo-interprétation et la géomatique.</p>
             <p> De retour en France il y a 3 ans, je suis fascinée par les coulisses des <em>effets spéciaux</em> cinématographiques et les <em>mystères de la création des pages web et des jeux vidéo</em>.</p>
-            <p>Au cours de l'année 2022 et 2023, je me suis consacrée à une formation en autodidacte, en explorant diverses ressources telles que des <em>tutoriels sur YouTube</em> et des <em>cours en ligne sur OpenClassroom</em>. J'ai également suivi une formation intitulée 'Initiation aux métiers du numérique' avec le CCI Campus de Strasbourg.</p>
-            <p>Fin 2023 à avril 2024, j'ai suivi les cours chez O'clock, pour passer le <em>Titre Professionnel de Développeur Web et Web Mobile</em> de niveau Bac+2 en juin 2024.</p>
+            <p>Au cours de l'année 2022 et 2023, je me suis consacrée à une formation en autodidacte, en explorant diverses ressources telles que des <em>tutoriels sur YouTube</em> et des <em>cours en ligne sur OpenClassroom</em>. J'ai également suivi une formation intitulée "Initiation aux métiers du numérique" avec le CCI Campus de Strasbourg.</p>
+            <p>Fin 2023 à avril 2024, j'ai suivi les cours chez O'clock, et  j'ai passé le <em>Titre Professionnel de Développeur Web et Web Mobile</em> de niveau Bac+2 en juin 2024.</p>
             <p>Ainsi, je souhaite travailler en tant qu'<em>Intégratrice web</em>.</p> <!--Mettre texte aligné (<br> pour passer à la ligne à la fin de celle-ci, si besoin)-->
         </section>
         <h3>Mes valeurs :</h3>
@@ -110,7 +110,7 @@
     }
     // ====  Hero  ==== //
     #hero {
-        background-color: var(--color-hero);
+        background-color: red;
         display: flex;
         flex-direction: column;
         text-align: center;
