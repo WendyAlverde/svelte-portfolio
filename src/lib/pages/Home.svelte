@@ -108,39 +108,47 @@
     .text {
         padding: 1rem;
     }
+
     // ====  Hero  ==== //
     #hero {
-        background-color: red;
+        background-color: var(--color-hero);
         display: flex;
         flex-direction: column;
         text-align: center;
     }
+
     h1 {
         margin-top: 2rem;
     }
+
     .subtitle {
         font-weight: bold;
         font-size: 1.5rem;
         margin: 2rem 0;
     }
-    #hero p{
+
+    #hero p {
         color: var(--text-clair);
     }
+
     // ====  Pictures  ==== //
     .troisPhotos {
         display: flex;
         justify-content: space-between;
         margin: 1rem 1rem 0;
     }
+
     .photo img {
         width: 5.5rem;
         height: 3.5rem;
         object-fit: cover;
     }
+
     .subtitlePicture {
         font-size: 0.8rem;
         margin: 0.3rem 0 1rem;
     }
+
     // ====  About  ==== //
     #about {
         padding: 1.5rem 0;
@@ -149,6 +157,7 @@
         flex-direction: column;
         background-color: var(--text-clair);
     }
+
     .profilpicture {
         width: 12rem;
     }
@@ -162,16 +171,19 @@
         padding-top: 0.5rem;
         border-top: 0.2rem solid var(--color-hero);
     }
+
     #about p  {
         word-spacing: 0.2rem;
     }
 
     em {
         font-weight: bold;
-    }    
+    } 
+
     li {
         margin: 1rem;
     }
+
     // ====  Skills  ==== //
     header p {
         font-weight: bold;
@@ -187,11 +199,19 @@
         padding: 1rem 0;
     }
 
-    .imgskils {
-        width: 6rem;
-        height: 6rem;
-        object-fit: cover;
-    }
+    .imgskills {
+            img {
+                width: 4rem;
+                height: 4rem;
+                object-fit: cover;
+            }
+
+            img:hover {
+                width: 5.5rem;
+                height: 5.5rem;
+            }
+        }
+
     // ====  logicels  ==== //
     .item {
         margin: 1rem;
