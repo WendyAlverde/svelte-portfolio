@@ -8,14 +8,16 @@
     // skills
     import figma from "../../assets/icons/site/home/imgskills/figma.webp"
     import github from "../../assets/icons/site/home/imgskills/github.webp"
-    import css from "../../assets/icons/site/home/imgskills/css.webp"
+    import css from "../../assets/icons/site/home/imgskills/css-3.webp"
     import html from "../../assets/icons/site/home/imgskills/html.webp"
-    import javascript from "../../assets/icons/site/home/imgskills/javascript.webp"
+    import javascript from "../../assets/icons/site/home/imgskills/js.webp"
     import svelte from "../../assets/icons/site/home/imgskills/svelte.webp"
-    import vercel from "../../assets/icons/site/home/imgskills/vercel.webp"
+    import react from "../../assets/icons/site/home/imgskills/react.webp"
+    import vercel from "../../assets/icons/site/home/imgskills/logo-vercel.svg"
+    import docker from "../../assets/icons/site/home/imgskills/docker.webp"
     import vsc from "../../assets/icons/site/home/imgskills/vsc.webp"
-    import construct3 from "../../assets/icons/site/home/imgskills/construct3.webp"
-    import piskel from "../../assets/icons/site/home/imgskills/piskel.webp"
+    import construct3 from "../../assets/icons/site/home/imgskills/construct3.svg"
+    // import piskel from "../../assets/icons/site/home/imgskills/piskel.webp"
     import photoshop from "../../assets/icons/site/home/imgskills/photoshop.webp"
 </script>
 
@@ -85,18 +87,22 @@
             </ul>
         </div>
         <div class="item">
-            <h3>Compétences en développement</h3>
+            <h3>Outils de développement</h3>
             <div class="imgskills">
                 <img src={html} loading="lazy" alt="Logo HTML">
                 <img src={css} loading="lazy" alt="Logo CSS">
                 <img src={javascript} loading="lazy" alt="Logo Javascript">
                 <img src={github} loading="lazy" alt="Logo Github">
-                <img src={vsc} loading="lazy" alt="Logo VSCode">
+                <img src={vsc} loading="lazy" alt="Logo Visual Studia Code">
+                <img src={react} loading="lazy" alt="Logo de la bibliothèque React">
+                <img src={svelte} loading="lazy" alt="Logo du framework Svelte">
+                <img src={vercel} loading="lazy" alt="Logo du site de déploiement Vercel">
+                <img src={docker} loading="lazy" alt="Logo de Docker">
                 <img src={construct3} loading="lazy" alt="Logo Construct3">
             </div>
-            <h3>Compétences en conception graphique</h3>
+            <h3>Outils de conception graphique</h3>
             <div class="imgskills">
-                <img src={piskel} loading="lazy" alt="Logo Piskel">
+                <!-- <img src={piskel} loading="lazy" alt="Logo Piskel"> -->
                 <img src={figma} loading="lazy" alt="Logo Figma">
                 <img src={photoshop} loading="lazy" alt="Logo Photoshop">
             </div>
