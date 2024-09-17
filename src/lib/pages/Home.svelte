@@ -2,7 +2,7 @@
     // Import pictures
     // hero
     import profil from "../../assets/icons/site/home/profil/profil.webp"
-    import pissenlit from "../../assets/icons/site/home/paysages/pissenlit.webp"
+    import hautbar from "../../assets/icons/site/home/paysages/hautbar.webp"
     import panier from "../../assets/icons/site/home/paysages/paniersoleil.webp"
     import montblanc from "../../assets/icons/site/home/paysages/montblanc.webp"
     // skills
@@ -17,7 +17,7 @@
     import docker from "../../assets/icons/site/home/imgskills/docker.webp"
     import vsc from "../../assets/icons/site/home/imgskills/vsc.webp"
     import construct3 from "../../assets/icons/site/home/imgskills/construct3.svg"
-    // import piskel from "../../assets/icons/site/home/imgskills/piskel.webp"
+    import piskel from "../../assets/icons/site/home/imgskills/piskel.webp"
     import photoshop from "../../assets/icons/site/home/imgskills/photoshop.webp"
 </script>
 
@@ -30,15 +30,9 @@
             <p>Passionnée par la création et l'optimisation d'interface utilisateur, je suis à la recherche d'un poste en tant qu'Intégratrice Web aux alentours de Colmar. </p>
         </div>
         <div class="troisPhotos">
-            <div class="photo photo1">
-                <img src={pissenlit} loading="lazy" alt="">
-            </div>
-            <div class="photo photo2">
-                <img src={panier} loading="lazy" alt="">
-            </div>
-            <div class="photo photo3">
-                <img src={montblanc} loading="lazy" alt="">
-            </div>
+            <img src={hautbar} loading="lazy" alt="">
+            <img src={panier} loading="lazy" alt="">
+            <img src={montblanc} loading="lazy" alt="">
         </div>
         <p class="subtitlePicture" aria-hidden="true">Photographie prise par Wendy Alverde</p>
     </section>
@@ -66,8 +60,8 @@
     <section id="skills">
         <header>
             <h2 class="section-title">Mes compétences</h2>
-            <p class="pskills">Grâce à mes expériences professionnelles, j'ai développé des compétences telles que l'autonomie, la minutie et la préoccupation pour la sécurité.</p>
-            <p class="pskills">Voici un aperçu de mes compétences acquises par passion et par auto-formation.</p>
+            <p>Grâce à mes expériences professionnelles, j'ai développé des compétences telles que l'autonomie, la minutie et la préoccupation pour la sécurité.</p>
+            <p>Voici un aperçu de mes compétences acquises par passion et par auto-formation.</p>
         </header>
         <div class="itemskills">
             <h3>Domaines de compétences</h3>
@@ -102,7 +96,7 @@
             </div>
             <h3>Outils de conception graphique</h3>
             <div class="imgskills">
-                <!-- <img src={piskel} loading="lazy" alt="Logo Piskel"> -->
+                <img src={piskel} loading="lazy" alt="Logo Piskel">
                 <img src={figma} loading="lazy" alt="Logo Figma">
                 <img src={photoshop} loading="lazy" alt="Logo Photoshop">
             </div>
@@ -111,75 +105,12 @@
 </main>
 
 <style lang="scss">
-    .text {
-        padding: 1rem;
-    }
-
-    // ====  Hero  ==== //
-    #hero {
-        background-color: var(--color-hero);
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-    }
-
     h1 {
         margin-top: 2rem;
     }
 
-    .subtitle {
-        font-weight: bold;
-        font-size: 1.5rem;
-        margin: 2rem 0;
-    }
-
-    #hero p {
-        color: var(--text-clair);
-    }
-
-    // ====  Pictures  ==== //
-    .troisPhotos {
-        display: flex;
-        justify-content: space-between;
-        margin: 1rem 1rem 0;
-    }
-
-    .photo img {
-        width: 5.5rem;
-        height: 3.5rem;
-        object-fit: cover;
-    }
-
-    .subtitlePicture {
-        font-size: 0.8rem;
-        margin: 0.3rem 0 1rem;
-    }
-
-    // ====  About  ==== //
-    #about {
-        padding: 1.5rem 0;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        background-color: var(--text-clair);
-    }
-
-    .profilpicture {
-        width: 12rem;
-    }
-    
     h2 {
-        margin-top: 1rem;
-    }
-
-    #about h3, .item h3 {
-        margin-top: 1.2rem;
-        padding-top: 0.5rem;
-        border-top: 0.2rem solid var(--color-hero);
-    }
-
-    #about p  {
-        word-spacing: 0.2rem;
+        padding-top: 1rem;
     }
 
     em {
@@ -190,37 +121,111 @@
         margin: 1rem;
     }
 
-    // ====  Skills  ==== //
-    header p {
-        font-weight: bold;
-    }
-
-    .pskills {
+    // ====  Hero  ==== //
+    #hero {
+        background-color: var(--color-hero);
+        display: flex;
+        flex-direction: column;
         text-align: center;
-        margin-bottom: 1.2rem;
+
+        .subtitle {
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        p {
+            color: var(--text-clair);
+        }
+
+        // ====  Pictures  ==== //
+        .troisPhotos {
+            display: flex;
+            justify-content: space-between;
+            margin: 1rem 1rem 0;
+        }
+
+        img {
+            width: 5.5rem;
+            height: 3.5rem;
+            object-fit: cover;
+        }
+
+        .subtitlePicture {
+            font-size: 0.8rem;
+            margin: 0.3rem 0 1rem;
+        }
     }
 
-    .itemskills {
+    // ====  About  ==== //
+    #about {
+        padding: 1.5rem 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        
+        .profilpicture {
+            width: 12rem;
+        }
+
+        h3 {
+            margin-top: 1.2rem;
+            padding-top: 0.5rem;
+            border-top: 0.2rem solid var(--color-hero);
+        }
+
+        .text {
+            padding: 1rem;
+        }
+
+        p  {
+            word-spacing: 0.2rem;
+        }
+    }
+
+    // ====  Skills  ==== //
+    #skills {
         background-color: var(--text-clair);
-        padding: 1rem 0;
+
+        header p {
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 1.2rem;
+        }
+
+        .itemskills {
+            background-color: var(--text-clair);
+            padding: 1rem 0;
+        }
+
+        // ====  logicels  ==== //
+        .item {
+            margin: 1rem;
+            
+            .imgskills {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                
+                img {
+                    width: 4rem;
+                    height: 4rem;
+                    object-fit: cover;
+                    margin: 1rem 0.5rem;
+                }
+            }
+        }
     }
 
-    .imgskills {
-            img {
-                width: 4rem;
-                height: 4rem;
-                object-fit: cover;
-            }
+    // ========================= Responsive : Desktop ========================= //
+    @media screen and (min-width: 769px) { /*PC*/
+        .imgskills {
 
             img:hover {
                 width: 5.5rem;
                 height: 5.5rem;
             }
         }
-
-    // ====  logicels  ==== //
-    .item {
-        margin: 1rem;
-        width: 90%;
     }
+    
 </style>
