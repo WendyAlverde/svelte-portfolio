@@ -1,5 +1,5 @@
 <script>
-    // Import pictures
+    // -------- Import pictures
     // hero
     import profil from "../../assets/icons/site/home/profil/profil.webp"
     import hautbar from "../../assets/icons/site/home/paysages/hautbar.webp"
@@ -20,7 +20,7 @@
     import piskel from "../../assets/icons/site/home/imgskills/piskel.webp"
     import photoshop from "../../assets/icons/site/home/imgskills/photoshop.webp"
 
-    // ------- circularProgress
+    // -------- circularProgress
     const circularProgress = document.querySelectorAll(".circularProgress");
 
 </script>
@@ -30,7 +30,6 @@
     <section id="hero">
         <div class="left">
             <h1>Intégratrice Web</h1>
-            <p class="subtitle">Bonjour, je m'appelle Wendy Alverde</p>
             <p>Passionnée par la création et l'optimisation d'interface utilisateur, je suis à la recherche d'un poste en tant qu'Intégratrice Web aux alentours de Colmar. </p>
         </div>
         <div class="troisPhotos">
@@ -150,14 +149,8 @@
         flex-direction: column;
         text-align: center;
 
-        .subtitle {
-            font-weight: bold;
-            font-size: 1.5rem;
-            margin: 2rem 0;
-        }
-
         p {
-            color: var(--text-clair);
+            color: var(--text-black);
         }
 
         // ====  Pictures  ==== //
@@ -193,7 +186,7 @@
         h3 {
             margin-top: 1.2rem;
             padding-top: 0.5rem;
-            border-top: 0.2rem solid var(--color-hero);
+            border-top: 0.2rem solid var(--color-text);
         }
 
         .text {
@@ -207,7 +200,7 @@
 
     // ====  Skills  ==== //
     #skills {
-        background-color: var(--text-clair);
+        background-color: var(--background-clair);
 
         header p {
             font-weight: bold;
@@ -216,7 +209,6 @@
         }
 
         .itemskills {
-            background-color: var(--text-clair);
             padding: 1rem 0;
         }
 
@@ -235,7 +227,7 @@
                     height: 7rem;
                     border-radius: 50%;
                     border: 1rem solid rgb(186, 192, 221);
-                    background-color: var(--text-clair);
+                    background-color: var(--background-clair);
                     margin: 0.5rem;
                     display: flex;
                     justify-content: center;
