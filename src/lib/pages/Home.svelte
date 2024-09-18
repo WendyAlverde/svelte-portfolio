@@ -25,7 +25,7 @@
     import { onMount } from 'svelte';
     
     let skillsWebObject = [
-        { src: html, name: "HTML", alt: "Logo HTML, langage de balisage pour le web", value: 95 },
+        { src: html, name: "HTML", alt: "Logo HTML, langage de balisage pour le web", value: 100 },
         { src: css, name: "CSS", alt: "Logo CSS, langage de styles pour la mise en forme des pages web", value: 90 },
         { src: javascript, name: "JavaScript", alt: "Logo Javascript, langage de programmation pour le web dynamique", value: 75 },
         { src: github, name: "GitHub", alt: "Logo Github, plateforme de gestion de code et de versionning", value: 90 },
@@ -42,6 +42,24 @@
         { src: figma, name: "Figma", alt: "Logo Figma, outil de conception UI/UX et prototypage", value: 70 },
         { src: photoshop, name: "Photoshop", alt: "Logo Photoshop, logiciel d'édition et retouche d'images", value: 45 },
     ];
+
+
+    // Fonction pour définir la progression
+    /*
+    * el : variable qui fait référence à l'élément DOM (div) qui contient la progression circulaire
+    */
+    function setProgress(element, percentage) {
+        const rotation = (percentage / 100) * 360; // 360 degrés = 100%
+        element.style.setProperty('--progress-rotation', `${rotation}deg`);
+    }
+
+    onMount(() => {
+        const elements = document.querySelectorAll('.circularProgress');
+        elements.forEach(el => {
+        const percentage = el.getAttribute('data-value');
+        setProgress(el, percentage);
+        });
+    });
 
 </script>
 
@@ -228,14 +246,32 @@
 
                 // ====  circularProgress  ==== // 
                 .circularProgress {
+                    position: relative;
                     width: 7rem;
                     height: 7rem;
                     border-radius: 50%;
-                    border: 1rem solid rgb(186, 192, 221);
+                    border: 1rem solid transparent;
                     background-color: var(--background-clair);
                     margin: 0.5rem;
                     display: flex;
                     justify-content: center;
+                    box-shadow: inset 0 0.1rem 0.8rem var(--blue-skills);
+
+                    // Cercle de base
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 50%;
+                        border: 0.5rem solid transparent;
+                        border-top-color: var(--violet); /* Couleur de la progression */
+                        transform: rotate(90deg); /* Positionne le départ à 12h */
+                        transition: transform 1s;
+                        z-index: 1; /* S'assurer que la progression est au-dessus de l'arrière-plan */
+                    }
+
+                    
                 }
                 
                 img {
