@@ -21,7 +21,27 @@
     import photoshop from "../../assets/icons/site/home/imgskills/photoshop.webp"
 
     // -------- circularProgress
-    const circularProgress = document.querySelectorAll(".circularProgress");
+
+    import { onMount } from 'svelte';
+    
+    let skillsWebObject = [
+        { src: html, name: "HTML", alt: "Logo HTML, langage de balisage pour le web", value: 95 },
+        { src: css, name: "CSS", alt: "Logo CSS, langage de styles pour la mise en forme des pages web", value: 90 },
+        { src: javascript, name: "JavaScript", alt: "Logo Javascript, langage de programmation pour le web dynamique", value: 75 },
+        { src: github, name: "GitHub", alt: "Logo Github, plateforme de gestion de code et de versionning", value: 90 },
+        { src: vsc, name: "Visual Studio Code", alt: "Logo de Visual Studio Code, éditeur de code", value: 90 },
+        { src: react, name: "React", alt: "Logo React, bibliothèque JavaScript pour la création d'interface utilisateur", value: 10 },
+        { src: svelte, name: "Svelte", alt: "Logo Svelte, framework pour la création d'applications web", value: 75 },
+        { src: vercel, name: "Vercel", alt: "Logo Vercel, plateforme de déploiement pour les sites web", value: 90 },
+        { src: docker, name: "Docker", alt: "Logo Docker, plateforme de conteneurisation pour les applications", value: 25 },
+        { src: construct3, name: "Construct 3", alt: "Logo Construct3, outil de création de jeux vidéo sans code", value: 50 },
+    ];
+
+    let skillsArtObject = [
+        { src: piskel, name: "Piskel", alt: "Logo Piskel, outil de création de pixel art", value: 80 },
+        { src: figma, name: "Figma", alt: "Logo Figma, outil de conception UI/UX et prototypage", value: 70 },
+        { src: photoshop, name: "Photoshop", alt: "Logo Photoshop, logiciel d'édition et retouche d'images", value: 45 },
+    ];
 
 </script>
 
@@ -85,49 +105,21 @@
         </div>
         <div class="item">
             <h3>Outils de développement</h3>
+            <p>L'apprentissage continu est au cœur de mon parcours, car l'évolution des outils et des pratiques ne s'arrête jamais.</p>
             <div class="imgskills">
-                <div class="circularProgress">
-                    <img src={html} loading="lazy" alt="Logo HTML, langage de balisage pour le web">
-                </div>
-                <div class="circularProgress">
-                    <img src={css} loading="lazy" alt="Logo CSS, langage de styles pour la mise en forme des pages web">
-                </div>
-                <div class="circularProgress">
-                    <img src={javascript} loading="lazy" alt="Logo Javascript, langage de programmation pour le web dynamique">
-                </div>
-                <div class="circularProgress">
-                    <img src={github} loading="lazy" alt="Logo Github, plateforme de gestion de code et de versionning">
-                </div>
-                <div class="circularProgress">
-                    <img src={vsc} loading="lazy" alt="Logo de Visual Studio Code, éditeur de code">
-                </div>
-                <div class="circularProgress">
-                    <img src={react} loading="lazy" alt="Logo React, bibliothèque JavaScript pour la création d'interface utilisateur">
-                </div>
-                <div class="circularProgress">
-                    <img src={svelte} loading="lazy" alt="Logo Svelte, framework pour la création d'applications web">
-                </div>
-                <div class="circularProgress">
-                    <img src={vercel} loading="lazy" alt="Logo Vercel, plateforme de déploiement pour les sites web">
-                </div>
-                <div class="circularProgress">
-                    <img src={docker} loading="lazy" alt="Logo Docker, plateforme de conteneurisation pour les applications">
-                </div>
-                <div class="circularProgress">
-                    <img src={construct3} loading="lazy" alt="Logo Construct3, outil de création de jeux vidéo sans code">
-                </div>
+                {#each skillsWebObject as skill}
+                    <div class="circularProgress" data-value={skill.value}>
+                        <img src={skill.src} loading="lazy" alt={skill.alt}>
+                    </div>
+                {/each}
             </div>
             <h3>Outils de conception graphique</h3>
             <div class="imgskills">
-                <div class="circularProgress">
-                    <img src={piskel} loading="lazy" alt="Logo Piskel, outil de création de pixel art">
-                </div>
-                <div class="circularProgress">
-                    <img src={figma} loading="lazy" alt="Logo Figma, outil de conception UI/UX et prototypage">
-                </div>
-                <div class="circularProgress">
-                    <img src={photoshop} loading="lazy" alt="Logo Photoshop, logiciel d'édition et retouche d'images">
-                </div>
+                {#each skillsArtObject as skillArt}
+                    <div class="circularProgress" data-value={skillArt.value}>
+                        <img src={skillArt.src} loading="lazy" alt={skillArt.alt}>
+                    </div>
+                {/each}
             </div>
         </div>
     </section>
@@ -201,6 +193,7 @@
     // ====  Skills  ==== //
     #skills {
         background-color: var(--background-clair);
+        padding-bottom: 0.02rem;
 
         header p {
             font-weight: bold;
@@ -210,11 +203,23 @@
 
         .itemskills {
             padding: 1rem 0;
+
+            p {
+                text-align: center;
+            }
         }
 
         // ====  logicels  ==== //
         .item {
             margin: 1rem;
+
+            h3 {
+                margin: 1rem;
+            }
+
+            p {
+                text-align: center;
+            }
             
             .imgskills {
                 display: flex;

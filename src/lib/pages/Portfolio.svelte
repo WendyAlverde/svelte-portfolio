@@ -7,6 +7,7 @@
 <main role="main">
     <h1>Portfolio</h1>
     <p>La programmation est la clé qui ouvre les portes du renouveau technologique, où l'imagination devient réalité et où les possibilités deviennent infinies.</p>
+    <!-- <p>"Le développement est un voyage constant où chaque projet m'apporte de nouvelles connaissances et perspectives."</p> -->
 
     <section id="portfolio">
         <article>
