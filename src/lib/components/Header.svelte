@@ -1,190 +1,251 @@
 <script>
-    import {link} from "svelte-spa-router"
+    import {link} from "svelte-spa-router";
+    import { onMount } from 'svelte';
     // import pictures
-    import linkedin from "../../assets/icons/site/socials/linkedin.svg"
-    import github from "../../assets/icons/site/socials/github.svg"
-    import instagram from "../../assets/icons/site/socials/instagram.svg"
+    import linkedin from "../../assets/icons/site/socials/linkedin.svg";
+    import github from "../../assets/icons/site/socials/github.svg";
+    import instagram from "../../assets/icons/site/socials/instagram.svg";
+
+    // Menu burger
+    // État pour contrôler l'ouverture du menu
+    let menuOpen = false;
+
+    // Fonction pour ouvrir/fermer le menu
+    function toggleMenu() {
+        menuOpen = !menuOpen;
+    }
+
+    // Fonction pour fermer le menu
+    function closeMenu() {
+        menuOpen = false;
+    }
 </script>
 
-<header role="banner">
-    <div class="container"> <!-- A retirer quand construction part -->
-        <a class="logo" href="/" use:link>Wendy Alverde</a>
-        <nav role="navigation">
-            <ul class="menu list-unstyled">
-                <li><a href="/" title="Cliquer pour aller sur la page d'accueil" use:link>Accueil</a></li>
-                <li><a href="/portfolio" title="Cliquer pour aller sur la page portfolio" use:link>Portfolio</a></li>
-                <li><a href="/contact" title="Cliquer pour aller sur la page contact" use:link>Contact</a></li>
-                <li><a href="/cv" title="Cliquer pour aller sur la page de mon curriculum vitae" use:link>Mon CV</a></li>
-            </ul>
-        </nav>
-        <ul class="socials">
-            <li>
-                <a href="https://www.linkedin.com/in/wendy-alverde-850761237/" alt="Lien vers mon profil LinkedIn" target="_blank">
-                    <img class="icon" src={linkedin} alt="Logo amenant sur le profil LinkedIn de Wendy Alverde">
-                </a>
-            </li>
-            <li>
-                <a href="https://github.com/WendyAlverde" target="_blank" alt="Lien vers mon profil GitHub">
-                    <img class="icon" src={github} alt="Logo amenant sur le profil GitHub de Wendy Alverde">
-                </a>
-            </li>
-            <li>
-                <a href="https://www.instagram.com/chat_push/" target="_blank" alt="Lien vers mon profil LinkedIn">
-                    <img class="icon" src={instagram} alt="Logo amenant sur le profil Instagram de Wendy Alverde">
-                </a>
-            </li>
-        </ul>
-        <button aria-pressed="false" class="burger"><em class="bar"></em></button>
-    </div>
-    <div class="banniere">
-        <p>SITE EN CONSTRUCTION</p>
-        <p class="little">Mobile first</p>
-    </div>
+<header class="header">
+    <a class="header__logo" href="/" use:link>Wendy Alverde</a>
+
+    {#if menuOpen}
+        <button class="menu-overlay" on:click="{closeMenu}" aria-hidden="false">
+            <nav class="menu" >
+                <ul class="header__menu list-unstyled">
+                    <li><a href="/" title="Accueil" use:link>Accueil</a></li>
+                    <li><a href="/portfolio" title="Portfolio" use:link>Portfolio</a></li>
+                    <li><a href="/contact" title="Contact" use:link>Contact</a></li>
+                    <li><a href="/cv" title="Mon CV" use:link>Mon CV</a></li>
+                </ul>
+            </nav>
+        </button>
+    {/if}
+
+    <ul class="socials">
+        <li>
+            <a href="https://www.linkedin.com/in/wendy-alverde-850761237/" target="_blank">
+                <img class="socials__icon" src={linkedin} alt="Lien vers mon profil LinkedIn">
+            </a>
+        </li>
+        <li>
+            <a href="https://github.com/WendyAlverde" target="_blank">
+                <img class="socials__icon" src={github} alt="Lien vers mon profil GitHub">
+            </a>
+        </li>
+        <li>
+            <a href="https://www.instagram.com/chat_push/" target="_blank">
+                <img class="socials__icon" src={instagram} alt="Lien vers mon profil Instagram">
+            </a>
+        </li>
+    </ul>
+
+    <button class="burger" aria-pressed={menuOpen} aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"} on:click={toggleMenu}>
+        <em class="burger__bar"></em>
+    </button>
 </header>
 
 <style lang="scss">
-    header { 
+    .header { 
         background: var(--background-entete);
         border-bottom: 1px solid #eee;
         border-radius: 0.3rem;
         box-shadow: 0 0 5px #548072; 
         position: sticky;
         top: 0;
-        z-index: 1;
-        margin-bottom: 1rem;
-    }
-
-    header .logo {
-        font-family: 'Playfair Display', serif;
-        letter-spacing: 1px;
-    }
-
-    .container {
         display: flex;
-        justify-content: space-between;
-        padding: 1rem 0.5rem;
         align-items: center;
-    }
+        padding: 0.5rem 1rem;
 
-    a, ul {
-        margin-top: 0.6rem;
-    }
+        &__logo {
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
+            color: var(--color-text);
 
-    nav {
-        // display: flex;
-        // justify-content: center;
-        // align-items: center;
-        // flex-direction: column;
-        display: none;
-        // position: fixed;
-        // top: 3.4rem;
-        // left: 110%;
-        overflow: hidden;
-        // height: calc(100vh -3.4rem);
-        background: var(--background-entete);
-        transition: all 0.4s ease-out;
-    }
-    header a  {
-        color: var(--color-text);
-    }
+            &:hover {
+                color: var(--color-passagesouris);
+            }
+        }
 
-    header a:hover {
-        color: var(--color-passagesouris);
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Fond transparent sombre */
+            display: flex;
+            justify-content: flex-end; /* Aligner le menu à droite */
+            z-index: 2; /* Au-dessus de tout */
+
+            .menu {
+                width: 80%;
+                max-width: 20rem;
+                background: var(--background-entete);
+                height: auto; /* Hauteur selon le contenu */
+                box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+                padding: 1rem;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                &__close {
+                    position: absolute;
+                    top: 1rem;
+                    right: 1rem;
+                    background: none;
+                    border: none;
+                    font-size: 2rem;
+                    cursor: pointer;
+                    color: var(--color-text);
+                }
+
+                .header__menu {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+
+                    a {
+                        color: var(--color-text);
+                        text-decoration: none;
+
+                        &:hover {
+                            color: var(--color-passagesouris);
+                        }
+                    }
+                }
+            }
+        }
+
+
+        &__nav {
+            display: none;
+            overflow: hidden;
+            background: var(--background-entete);
+            transition: all 0.4s ease-out;
+
+            & .header__menu {
+                margin-top: 0.6rem;
+            }
+        }
     }
 
     .socials {
         display: flex;
+
+        &__icon {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
     }
 
-    /* Burger */
     .burger {
         background: none;
         border: none;
         width: 2.1rem;
         height: 2.1rem;
+        position: relative;
         cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .burger__bar {
+            display: block;
+            width: 1.3rem;
+            height: 0.2rem;
+            background-color: var(--color-text);
+            position: absolute;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            z-index: 2;
+
+            &::before,
+            &::after {
+                display: block;
+                content: '';
+                width: 1.3rem;
+                height: 0.2rem;
+                background-color: var(--color-text);
+                position: absolute;
+                transition: transform 0.3s ease, opacity 0.3s ease;
+            }
+
+            &::before {
+                transform: translateY(-0.5rem);
+            }
+
+            &::after {
+                transform: translateY(0.5rem);
+            }
+        }
+        // Quand le menu est ouvert
+        &[aria-pressed="true"] .burger__bar {
+            background-color: transparent;
+
+            &::before {
+                transform: rotate(45deg);
+            }
+
+            &::after {
+                transform: rotate(-45deg);
+            }
+        }
     }
 
-    .burger .bar, .burger .bar::before, .burger .bar::after {
-        display: block;
-        content: "";
-        width: 1.3rem;
-        height: 0.2rem;
-        background-color: var(--color-text);
-        position: absolute;
-    }
-
-    .burger .bar::before {
-        transform: translateY(-0.5rem);
-    }
-
-    .burger .bar::after {
-        transform: translateY(0.5rem);
-    }
-    /* ==== Ne restera pas à la fin ====  */
-    .banniere {
-        background: #EBB300;
-        border: 0.2rem solid #D47E00;
-        border-radius: 0.3rem;
-        box-shadow: 0 0 0.3rem #D47E00; /*Ombre*/
-        position: sticky;
-        top: 0;
-        z-index: 1;
-    }
-
-    .banniere p {
-        text-align: center;
-    }
-
-    .little {
-        font-size: 0.8rem;
-        margin-bottom: 0.3rem;
-    }
-    /* ==== Ne restera pas à la fin ==== */
-
+    /* Responsive */
     @media screen and (min-width: 426px) and (max-width: 768px) { /*Tablette*/
-        header .logo {
+        .header__logo {
             font-size: 1.5rem;
             letter-spacing: 1px;
         }
 
-        header li {
-            font-size: 1.5rem;
-            padding: 0 .5rem;
-        }
-
-        nav {
+        .header__nav {
             display: block;
         }
 
         .burger {
+            display: none;
+        }
+        .menu-overlay {
             display: none;
         }
     }
 
     @media screen and (min-width: 769px) { /*PC*/
-        header .logo {
+        .header__logo {
             font-size: 2rem;
             letter-spacing: 2px;
         }
-        header li {
-            font-size: 2rem;
-            padding: 0.5rem;
-        }
 
-        nav {
+        .header__nav {
             display: block;
+
+            & .header__menu {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                padding-top: 1rem;
+            }
         }
 
         .burger {
             display: none;
-        }
-
-        nav .menu {
-            display: flex;/*1*/
-            flex-direction: row;/*2*/
-            justify-content: space-around;/*3*/
-            padding-top: 1rem;
         }
     }
 </style>

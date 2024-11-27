@@ -268,7 +268,6 @@
                         border-top-color: var(--violet); /* Couleur de la progression */
                         transform: rotate(90deg); /* Positionne le départ à 12h */
                         transition: transform 1s;
-                        z-index: 1; /* S'assurer que la progression est au-dessus de l'arrière-plan */
                     }
 
                     
