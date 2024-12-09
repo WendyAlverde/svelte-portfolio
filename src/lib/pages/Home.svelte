@@ -19,48 +19,6 @@
     import construct3 from "../../assets/icons/site/home/imgskills/construct3.svg"
     import piskel from "../../assets/icons/site/home/imgskills/piskel.webp"
     import photoshop from "../../assets/icons/site/home/imgskills/photoshop.webp"
-
-    // -------- circularProgress
-
-    import { onMount } from 'svelte';
-    
-    let skillsWebObject = [
-        { src: html, name: "HTML", alt: "Logo HTML, langage de balisage pour le web", value: 100 },
-        { src: css, name: "CSS", alt: "Logo CSS, langage de styles pour la mise en forme des pages web", value: 90 },
-        { src: javascript, name: "JavaScript", alt: "Logo Javascript, langage de programmation pour le web dynamique", value: 75 },
-        { src: github, name: "GitHub", alt: "Logo Github, plateforme de gestion de code et de versionning", value: 90 },
-        { src: vsc, name: "Visual Studio Code", alt: "Logo de Visual Studio Code, éditeur de code", value: 90 },
-        { src: react, name: "React", alt: "Logo React, bibliothèque JavaScript pour la création d'interface utilisateur", value: 10 },
-        { src: svelte, name: "Svelte", alt: "Logo Svelte, framework pour la création d'applications web", value: 75 },
-        { src: vercel, name: "Vercel", alt: "Logo Vercel, plateforme de déploiement pour les sites web", value: 90 },
-        { src: docker, name: "Docker", alt: "Logo Docker, plateforme de conteneurisation pour les applications", value: 25 },
-        { src: construct3, name: "Construct 3", alt: "Logo Construct3, outil de création de jeux vidéo sans code", value: 50 },
-    ];
-
-    let skillsArtObject = [
-        { src: piskel, name: "Piskel", alt: "Logo Piskel, outil de création de pixel art", value: 80 },
-        { src: figma, name: "Figma", alt: "Logo Figma, outil de conception UI/UX et prototypage", value: 70 },
-        { src: photoshop, name: "Photoshop", alt: "Logo Photoshop, logiciel d'édition et retouche d'images", value: 45 },
-    ];
-
-
-    // Fonction pour définir la progression
-    /*
-    * el : variable qui fait référence à l'élément DOM (div) qui contient la progression circulaire
-    */
-    function setProgress(element, percentage) {
-        const rotation = (percentage / 100) * 360; // 360 degrés = 100%
-        element.style.setProperty('--progress-rotation', `${rotation}deg`);
-    }
-
-    onMount(() => {
-        const elements = document.querySelectorAll('.circularProgress');
-        elements.forEach(el => {
-        const percentage = el.getAttribute('data-value');
-        setProgress(el, percentage);
-        });
-    });
-
 </script>
 
 <main>
@@ -125,19 +83,21 @@
             <h3>Outils de développement</h3>
             <p>L'apprentissage continu est au cœur de mon parcours, car l'évolution des outils et des pratiques ne s'arrête jamais.</p>
             <div class="imgskills">
-                {#each skillsWebObject as skill}
-                    <div class="circularProgress" data-value={skill.value}>
-                        <img src={skill.src} loading="lazy" alt={skill.alt}>
-                    </div>
-                {/each}
+                
             </div>
             <h3>Outils de conception graphique</h3>
             <div class="imgskills">
-                {#each skillsArtObject as skillArt}
-                    <div class="circularProgress" data-value={skillArt.value}>
-                        <img src={skillArt.src} loading="lazy" alt={skillArt.alt}>
-                    </div>
-                {/each}
+                <div class="circularProgress">
+                    <img src={figma} loading="lazy" alt="Logo de Figma">
+                </div>
+                <div class="circularProgress">
+                    <img src={photoshop} loading="lazy" alt="Logo de Photoshop">
+                </div>
+                <div class="circularProgress">
+                    <img src={piskel} loading="lazy" alt="Logo de Piskel">
+                </div>
+
+                
             </div>
         </div>
     </section>

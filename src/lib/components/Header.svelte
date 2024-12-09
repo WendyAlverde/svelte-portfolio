@@ -13,41 +13,85 @@
     // Fonction pour ouvrir/fermer le menu
     function toggleMenu() {
         menuOpen = !menuOpen;
+        // Menu burger ouvert, bloquer le défilement de la page
+        document.body.classList.toggle('menu-open', menuOpen);
     }
 
     // Fonction pour fermer le menu
     function closeMenu() {
         menuOpen = false;
+        // Menu burger ouvert, bloquer le défilement de la page
+        document.body.classList.remove('menu-open');
     }
+
+    let firstFocusableElement;
+    let lastFocusableElement;
+
+    onMount(() => {
+        //  Gère les interactions clavier dans le menu
+        const handleKeyPress = (event) => {
+            if (!menuOpen) return;
+            // Ferme le menu si la touche "Échap" est pressée
+            if (event.key === "Escape") {
+                closeMenu();
+            }
+            // Gère la navigation au clavier avec la touche "Tab" pour le focus
+            if (event.key === "Tab") {
+                // Sélectionne tous les éléments pouvant être focalisés dans le menu (liens et bouton)
+                const focusableElements = document.querySelectorAll(
+                    ".mobile-nav-list a, .mobile"
+                );
+                // Identifie le premier et le dernier élément du menu
+                firstFocusableElement = focusableElements[0];
+                lastFocusableElement = focusableElements[focusableElements.length - 1];
+                // Si "Shift + Tab" est pressé et qu'on est sur le premier élément,
+                // renvoyer le focus au dernier élément (boucle de navigation)
+                if (event.shiftKey && document.activeElement === firstFocusableElement) {
+                    lastFocusableElement.focus();
+                    event.preventDefault();
+                // Si "Tab" est pressé sans "Shift" et qu'on est sur le dernier élément,
+                // renvoyer le focus au premier élément
+                } else if (!event.shiftKey && document.activeElement === lastFocusableElement) {
+                    firstFocusableElement.focus();
+                    event.preventDefault();
+                }
+            }
+        };
+        // Ajoute un écouteur d'événements sur tout le document pour capturer les interactions clavier
+        document.addEventListener("keydown", handleKeyPress);
+        // Retourne une fonction pour nettoyer l'écouteur lorsque le composant est détruit
+        // Par exemple lorsque sa condition {#if} devient false
+        return () => document.removeEventListener("keydown", handleKeyPress);
+    });
 </script>
 
 <header class="header">
-    <a class="header-logo" href="/" use:link>Wendy Alverde</a>
+    <a class="header-logo" href="/" use:link aria-label="Retour à l'accueil">Wendy Alverde</a>
 
-    <nav class="header-nav">
+    <nav class="header-nav" aria-label="Navigation principale">
         <ul class="header-nav-list">
-            <li><a href="/" title="Accueil" use:link>Accueil</a></li>
-            <li><a href="/portfolio" title="Portfolio" use:link>Portfolio</a></li>
-            <li><a href="/contact" title="Contact" use:link>Contact</a></li>
-            <li><a href="/cv" title="Mon CV" use:link>Mon CV</a></li>
+            <li><a href="/" use:link aria-label="Retour à l'accueil">Accueil</a></li>
+            <li><a href="/portfolio" use:link aria-label="Aller sur la page portfolio">Portfolio</a></li>
+            <li><a href="/contact" use:link aria-label="Aller sur la page contact">Contact</a></li>
+            <li><a href="/cv" use:link aria-label="Aller sur la page CV">Mon CV</a></li>
         </ul>
     </nav>
     
     <section class="header-right">
-        <ul class="socials">
+        <ul class="socials" aria-label="Liens vers mes réseaux sociaux">
             <li>
-                <a href="https://www.linkedin.com/in/wendy-alverde-850761237/" target="_blank">
-                    <img class="socials__icon" src={linkedin} alt="Lien vers mon profil LinkedIn">
+                <a href="https://www.linkedin.com/in/wendy-alverde-850761237/" title="LinkdIn" target="_blank" aria-label="Lien vers LinkedIn">
+                    <img class="socials__icon" src={linkedin} title="LinkdIn" alt="Lien vers mon profil LinkedIn">
                 </a>
             </li>
             <li>
-                <a href="https://github.com/WendyAlverde" target="_blank">
-                    <img class="socials__icon" src={github} alt="Lien vers mon profil GitHub">
+                <a href="https://github.com/WendyAlverde" target="_blank" aria-label="Lien vers GitHub">
+                    <img class="socials__icon" src={github} title="GitHub" alt="Lien vers mon profil GitHub">
                 </a>
             </li>
             <li>
-                <a href="https://www.instagram.com/chat_push/" target="_blank">
-                    <img class="socials__icon" src={instagram} alt="Lien vers mon profil Instagram">
+                <a href="https://www.instagram.com/chat_push/" target="_blank" aria-label="Lien vers Instagram">
+                    <img class="socials__icon" src={instagram} title="Instagram" alt="Lien vers mon profil Instagram">
                 </a>
             </li>
         </ul>
@@ -57,24 +101,31 @@
         </button>
         <!-- Mobile -->
         {#if menuOpen}
-            <button class="mobile" on:click="{closeMenu}" aria-hidden="false">
+        <dialog class="accessibility" aria-modal="true" open>
+            <button class="mobile" aria-label="Fermer le menu" on:click="{closeMenu}">
                 <nav class="mobile-nav" >
                     <ul class="mobile-nav-list">
-                        <li><a href="/" title="Accueil" use:link>Accueil</a></li>
-                        <li><a href="/portfolio" title="Portfolio" use:link>Portfolio</a></li>
-                        <li><a href="/contact" title="Contact" use:link>Contact</a></li>
-                        <li><a href="/cv" title="Mon CV" use:link>Mon CV</a></li>
+                        <li><a href="/" use:link aria-label="Aller sur la page d'accueil">Accueil</a></li>
+                        <li><a href="/portfolio" use:link aria-label="Aller sur la page portfolio">Portfolio</a></li>
+                        <li><a href="/contact" use:link aria-label="Aller sur la page contact">Contact</a></li>
+                        <li><a href="/cv" use:link aria-label="Aller sur la page CV">Mon CV</a></li>
                     </ul>
                 </nav>
             </button>
+        </dialog>
         {/if}
         <!-- Mobile -->
-
     </section>
-    
 </header>
 
 <style lang="scss">
+    img[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    top: -100%;
+    left: 0;
+    background-color: #0ace0a;
+}
     .header { 
         background: var(--background-entete);
         border-radius: 0.3rem;
@@ -108,7 +159,6 @@
                 font-size: 2rem;
                 letter-spacing: 2px;
             }
-
         }
 
         &-nav {
@@ -169,7 +219,7 @@
                     @media (min-width: 991px) { /*PC*/
                         width: 2rem;
                         height: 2rem;
-                    }
+                    }  
                 }
             }
 
@@ -230,65 +280,58 @@
                 }
             }
 
-            .mobile {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.5); /* Fond transparent sombre */
-                display: flex;
-                justify-content: flex-end; /* Aligner le menu à droite */
-                z-index: 2; /* Au-dessus de tout */
-
-                &-nav {
-                    width: 50%;
-                    max-width: 20rem;
-                    background: var(--background-entete);
-                    height: auto; /* Hauteur selon le contenu */
-                    padding: 1rem;
-                    position: relative;
+            .accessibility {
+                background: none;
+                border: none;
+                .mobile {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.5); /* Fond transparent sombre */
                     display: flex;
-                    flex-direction: column;
-                    border: 0.2rem solid var(--color-text);
-                    border-radius: 3%;
+                    justify-content: flex-end; /* Aligner le menu à droite */
+                    z-index: 2; /* Au-dessus de tout */
+                        
 
-                    &-list {
+                    &-nav {
+                        width: 50%;
+                        max-width: 20rem;
+                        background: var(--background-entete);
+                        height: auto; /* Hauteur selon le contenu */
+                        padding: 1rem;
+                        position: relative;
                         display: flex;
                         flex-direction: column;
-                        gap: 1rem;
-                        margin: 1rem 0;
+                        border: 0.2rem solid var(--color-text);
+                        border-radius: 3%;
 
-                        li {
-                            padding: 0.5rem;
+                        &-list {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 1rem;
+                            margin: 1rem 0;
 
-                            a {
-                                color: var(--color-text);
-                                text-decoration: none;
-                                font-size: 1.5rem;
+                            li {
+                                padding: 0.5rem;
 
-                                &:hover {
-                                    color: var(--color-passagesouris);
+                                a {
+                                    color: var(--color-text);
+                                    text-decoration: none;
+                                    font-size: 1.5rem;
+
+                                    &:hover {
+                                        color: var(--color-passagesouris);
+                                    }
                                 }
                             }
                         }
                     }
+                    
                 }
             }
+            
         }
     }
-
-    // @media (min-width: 770px) { /*PC*/
-
-    //     .header__nav {
-    //         display: block;
-
-    //         & .header__menu { 
-    //             display: flex;
-    //             flex-direction: row;
-    //             justify-content: space-around;
-    //             padding-top: 1rem;
-    //         }
-    //     }
-    // }
 </style>
