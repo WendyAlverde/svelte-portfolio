@@ -25,9 +25,9 @@
     <a class="header__logo" href="/" use:link>Wendy Alverde</a>
 
     {#if menuOpen}
-        <button class="menu-overlay" on:click="{closeMenu}" aria-hidden="false">
-            <nav class="menu" >
-                <ul class="header__menu list-unstyled">
+        <button class="menu" on:click="{closeMenu}" aria-hidden="false">
+            <nav class="menu-nav" >
+                <ul class="menu-nav-list">
                     <li><a href="/" title="Accueil" use:link>Accueil</a></li>
                     <li><a href="/portfolio" title="Portfolio" use:link>Portfolio</a></li>
                     <li><a href="/contact" title="Contact" use:link>Contact</a></li>
@@ -69,8 +69,9 @@
         position: sticky;
         top: 0;
         display: flex;
-        align-items: center;
+        align-items: flex-end;
         padding: 0.5rem 1rem;
+        justify-content: space-between;
 
         &__logo {
             font-family: 'Playfair Display', serif;
@@ -82,7 +83,7 @@
             }
         }
 
-        .menu-overlay {
+        .menu {
             position: fixed;
             top: 0;
             left: 0;
@@ -93,8 +94,8 @@
             justify-content: flex-end; /* Aligner le menu à droite */
             z-index: 2; /* Au-dessus de tout */
 
-            .menu {
-                width: 80%;
+            &-nav {
+                width: 50%;
                 max-width: 20rem;
                 background: var(--background-entete);
                 height: auto; /* Hauteur selon le contenu */
@@ -103,27 +104,31 @@
                 position: relative;
                 display: flex;
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: center;
+                border: 0.2rem solid var(--color-text);
+                border-radius: 2%;
 
-                &__close {
-                    position: absolute;
-                    top: 1rem;
-                    right: 1rem;
-                    background: none;
-                    border: none;
-                    font-size: 2rem;
-                    cursor: pointer;
-                    color: var(--color-text);
-                }
+                // &__close {
+                //     position: absolute;
+                //     top: 1rem;
+                //     right: 1rem;
+                //     background: none;
+                //     border: none;
+                //     font-size: 2rem;
+                //     cursor: pointer;
+                //     color: var(--color-text);
+                // }
 
-                .header__menu {
+                &-list {
                     display: flex;
                     flex-direction: column;
                     gap: 1rem;
+                    
 
                     a {
                         color: var(--color-text);
                         text-decoration: none;
+                        font-size: 1.5rem;
 
                         &:hover {
                             color: var(--color-passagesouris);
@@ -150,8 +155,8 @@
         display: flex;
 
         &__icon {
-            width: 1.5rem;
-            height: 1.5rem;
+            width: 1.2rem;
+            height: 1.2rem;
         }
     }
 
@@ -209,23 +214,23 @@
     }
 
     /* Responsive */
-    @media screen and (min-width: 426px) and (max-width: 768px) { /*Tablette*/
-        .header__logo {
-            font-size: 1.5rem;
-            letter-spacing: 1px;
-        }
+    // @media screen and (min-width: 430px) and (max-width: 768px) { /*Tablette*/
+    //     .header__logo {
+    //         font-size: 1.5rem;
+    //         letter-spacing: 1px;
+    //     }
 
-        .header__nav {
-            display: block;
-        }
+    //     .header__nav {
+    //         display: block;
+    //     }
 
-        .burger {
-            display: none;
-        }
-        .menu-overlay {
-            display: none;
-        }
-    }
+    //     .burger {
+    //         display: none;
+    //     }
+    //     .menu-overlay {
+    //         display: none;
+    //     }
+    // }
 
     @media screen and (min-width: 769px) { /*PC*/
         .header__logo {
