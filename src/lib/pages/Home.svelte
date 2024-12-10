@@ -1,4 +1,5 @@
 <script>
+    import {link} from "svelte-spa-router";
     // -------- Import pictures
     // hero
     import profil from "../../assets/icons/site/home/profil/profil.webp"
@@ -25,13 +26,14 @@
     <!-- Profil -->
     <section id="hero">
         <div class="left">
-            <h1>Intégratrice Web</h1>
-            <p>Passionnée par la création et l'optimisation d'interface utilisateur, je suis à la recherche d'un poste en tant qu'Intégratrice Web aux alentours de Colmar. </p>
+            <h1>Intégratrice Web - Freelance</h1>
+            <p>Passionnée par la création et l'optimisation d'interface utilisateur, je suis à la recherche de nouveaux projets de sites à créer ou à améliorer.</p>
+            
         </div>
         <div class="troisPhotos">
-            <img src={hautbar} loading="lazy" alt="">
-            <img src={panier} loading="lazy" alt="">
-            <img src={montblanc} loading="lazy" alt="">
+            <img src={hautbar} loading="lazy" title="Chateau du Haut-Bar" alt="" aria-hidden="true">
+            <img src={panier} loading="lazy" title="Montgolfière lors du Mondial Air Ballons 2023 à Chambley" alt="" aria-hidden="true">
+            <img src={montblanc} loading="lazy" title="Mont Blanc" alt="" aria-hidden="true">
         </div>
         <p class="subtitlePicture" aria-hidden="true">Photographie prise par Wendy Alverde</p>
     </section>
@@ -39,21 +41,28 @@
     <section id="about">
         <img class="profilpicture" src={profil} loading="lazy" alt="Photo de profil de Wendy Alverde, intégratrice web">
         <h2 class="section-title">À propos</h2>
-        <h3>Qui suis-je</h3>
-        <section class="text">
-            <p>Après avoir étudié en foresterie au Québec pendant 4 ans, j'ai développé un vif intérêt pour les <em>aspects informatiques</em>, tels que la photo-interprétation et la géomatique.</p>
-            <p>De retour en France il y a 3 ans, je suis fascinée par les coulisses des <em>effets spéciaux</em> cinématographiques et les <em>mystères de la création des pages web et des jeux vidéo</em>.</p>
-            <p>Au cours de l'année 2022 et 2023, je me suis formée en autodidacte en explorant diverses ressources telles que des <em>tutoriels sur YouTube</em> et des <em>moocs sur OpenClassroom</em>. J'ai également suivi une formation intitulée "Initiation aux métiers du numérique" avec le CCI Campus de Strasbourg.</p>
-            <p>De octobre 2023 à avril 2024, j'ai suivi les cours chez O'clock, et  j'ai passé le <em>Titre Professionnel de Développeur Web et Web Mobile</em> de niveau Bac+2 en juin 2024.</p>
-            <p>Ainsi, je souhaite travailler en tant qu'<em>Intégratrice web</em>.</p> <!--Mettre texte aligné (<br> pour passer à la ligne à la fin de celle-ci, si besoin)-->
-        </section>
-        <h3>Mes valeurs :</h3>
-        <ul class="text" role="list">
-            <li class="li1" role="listitem"><em>Créativité</em> : J'ai la capacité d'imaginer, concevoir et produire des idées originales et innovantes.</li>
-            <li class="li2" role="listitem"><em>Plaisir</em> : J'apprécie chaque aspect de mon travail, ce qui se reflète dans ma motivation, ma satisfaction et ma capacité à donner le meilleur de moi-même.</li>
-            <li class="li3" role="listitem"><em>Responsabilité écologique</em> : Je m'engage pour un travail respectueux de l'environnement en adoptant des pratiques durables et éco-responsables.</li>
-            <li class="li4" role="listitem"><em>Rigueur</em> : J'aborde chaque projet avec une attention méticuleuse aux détails et à la qualité de mon travail.</li>
-        </ul>              
+        <article>
+            <h3>Qui suis-je</h3>
+            <section class="text">
+                <p>Après avoir étudié en foresterie au Québec pendant 4 ans, j'ai développé un vif intérêt pour les <em>aspects informatiques</em>, tels que la photo-interprétation et la géomatique.</p>
+                <p>De retour en France il y a 4 ans, j'ai découvert une passion pour les <em>mystères de la création des pages web et des jeux vidéo</em>.</p>
+                <p>Au cours de l'année 2022 et 2023, je me suis formée en autodidacte en explorant diverses ressources telles que des <em>tutoriels sur YouTube</em> et des <em>moocs sur OpenClassroom</em>. J'ai également suivi une formation intitulée "Initiation aux métiers du numérique" avec le CCI Campus de Strasbourg.</p>
+                <p>De octobre 2023 à avril 2024, j'ai suivi les cours chez O'clock, et  j'ai passé le <em>Titre Professionnel de Développeur Web et Web Mobile</em> de niveau Bac+2 en juin 2024.</p>
+                <p>En juillet, j'ai suivi une courte formation sur le développement de jeux vidéo avec l'application Construct. Cette expérience a été très enrichissante, m'apportant de nouvelles connaissances et m'aidant à développer une meilleure logique.</p>
+                <p>Depuis, je travaille sur plusieurs projets de sites web pour continuer à pratiquer, approfondir mes compétences et rester à jour avec les dernières technologies. Je vous invite à découvrir mes projets sur ma page <a href="/portfolio" use:link aria-label="Aller sur la page portfolio">Portfolio</a>.</p>
+                <p>Ainsi, je souhaite travailler sur vos projets en tant qu'<em>Intégratrice web</em>.</p>
+                <!--Mettre texte aligné (<br> pour passer à la ligne à la fin de celle-ci, si besoin) ou &nbsp; pour simuler un espace mais garder les éléments sur la même ligne-->
+            </section>
+        </article>
+        <article>
+            <h3>Mes valeurs :</h3>
+            <ul class="text" role="list">
+                <li class="li1" role="listitem"><em>Créativité</em> : J'ai la capacité d'imaginer, concevoir et produire des idées originales et innovantes.</li>
+                <li class="li2" role="listitem"><em>Plaisir</em> : J'apprécie chaque aspect de mon travail, ce qui se reflète dans ma motivation, ma satisfaction et ma capacité à donner le meilleur de moi-même.</li>
+                <li class="li3" role="listitem"><em>Responsabilité écologique</em> : Je m'engage pour un travail respectueux de l'environnement en adoptant des pratiques durables et éco-responsables.</li>
+                <li class="li4" role="listitem"><em>Rigueur</em> : J'aborde chaque projet avec une attention méticuleuse aux détails et à la qualité de mon travail.</li>
+            </ul>         
+        </article>
     </section>
     <!-- Skills -->
     <section id="skills">
@@ -67,7 +76,8 @@
             <ul role="list">
                 <li role="listitem">
                     <h4>Programmation</h4>
-                    <p>Développement web et web mobile</p>
+                    <p>Développement de site web et web mobile</p>
+                    <p>Développement de jeux vidéo</p>
                 </li>
                 <li role="listitem">
                     <h4>Photographie</h4>
@@ -83,21 +93,48 @@
             <h3>Outils de développement</h3>
             <p>L'apprentissage continu est au cœur de mon parcours, car l'évolution des outils et des pratiques ne s'arrête jamais.</p>
             <div class="imgskills">
-                
+                <div class="circularProgress">
+                    <img src={github} loading="lazy" title="GitHub" alt="Logo de l'application GitHub, une plateforme de gestion de code source et de collaboration">
+                </div>
+                <div class="circularProgress">
+                    <img src={css} loading="lazy" title="CSS" alt="Logo du langage CSS, utilisé pour la mise en forme des pages web">
+                </div>
+                <div class="circularProgress">
+                    <img src={html} loading="lazy" title="HTML" alt="Logo du langage HTML, utilisé pour structurer le contenu des pages web">
+                </div>
+                <div class="circularProgress">
+                    <img src={javascript} loading="lazy" title="JavaScript" alt="Logo du langage de programmation JavaScript, utilisé pour rendre les pages web interactives">
+                </div>
+                <div class="circularProgress">
+                    <img src={svelte} loading="lazy" title="Svelte" alt="Logo du framework JavaScript Svelte, utilisé pour le développement d'applications web">
+                </div>
+                <div class="circularProgress">
+                    <img src={react} loading="lazy" title="React" alt="Logo de la bibliothèque React, utilisé pour la création d'interfaces utilisateur dynamiques">
+                </div>
+                <div class="circularProgress">
+                    <img src={vercel} loading="lazy" title="Vercel" alt="Logo de Vercel, une plateforme de déploiement pour les applications front-end">
+                </div>
+                <div class="circularProgress">
+                    <img src={docker} loading="lazy" title="Docker" alt="Logo de Docker, un outil de conteneurisation pour le déploiement d'applications">
+                </div>
+                <div class="circularProgress">
+                    <img src={vsc} loading="lazy" title="Visual Studio Code" alt="Logo de Visual Studio Code, un éditeur de code source populaire pour le développement web">
+                </div>
+                <div class="circularProgress">
+                    <img src={construct3} loading="lazy" title="Construct 3" alt="Logo de Construct 3, une application de développement de jeux vidéo sans code">
+                </div>
             </div>
             <h3>Outils de conception graphique</h3>
             <div class="imgskills">
                 <div class="circularProgress">
-                    <img src={figma} loading="lazy" alt="Logo de Figma">
+                    <img src={figma} loading="lazy" title="Figma" alt="Logo de Figma, outil de conception d'interface">
                 </div>
                 <div class="circularProgress">
-                    <img src={photoshop} loading="lazy" alt="Logo de Photoshop">
+                    <img src={piskel} loading="lazy" title="Piskel" alt="Logo de Piskel, un éditeur de sprites et d'animations en pixel art">
                 </div>
                 <div class="circularProgress">
-                    <img src={piskel} loading="lazy" alt="Logo de Piskel">
+                    <img src={photoshop} loading="lazy" title="Photoshop" alt="Logo de Photoshop, un logiciel de retouche et de création graphique">
                 </div>
-
-                
             </div>
         </div>
     </section>
@@ -206,7 +243,6 @@
 
                 // ====  circularProgress  ==== // 
                 .circularProgress {
-                    position: relative;
                     width: 7rem;
                     height: 7rem;
                     border-radius: 50%;
@@ -216,21 +252,6 @@
                     display: flex;
                     justify-content: center;
                     box-shadow: inset 0 0.1rem 0.8rem var(--blue-skills);
-
-                    // Cercle de base
-                    &::before {
-                        content: '';
-                        position: absolute;
-                        width: 100%;
-                        height: 100%;
-                        border-radius: 50%;
-                        border: 0.5rem solid transparent;
-                        border-top-color: var(--violet); /* Couleur de la progression */
-                        transform: rotate(90deg); /* Positionne le départ à 12h */
-                        transition: transform 1s;
-                    }
-
-                    
                 }
                 
                 img {
