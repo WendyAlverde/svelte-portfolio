@@ -1,172 +1,335 @@
 <script>
-    import {link} from "svelte-spa-router"
+    import {link} from "svelte-spa-router";
+    import { onMount } from 'svelte';
     // import pictures
-    import linkedin from "../../assets/icons/site/socials/linkedin.svg"
-    import github from "../../assets/icons/site/socials/github.svg"
-    import instagram from "../../assets/icons/site/socials/instagram.svg"
+    import linkedin from "../../assets/site/socials/linkedin.svg";
+    import github from "../../assets/site/socials/github.svg";
+    import instagram from "../../assets/site/socials/instagram.svg";
+
+    // Menu burger
+    // État pour contrôler l'ouverture du menu
+    let menuOpen = false;
+
+    // Fonction pour ouvrir/fermer le menu
+    function toggleMenu() {
+        menuOpen = !menuOpen;
+        // Menu burger ouvert, bloquer le défilement de la page
+        document.body.classList.toggle('menu-open', menuOpen);
+    }
+
+    // Fonction pour fermer le menu
+    function closeMenu() {
+        menuOpen = false;
+        // Menu burger ouvert, bloquer le défilement de la page
+        document.body.classList.remove('menu-open');
+    }
+
+    let firstFocusableElement;
+    let lastFocusableElement;
+
+    onMount(() => {
+        //  Gère les interactions clavier dans le menu
+        const handleKeyPress = (event) => {
+            if (!menuOpen) return;
+            // Ferme le menu si la touche "Échap" est pressée
+            if (event.key === "Escape") {
+                closeMenu();
+            }
+            // Gère la navigation au clavier avec la touche "Tab" pour le focus
+            if (event.key === "Tab") {
+                // Sélectionne tous les éléments pouvant être focalisés dans le menu (liens et bouton)
+                const focusableElements = document.querySelectorAll(
+                    ".mobile-nav-list a, .mobile"
+                );
+                // Identifie le premier et le dernier élément du menu
+                firstFocusableElement = focusableElements[0];
+                lastFocusableElement = focusableElements[focusableElements.length - 1];
+                // Si "Shift + Tab" est pressé et qu'on est sur le premier élément,
+                // renvoyer le focus au dernier élément (boucle de navigation)
+                if (event.shiftKey && document.activeElement === firstFocusableElement) {
+                    lastFocusableElement.focus();
+                    event.preventDefault();
+                // Si "Tab" est pressé sans "Shift" et qu'on est sur le dernier élément,
+                // renvoyer le focus au premier élément
+                } else if (!event.shiftKey && document.activeElement === lastFocusableElement) {
+                    firstFocusableElement.focus();
+                    event.preventDefault();
+                }
+            }
+        };
+        // Ajoute un écouteur d'événements sur tout le document pour capturer les interactions clavier
+        document.addEventListener("keydown", handleKeyPress);
+        // Retourne une fonction pour nettoyer l'écouteur lorsque le composant est détruit
+        // Par exemple lorsque sa condition {#if} devient false
+        return () => document.removeEventListener("keydown", handleKeyPress);
+    });
 </script>
 
-<header>
-    <div class="container"> <!-- A retirer quand construction part -->
-        <a class="logo" href="/" use:link>Wendy Alverde</a>
-        <nav>
-            <ul class="menu list-unstyled">
-                <li><a href="/" title="Cliquer pour aller sur la page d'accueil" use:link>Accueil</a></li>
-                <li><a href="/portfolio" title="Cliquer pour aller sur la page portfolio" use:link>Portfolio</a></li>
-                <li><a href="/contact" title="Cliquer pour aller sur la page contact" use:link>Contact</a></li>
-                <li><a href="/cv" title="Cliquer pour aller sur la page de mon curriculum vitae" use:link>Mon CV</a></li>
-            </ul>
-        </nav>
-        <ul class="socials">
+<header class="header">
+    <a class="header-logo" href="/" use:link aria-label="Retour à l'accueil">Wendy Alverde</a>
+
+    <nav class="header-nav" aria-label="Navigation principale">
+        <ul class="header-nav-list">
+            <li><a href="/" use:link aria-label="Retour à l'accueil">Accueil</a></li>
+            <li><a href="/portfolio" use:link aria-label="Aller sur la page portfolio">Portfolio</a></li>
+            <li><a href="/contact" use:link aria-label="Aller sur la page contact">Contact</a></li>
+            <li><a href="/cv" use:link aria-label="Aller sur la page CV">Mon CV</a></li>
+        </ul>
+    </nav>
+    
+    <section class="header-right">
+        <ul class="socials" aria-label="Liens vers mes réseaux sociaux">
             <li>
-                <a href="https://www.linkedin.com/in/wendy-alverde-850761237/" target="_blank" alt="Lien vers mon profil LinkedIn">
-                    <img class="icon" src={linkedin} alt="Logo amenant sur le profil LinkedIn de Wendy Alverde">
+                <a href="https://www.linkedin.com/in/wendy-alverde-850761237/" title="LinkdIn" target="_blank" aria-label="Lien vers LinkedIn">
+                    <img class="socials__icon" src={linkedin} title="LinkdIn" alt="Lien vers mon profil LinkedIn">
                 </a>
             </li>
             <li>
-                <a href="https://github.com/WendyAlverde" target="_blank" alt="Lien vers mon profil GitHub">
-                    <img class="icon" src={github} alt="Logo amenant sur le profil GitHub de Wendy Alverde">
+                <a href="https://github.com/WendyAlverde" target="_blank" aria-label="Lien vers GitHub">
+                    <img class="socials__icon" src={github} title="GitHub" alt="Lien vers mon profil GitHub">
                 </a>
             </li>
             <li>
-                <a href="https://www.instagram.com/chat_push/" target="_blank" alt="Lien vers mon profil LinkedIn">
-                    <img class="icon" src={instagram} alt="Logo amenant sur le profil Instagram de Wendy Alverde">
+                <a href="https://www.instagram.com/chat_push/" target="_blank" aria-label="Lien vers Instagram">
+                    <img class="socials__icon" src={instagram} title="Instagram" alt="Lien vers mon profil Instagram">
                 </a>
             </li>
         </ul>
-        <button aria-pressed="false" class="burger"><em class="bar"></em></button>
-    </div>
-    <div class="banniere">
-        <p>SITE EN CONSTRUCTION</p>
-        <p class="little">Mobile first</p>
-    </div>
+    
+        <button class="burger" aria-pressed={menuOpen} aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"} on:click={toggleMenu}>
+            <em class="burger__bar"></em>
+        </button>
+        <!-- Mobile -->
+        {#if menuOpen}
+        <dialog class="accessibility" aria-modal="true" open>
+            <button class="mobile" aria-label="Fermer le menu" on:click="{closeMenu}">
+                <nav class="mobile-nav" >
+                    <ul class="mobile-nav-list">
+                        <li><a href="/" use:link aria-label="Aller sur la page d'accueil">Accueil</a></li>
+                        <li><a href="/portfolio" use:link aria-label="Aller sur la page portfolio">Portfolio</a></li>
+                        <li><a href="/contact" use:link aria-label="Aller sur la page contact">Contact</a></li>
+                        <li><a href="/cv" use:link aria-label="Aller sur la page CV">Mon CV</a></li>
+                    </ul>
+                </nav>
+            </button>
+        </dialog>
+        {/if}
+        <!-- Mobile -->
+    </section>
 </header>
 
 <style lang="scss">
-    header { 
+    img[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    top: -100%;
+    left: 0;
+    background-color: #0ace0a;
+}
+    .header { 
         background: var(--background-entete);
-        border-bottom: 1px solid #eee;
         border-radius: 0.3rem;
         box-shadow: 0 0 5px #548072; 
         position: sticky;
         top: 0;
-        z-index: 1;
-        margin-bottom: 1rem;
-    }
-
-    header .logo {
-        font-family: 'Playfair Display', serif;
-        letter-spacing: 1px;
-    }
-
-    .container {
         display: flex;
+        align-items: flex-end;
         justify-content: space-between;
-        padding: 1rem 0.5rem;
-        align-items: center;
-    }
+        padding: 0.5rem 1rem;
 
-    a, ul {
-        margin-top: 0.6rem;
-    }
-
-    nav {
-        // display: flex;
-        // justify-content: center;
-        // align-items: center;
-        // flex-direction: column;
-        display: none;
-        // position: fixed;
-        // top: 3.4rem;
-        // left: 110%;
-        overflow: hidden;
-        // height: calc(100vh -3.4rem);
-        background: var(--background-entete);
-        transition: all 0.4s ease-out;
-    }
-
-    header a  {
-        color: var(--color-text);
-    }
-
-    header a:hover {
-        color: var(--color-passagesouris);
-    }
-
-    .socials {
-        display: flex;
-    }
-
-    /* Burger */
-    .burger {
-        background: none;
-        border: none;
-        width: 2.1rem;
-        height: 2.1rem;
-        cursor: pointer;
-    }
-
-    .burger .bar, .burger .bar::before, .burger .bar::after {
-        display: block;
-        content: "";
-        width: 1.3rem;
-        height: 0.2rem;
-        background-color: var(--color-text);
-        position: absolute;
-    }
-
-    .burger .bar::before {
-        transform: translateY(-0.5rem);
-    }
-
-    .burger .bar::after {
-        transform: translateY(0.5rem);
-    }
-
-    /* ==== Ne restera pas à la fin ====  */
-    .banniere {
-        background: #EBB300;
-        border: 0.2rem solid #D47E00;
-        border-radius: 0.3rem;
-        box-shadow: 0 0 0.3rem #D47E00; /*Ombre*/
-        position: sticky;
-        top: 0;
-        z-index: 1;
-    }
-
-    .banniere p {
-        text-align: center;
-    }
-
-    .little {
-        font-size: 0.8rem;
-        margin-bottom: 0.3rem;
-    }
-    /* ==== Ne restera pas à la fin ==== */
-
-    @media screen and (min-width: 769px) { /*PC*/
-        header .logo {
-            font-size: 2rem;
-            letter-spacing: 2px;
-        }
-        header li {
-            font-size: 2rem;
-            padding: 0.5rem;
+        @media (min-width: 770px) { /*PC*/
+            padding: 0.8rem 2rem;
         }
 
-        nav {
-            display: block;
+        &-logo {
+            font-family: 'Playfair Display', serif;
+            color: var(--color-text);
+            font-size: 1.2rem;
+
+            &:hover {
+                color: var(--color-passagesouris);
+            }
+
+            @media (min-width: 710px) and (max-width: 769px) { /*Tablette*/
+                font-size: 1.5rem;
+                letter-spacing: 1px;
+            }
+
+            @media (min-width: 770px) { /*PC*/
+                font-size: 2rem;
+                letter-spacing: 2px;
+            }
         }
 
-        .burger {
+        &-nav {
             display: none;
+            
+            @media (min-width: 710px) and (max-width: 991px) { /*Tablette et plus*/
+                display: flex;
+
+                &-list {
+                    display: flex;
+                    gap: 1rem;
+
+                    a {
+                        color: var(--color-text);
+                        font-size: 1.5rem;
+
+                        &:hover {
+                            color: var(--color-passagesouris);
+                        }
+                    }
+                }
+            }
+            @media (min-width: 991px) { /*PC*/
+                display: flex;
+
+                &-list {
+                    display: flex;
+                    gap: 2rem;
+
+                    a {
+                        color: var(--color-text);
+                        font-size: 2rem;
+
+                        &:hover {
+                            color: var(--color-passagesouris);
+                        }
+                    }
+                }
+            }
         }
 
-        nav .menu {
-            display: flex;/*1*/
-            flex-direction: row;/*2*/
-            justify-content: space-around;/*3*/
-            padding-top: 1rem;
+        &-right {
+            display: flex;
+            align-items: flex-end;
+            gap: 1rem;
+
+            .socials {
+                display: flex;
+
+                &__icon {
+                    width: 1.2rem;
+                    height: 1.2rem;
+
+                    @media (min-width: 710px) and (max-width: 991px) { /*Tablette*/
+                        width: 1.5rem;
+                        height: 1.5rem;
+                    }
+                    @media (min-width: 991px) { /*PC*/
+                        width: 2rem;
+                        height: 2rem;
+                    }  
+                }
+            }
+
+            .burger {
+                background: none;
+                border: none;
+                width: 2.1rem;
+                height: 2.1rem;
+                position: relative;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                @media (min-width: 710px) { /*Passage du burger*/
+                    display: none;
+                }
+
+                .burger__bar {
+                    display: block;
+                    width: 1.3rem;
+                    height: 0.2rem;
+                    background-color: var(--color-text);
+                    position: absolute;
+                    transition: transform 0.3s ease, opacity 0.3s ease;
+                    z-index: 3;
+
+                    &::before,
+                    &::after {
+                        display: block;
+                        content: '';
+                        width: 1.3rem;
+                        height: 0.2rem;
+                        background-color: var(--color-text);
+                        position: absolute;
+                        transition: transform 0.3s ease, opacity 0.3s ease;
+                    }
+
+                    &::before {
+                        transform: translateY(-0.5rem);
+                    }
+
+                    &::after {
+                        transform: translateY(0.5rem);
+                    }
+                }
+                // Quand le menu est ouvert
+                &[aria-pressed="true"] .burger__bar {
+                    background-color: transparent;
+
+                    &::before {
+                        transform: rotate(45deg);
+                    }
+
+                    &::after {
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+
+            .accessibility {
+                background: none;
+                border: none;
+                .mobile {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.5); /* Fond transparent sombre */
+                    display: flex;
+                    justify-content: flex-end; /* Aligner le menu à droite */
+                    z-index: 2; /* Au-dessus de tout */
+                        
+
+                    &-nav {
+                        width: 50%;
+                        max-width: 20rem;
+                        background: var(--background-entete);
+                        height: auto; /* Hauteur selon le contenu */
+                        padding: 1rem;
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        border: 0.2rem solid var(--color-text);
+                        border-radius: 3%;
+
+                        &-list {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 1rem;
+                            margin: 1rem 0;
+
+                            li {
+                                padding: 0.5rem;
+
+                                a {
+                                    color: var(--color-text);
+                                    text-decoration: none;
+                                    font-size: 1.5rem;
+
+                                    &:hover {
+                                        color: var(--color-passagesouris);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 </style>

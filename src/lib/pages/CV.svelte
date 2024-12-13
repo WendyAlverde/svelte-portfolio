@@ -1,20 +1,20 @@
 <script>
     import {link} from "svelte-spa-router"
      // Import pictures
-    import at from "../../assets/icons/cv/at.svg"
-    import calendar from "../../assets/icons/cv/calendar.svg"
-    import car from "../../assets/icons/cv/car.svg"
-    import house from "../../assets/icons/cv/house.svg"
-    import card from "../../assets/icons/cv/id-card.svg"
-    import phone from "../../assets/icons/cv/phone.svg"
-    import profil from "../../assets/icons/site/profil/profil.webp"
+    import at from "../../assets/cv/at.svg"
+    import calendar from "../../assets/cv/calendar.svg"
+    import car from "../../assets/cv/car.svg"
+    import house from "../../assets/cv/house.svg"
+    import card from "../../assets/cv/id-card.svg"
+    import phone from "../../assets/cv/phone.svg"
+    import profil from "../../assets/site/home/profil/profil.webp"
     // import socials
-    import linkedin from "../../assets/icons/site/socials/linkedin.svg"
-    import github from "../../assets/icons/site/socials/github.svg"
-    import instagram from "../../assets/icons/site/socials/instagram.svg"  
+    import linkedin from "../../assets/site/socials/linkedin.svg"
+    import github from "../../assets/site/socials/github.svg"
+    import instagram from "../../assets/site/socials/instagram.svg"  
 </script>
     
-<main role="main">
+<main>
     <h1>Mon Curriculum Vitae</h1>
     <section id="containerPerso">
         <div class="left">
@@ -35,27 +35,27 @@
             <ul>
                 <li>
                     <!-- Voir pour mettre les images et icons en bdd -->
-                    <img class="icon" src={at}>
+                    <img class="icon" src={at} alt="">
                     alverdew@gmail.com
                 </li> 
                 <li>
-                    <img class="icon" src={phone}>
+                    <img class="icon" src={phone} alt="">
                     0784588343
                 </li>
                 <li>
-                    <img class="icon" src={calendar}>
+                    <img class="icon" src={calendar} alt="">
                     25 ans
                 </li>
                 <li>
-                    <img class="icon" src={house}>
+                    <img class="icon" src={house} alt="">
                     Rohr
                 </li>
                 <li>
-                    <img class="icon" src={card}>
+                    <img class="icon" src={card} alt="">
                     Permis B
                 </li>
                 <li>
-                    <img class="icon" src={car}>
+                    <img class="icon" src={car} alt="">
                     Véhicule personnel
                 </li>
             </ul>

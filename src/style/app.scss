@@ -7,17 +7,40 @@
 
 /* root est au même niveau qu'HTML */
 :root {
-	/* Maintenant si on fait met une taille : 500px/16px = 31,25rem tout s'armonise en concéquence donc plus d'autre px dans le reste du projet*/
+	/* 500px/16px = 31,25rem - tout s'armonise en conséquence */
 	font-size: 16px;
     /* Toutes les couleurs utilisées sur le site */
-    --color-text: #00330d;
-    --background-body: #ffffff;
-    --color-hero: #548072;
-    --color-passagesouris: #0ace0a;
-    --text-clair: #d6e7e1;
-    --background-entete: #eef7f4; 
+    --background-entete: #eef7f4; /* Couleur de fond sur Header et Footer */
+    --background-body: #ffffff; /* Couleur de base du background */
+    --color-hero: #548072; /* Couleur de fond de hero */
+    --background-clair: #d6e7e1; /* Couleur de fond de skills */
+
+    --color-text: #00330d; /* Couleur texte sur fond blanc / Body */
+    --text-black: #050505; /* Couleur texte sur color hero */
+    
+    --color-passagesouris: #0ace0a; /* Couleur hover sur la nav */
+    
     // newcolor
     --blue-green: #169696;
+    --blue-skills: #a2caff;
+    // --text-in-white: #3C5D53;
+
+    // Couleur complémentaire #548072
+    // --bleugris: #547880;
+    // --bleuviolet:#546280;
+    --violet: #5c5480;
+    // --violetmauve: #725480;
+    // --mauve: #805462;
+
+    // Couleur complémentaire #d6e7e1
+    // --bleugris-clair: #d6e5e7;
+    // --bleuviolet-clair:#d6dce7;
+    // --violet-clair: #d9d6e7;
+    // --violetmauve-clair: #e1d6e7;
+    // --mauve-clair: #e7d6e5;
+
+    // --red:#C70039;
+    // Revoir les couleurs pour l'accessibilité : https://webaim.org/resources/contrastchecker/ home c'est fait
 }
 
 body {
@@ -27,22 +50,30 @@ body {
     line-height: 1.5;
 }
 
+// Menu burger ouvert, bloquer le défilement de la page
+body.menu-open {
+    overflow: hidden;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
     text-align: center;
-    color: var(--color-text);
     text-transform: uppercase;
 }
 
 h1 {
-    color: var(--text-clair);
+    color: var(--text-black);
     font-size: 1.8rem;
+    margin-top: 2rem;
+    @media (min-width: 991px) { /*PC*/
+        font-size: 2.5rem; 
+    }
 }
 
 h2 {
     font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
     font-size: 1.5rem;
-    margin-bottom: 1rem;/*A voir si utile ?*/
+    padding-top: 1rem;
 }
 
 h3 {
@@ -52,13 +83,17 @@ h3 {
 
 p {
     margin: 0.5rem 1rem;
+    @media (min-width: 991px) { /*PC*/
+        font-size: 1.2rem; 
+    }
 }
 
-
+a:focus, button:focus {
+    outline: 2px solid #005fcc; /* Une couleur qui contraste bien avec le fond */
+}
 /** ================== End Global style ================== **/
 
 /** ================== Start Header / Footer ================== **/
-
 .socials a {
     padding: 0 0.4rem;
 }
@@ -66,9 +101,6 @@ p {
 .socials .icon {
     height: 1.2rem;
 }
-
 /** ================== End Header / Footer ================== **/
-
-/** ================== Start Responsive ================== **/
 
 

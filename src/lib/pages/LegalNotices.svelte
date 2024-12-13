@@ -1,12 +1,12 @@
 <h2>Mentions Légales</h2>
 
-<main role="main">
-    <section class="identification" role="region" aria-labelledby="site-identification-heading">
+<main>
+    <section class="identification" aria-labelledby="site-identification-heading">
         <div class="column first">
             <h3 id="site-identification-heading">Identification du site</h3>
             <p class="websiteid">Nom du site : Wendy Alverde - Portfolio</p>
             <p>Contact : <a href="mailto:alverdew@gmail.com" aria-label="Lien cliquable qui mène à votre boîte mail">alverdew@gmail.com</a></p>
-            <p>Adresse : Rohr</p>
+            <p>Adresse : Horbourg-Wihr</p>
         </div>
         
         <div class="column">
@@ -21,10 +21,10 @@
         </div>
     </section>
 
-    <section role="region" aria-labelledby="Important-information">
+    <section aria-labelledby="Important-information">
         <div class="column first">
             <h3 id="personal-data-collection-heading" aria-describedby="collecte des données personnelles">Collecte de données personnelles</h3>
-            <p id="collecte des données personnelles">Nous ne collectons aucune informations.</p>
+            <p id="collecte des données personnelles">Je ne collecte aucune informations.</p>
 
             <h3 id="minor-protection-heading" aria-describedby="description de la protection des mineurs">Protection des mineurs</h3>
             <p id="description de la protection des mineurs">Ce site est pour toutes personnes intéressé par mon profil.</p>

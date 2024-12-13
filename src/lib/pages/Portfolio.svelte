@@ -1,12 +1,13 @@
 <script>
     import {link} from "svelte-spa-router"
     // Import pictures
-    import ocook from "../../assets/icons/site/portfolio/ocook-logo-blue.webp"
+    import ocook from "../../assets/site/portfolio/ocook-logo-blue.webp"
 </script>
 
 <main>
     <h1>Portfolio</h1>
     <p>La programmation est la clé qui ouvre les portes du renouveau technologique, où l'imagination devient réalité et où les possibilités deviennent infinies.</p>
+    <!-- <p>"Le développement est un voyage constant où chaque projet m'apporte de nouvelles connaissances et perspectives."</p> -->
 
     <section id="portfolio">
         <section id="web">
