@@ -249,7 +249,7 @@
             }  
         } 
     }
-
+  
     // ====  About  ==== //
     #about {
         padding: 1.5rem 0;
@@ -334,15 +334,6 @@
                     max-height: 3rem;
                     object-fit: cover;
                     margin: 1rem 0.5rem;
-
-                    // ========================= Responsive : Desktop ========================= //
-                    // Il va faloir le mettre sur img et circularProgress
-                    // @media screen and (min-width: 769px) { /*PC*/
-                    //     &:hover {
-                    //         width: 5.5rem;
-                    //         height: 5.5rem;
-                    //     }
-                    // }
                 }                
             }
         }
