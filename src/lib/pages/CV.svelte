@@ -1,17 +1,17 @@
 <script>
     import {link} from "svelte-spa-router"
      // Import pictures
-    import at from "../../assets/icons/cv/at.svg"
-    import calendar from "../../assets/icons/cv/calendar.svg"
-    import car from "../../assets/icons/cv/car.svg"
-    import house from "../../assets/icons/cv/house.svg"
-    import card from "../../assets/icons/cv/id-card.svg"
-    import phone from "../../assets/icons/cv/phone.svg"
-    import profil from "../../assets/icons/site/home/profil/profil.webp"
+    import at from "../../assets/cv/at.svg"
+    import calendar from "../../assets/cv/calendar.svg"
+    import car from "../../assets/cv/car.svg"
+    import house from "../../assets/cv/house.svg"
+    import card from "../../assets/cv/id-card.svg"
+    import phone from "../../assets/cv/phone.svg"
+    import profil from "../../assets/site/home/profil/profil.webp"
     // import socials
-    import linkedin from "../../assets/icons/site/socials/linkedin.svg"
-    import github from "../../assets/icons/site/socials/github.svg"
-    import instagram from "../../assets/icons/site/socials/instagram.svg"  
+    import linkedin from "../../assets/site/socials/linkedin.svg"
+    import github from "../../assets/site/socials/github.svg"
+    import instagram from "../../assets/site/socials/instagram.svg"  
 </script>
     
 <main>

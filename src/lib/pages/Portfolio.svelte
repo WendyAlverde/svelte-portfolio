@@ -1,7 +1,7 @@
 <script>
     import {link} from "svelte-spa-router"
     // Import pictures
-    import ocook from "../../assets/icons/site/portfolio/ocook-logo-blue.webp"
+    import ocook from "../../assets/site/portfolio/ocook-logo-blue.webp"
 </script>
 
 <main role="main">

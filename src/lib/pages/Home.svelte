@@ -1,41 +1,55 @@
 <script>
     import {link} from "svelte-spa-router";
+    import tools from "../../json/tools.json"
     // -------- Import pictures
     // hero
-    import profil from "../../assets/icons/site/home/profil/profil.webp"
-    import hautbar from "../../assets/icons/site/home/paysages/hautbar.webp"
-    import panier from "../../assets/icons/site/home/paysages/paniersoleil.webp"
-    import montblanc from "../../assets/icons/site/home/paysages/montblanc.webp"
+    import profil from "../../assets/site/home/profil/profil.webp"
+    // -- mobile
+    import hautbar from "../../assets/site/home/paysages/hautbar.webp"
+    import panier from "../../assets/site/home/paysages/paniersoleil.webp"
+    import montblanc from "../../assets/site/home/paysages/montblanc.webp"
+    // -- desktop
+    import nature1 from "../../assets/site/home/paysages/nature1.webp"
+    import lacQuebec from "../../assets/site/home/paysages/lacQuebec.webp"
+    import tourtelegraphe from "../../assets/site/home/paysages/tourtelegraphe.webp"
     // skills
-    import figma from "../../assets/icons/site/home/imgskills/figma.webp"
-    import github from "../../assets/icons/site/home/imgskills/github.webp"
-    import css from "../../assets/icons/site/home/imgskills/css-3.webp"
-    import html from "../../assets/icons/site/home/imgskills/html.webp"
-    import javascript from "../../assets/icons/site/home/imgskills/js.webp"
-    import svelte from "../../assets/icons/site/home/imgskills/svelte.webp"
-    import react from "../../assets/icons/site/home/imgskills/react.webp"
-    import vercel from "../../assets/icons/site/home/imgskills/logo-vercel.svg"
-    import docker from "../../assets/icons/site/home/imgskills/docker.webp"
-    import vsc from "../../assets/icons/site/home/imgskills/vsc.webp"
-    import construct3 from "../../assets/icons/site/home/imgskills/construct3.svg"
-    import piskel from "../../assets/icons/site/home/imgskills/piskel.webp"
-    import photoshop from "../../assets/icons/site/home/imgskills/photoshop.webp"
+    import figma from "../../assets/site/home/imgskills/figma.webp"
+    import github from "../../assets/site/home/imgskills/github.webp"
+    import css from "../../assets/site/home/imgskills/css-3.webp"
+    import html from "../../assets/site/home/imgskills/html.webp"
+    import javascript from "../../assets/site/home/imgskills/js.webp"
+    import svelte from "../../assets/site/home/imgskills/svelte.webp"
+    import react from "../../assets/site/home/imgskills/react.webp"
+    import vercel from "../../assets/site/home/imgskills/logo-vercel.svg"
+    import docker from "../../assets/site/home/imgskills/docker.webp"
+    import vsc from "../../assets/site/home/imgskills/vsc.webp"
+    import construct3 from "../../assets/site/home/imgskills/construct3.svg"
+    import piskel from "../../assets/site/home/imgskills/piskel.webp"
+    import photoshop from "../../assets/site/home/imgskills/photoshop.webp"
 </script>
 
 <main>
     <!-- Profil -->
-    <section id="hero">
-        <div class="left">
+    <section class="hero">
+        <div class="hero-left">
             <h1>Intégratrice Web - Freelance</h1>
+            <p>Wendy Alverde</p>
             <p>Passionnée par la création et l'optimisation d'interface utilisateur, je suis à la recherche de nouveaux projets de sites à créer ou à améliorer.</p>
             
         </div>
-        <div class="troisPhotos">
-            <img src={hautbar} loading="lazy" title="Chateau du Haut-Bar" alt="" aria-hidden="true">
-            <img src={panier} loading="lazy" title="Montgolfière lors du Mondial Air Ballons 2023 à Chambley" alt="" aria-hidden="true">
-            <img src={montblanc} loading="lazy" title="Mont Blanc" alt="" aria-hidden="true">
+        <div class="hero-right">
+            <div class="hero-right-troisPhotos mobile">
+                <img class="hero-right-troisPhotos-myPhoto" src={hautbar} loading="lazy" title="Chateau du Haut-Bar" alt="" aria-hidden="true">
+                <img class="hero-right-troisPhotos-myPhoto" src={panier} loading="lazy" title="Montgolfière lors du Mondial Air Ballons 2023 à Chambley" alt="" aria-hidden="true">
+                <img class="hero-right-troisPhotos-myPhoto" src={montblanc} loading="lazy" title="Mont Blanc" alt="" aria-hidden="true">
+            </div>
+            <div class="hero-right-troisPhotos pc">
+                <img class="hero-right-troisPhotos-myPhoto pc-photo1 " src={nature1} loading="lazy" alt="" aria-hidden="true">
+                <img class="hero-right-troisPhotos-myPhoto pc-photo2 " src={lacQuebec} loading="lazy" title="Un lac au Québec" alt="" aria-hidden="true">
+                <img class="hero-right-troisPhotos-myPhoto pc-photo3 " src={tourtelegraphe} loading="lazy" title="Tour télégraphe Chappe à saverne dans la Bas-Rhin" alt="" aria-hidden="true">
+            </div>
+            <p class="hero-right-subtitlePicture" aria-hidden="true">Photographie prise par Wendy Alverde</p>
         </div>
-        <p class="subtitlePicture" aria-hidden="true">Photographie prise par Wendy Alverde</p>
     </section>
     <!-- About -->
     <section id="about">
@@ -93,48 +107,19 @@
             <h3>Outils de développement</h3>
             <p>L'apprentissage continu est au cœur de mon parcours, car l'évolution des outils et des pratiques ne s'arrête jamais.</p>
             <div class="imgskills">
-                <div class="circularProgress">
-                    <img src={github} loading="lazy" title="GitHub" alt="Logo de l'application GitHub, une plateforme de gestion de code source et de collaboration">
-                </div>
-                <div class="circularProgress">
-                    <img src={css} loading="lazy" title="CSS" alt="Logo du langage CSS, utilisé pour la mise en forme des pages web">
-                </div>
-                <div class="circularProgress">
-                    <img src={html} loading="lazy" title="HTML" alt="Logo du langage HTML, utilisé pour structurer le contenu des pages web">
-                </div>
-                <div class="circularProgress">
-                    <img src={javascript} loading="lazy" title="JavaScript" alt="Logo du langage de programmation JavaScript, utilisé pour rendre les pages web interactives">
-                </div>
-                <div class="circularProgress">
-                    <img src={svelte} loading="lazy" title="Svelte" alt="Logo du framework JavaScript Svelte, utilisé pour le développement d'applications web">
-                </div>
-                <div class="circularProgress">
-                    <img src={react} loading="lazy" title="React" alt="Logo de la bibliothèque React, utilisé pour la création d'interfaces utilisateur dynamiques">
-                </div>
-                <div class="circularProgress">
-                    <img src={vercel} loading="lazy" title="Vercel" alt="Logo de Vercel, une plateforme de déploiement pour les applications front-end">
-                </div>
-                <div class="circularProgress">
-                    <img src={docker} loading="lazy" title="Docker" alt="Logo de Docker, un outil de conteneurisation pour le déploiement d'applications">
-                </div>
-                <div class="circularProgress">
-                    <img src={vsc} loading="lazy" title="Visual Studio Code" alt="Logo de Visual Studio Code, un éditeur de code source populaire pour le développement web">
-                </div>
-                <div class="circularProgress">
-                    <img src={construct3} loading="lazy" title="Construct 3" alt="Logo de Construct 3, une application de développement de jeux vidéo sans code">
-                </div>
+                {#each tools.devTools as devTool}
+                    <div class="circularProgress">
+                        <img class="iconsTools" src={devTool.src} loading="lazy" title={devTool.name} alt={devTool.alt}>
+                    </div>
+                {/each}
             </div>
             <h3>Outils de conception graphique</h3>
             <div class="imgskills">
-                <div class="circularProgress">
-                    <img src={figma} loading="lazy" title="Figma" alt="Logo de Figma, outil de conception d'interface">
-                </div>
-                <div class="circularProgress">
-                    <img src={piskel} loading="lazy" title="Piskel" alt="Logo de Piskel, un éditeur de sprites et d'animations en pixel art">
-                </div>
-                <div class="circularProgress">
-                    <img src={photoshop} loading="lazy" title="Photoshop" alt="Logo de Photoshop, un logiciel de retouche et de création graphique">
-                </div>
+                {#each tools.designTools as designTool}
+                    <div class="circularProgress">
+                        <img class="iconsTools" src={designTool.src} loading="lazy" title={designTool.name} alt={designTool.alt}>
+                    </div>
+                {/each}
             </div>
         </div>
     </section>
@@ -150,33 +135,119 @@
     }
 
     // ====  Hero  ==== //
-    #hero {
+    .hero {
         background-color: var(--color-hero);
         display: flex;
         flex-direction: column;
         text-align: center;
+        align-items: center;
 
-        p {
-            color: var(--text-black);
+        @media (min-width: 991px) { /*PC*/
+            flex-direction: row; 
+            height: 20rem;
         }
 
-        // ====  Pictures  ==== //
-        .troisPhotos {
+        &-left {
+            @media (min-width: 991px) { /*PC*/
+                width: 70%; 
+            }
+            
+            p {
+                color: var(--text-black);
+            }  
+        }
+
+        &-right {
+            width: 100vw;
             display: flex;
-            justify-content: space-between;
-            margin: 1rem 1rem 0;
-        }
+            flex-direction: column;
+            align-items: center;
+            padding-right: 4rem;
 
-        img {
-            width: 5.5rem;
-            height: 3.5rem;
-            object-fit: cover;
-        }
+            @media (min-width: 991px) { /*PC*/
+                width: 50%; 
+            }
 
-        .subtitlePicture {
-            font-size: 0.8rem;
-            margin: 0.3rem 0 1rem;
-        }
+            // ====  Pictures  ==== //
+            &-troisPhotos {
+                display: flex;
+                justify-content: space-between;
+                margin: 1rem 1rem 0;
+                width: 100%;
+                max-width: 90%;
+
+                @media (min-width: 991px) { /*PC*/
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                &-myPhoto {
+                    width: 5.5rem;
+                    height: 3.5rem;
+                    object-fit: cover;
+
+                    @media (min-width: 426px) { /*Tablette*/
+                        width: 7rem;
+                        height: 5rem;
+                    }
+                    @media (min-width: 710px) { /*Tablette*/
+                        width: 9rem;
+                        height: 7rem;
+                    }
+                }  
+            }
+            
+            .pc {
+                display: none;
+
+                @media (min-width: 991px) { /*PC*/
+                    display: flex;
+                    position: relative;
+                    width: auto;
+                    height: auto;
+
+                    .hero-right-troisPhotos-myPhoto {
+                        width: 7rem;
+                        height: 5rem;
+                    }
+                    
+                    &-photo1 {
+                        position: absolute;
+                        top: -4rem;
+                        right: -6rem;
+                        z-index: 1;
+                    }
+                    &-photo2 {
+                        position: relative;
+                    }
+                    &-photo3 {
+                        position: absolute;
+                        bottom: -4rem;
+                        right: -6rem;
+                    }
+                }
+            }
+
+            .mobile {
+                display: flex;
+
+                @media (min-width: 991px) { /*PC*/
+                    display: none;
+                }
+            }
+
+            &-subtitlePicture {
+                font-size: 0.8rem;
+                margin: 0.3rem 0 1rem;
+                
+                @media (min-width: 991px) { /*PC*/
+                    position: absolute;
+                    bottom: 3.5rem;
+                    right: 5rem;
+                    font-size: 1rem;
+                }
+            }  
+        } 
     }
 
     // ====  About  ==== //
@@ -194,6 +265,10 @@
             margin-top: 1.2rem;
             padding-top: 0.5rem;
             border-top: 0.2rem solid var(--color-text);
+            width: fit-content;
+            // Pour centrer horizontalement l'élément
+            margin-left: auto;
+            margin-right: auto
         }
 
         .text {
@@ -254,9 +329,9 @@
                     box-shadow: inset 0 0.1rem 0.8rem var(--blue-skills);
                 }
                 
-                img {
-                    width: 3rem;
-                    height: 3rem;
+                .iconsTools {
+                    max-width: 4.5rem;
+                    max-height: 3rem;
                     object-fit: cover;
                     margin: 1rem 0.5rem;
 

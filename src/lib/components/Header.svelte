@@ -2,9 +2,9 @@
     import {link} from "svelte-spa-router";
     import { onMount } from 'svelte';
     // import pictures
-    import linkedin from "../../assets/icons/site/socials/linkedin.svg";
-    import github from "../../assets/icons/site/socials/github.svg";
-    import instagram from "../../assets/icons/site/socials/instagram.svg";
+    import linkedin from "../../assets/site/socials/linkedin.svg";
+    import github from "../../assets/site/socials/github.svg";
+    import instagram from "../../assets/site/socials/instagram.svg";
 
     // Menu burger
     // État pour contrôler l'ouverture du menu
@@ -164,7 +164,7 @@
         &-nav {
             display: none;
             
-            @media (min-width: 710px) and (max-width: 991px) { /*Tablette*/
+            @media (min-width: 710px) and (max-width: 991px) { /*Tablette et plus*/
                 display: flex;
 
                 &-list {
@@ -234,7 +234,7 @@
                 justify-content: center;
                 align-items: center;
 
-                @media (min-width: 710px) {
+                @media (min-width: 710px) { /*Passage du burger*/
                     display: none;
                 }
 
@@ -328,10 +328,8 @@
                             }
                         }
                     }
-                    
                 }
             }
-            
         }
     }
 </style>
