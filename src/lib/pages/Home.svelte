@@ -58,12 +58,20 @@
             <article>
                 <h3>Qui suis-je</h3>
                 <section class="about-articles-text">
+                    <h4>Québec</h4>
                     <p class="about-articles-text-style">Après avoir étudié en foresterie au Québec pendant 4 ans, j'ai développé un vif intérêt pour les <em>aspects informatiques</em>, tels que la photo-interprétation et la géomatique.</p>
+                    <!-- <h4>France</h4> -->
+                    <h4>Passion</h4>
                     <p class="about-articles-text-style" >De retour en France il y a 4 ans, j'ai découvert une passion pour les <em>mystères de la création des pages web et des jeux vidéo</em>.</p>
+                    <h4>Auto-formation</h4>
                     <p class="about-articles-text-style" >Au cours de l'année 2022 et 2023, je me suis formée en autodidacte en explorant diverses ressources telles que des <em>tutoriels sur YouTube</em> et des <em>moocs sur OpenClassroom</em>. J'ai également suivi une formation intitulée "Initiation aux métiers du numérique" avec le CCI Campus de Strasbourg.</p>
+                    <h4>Formation O'clock</h4>
                     <p class="about-articles-text-style" >De octobre 2023 à avril 2024, j'ai suivi les cours chez O'clock, et  j'ai passé le <em>Titre Professionnel de Développeur Web et Web Mobile</em> de niveau Bac+2 en juin 2024.</p>
-                    <p class="about-articles-text-style" >En juillet, j'ai suivi une courte formation sur le développement de jeux vidéo avec l'application Construct. Cette expérience a été très enrichissante, m'apportant de nouvelles connaissances et m'aidant à développer une meilleure logique.</p>
+                    <h4>Formation Construct</h4>
+                    <p class="about-articles-text-style" >En juillet, j'ai suivi une courte formation sur le <em>développement de jeux vidéo</em> avec l'application Construct. Cette expérience a été très enrichissante, m'apportant de nouvelles connaissances et m'aidant à développer une meilleure logique.</p>
+                    <h4>Projet professionnel</h4>
                     <p class="about-articles-text-style" >Depuis, je travaille sur plusieurs projets de sites web pour continuer à pratiquer, approfondir mes compétences et rester à jour avec les dernières technologies. Je vous invite à découvrir mes projets sur la page <a href="/portfolio" use:link aria-label="Aller sur la page portfolio">Portfolio</a>.</p>
+                    <h4>Auto-entrepreneur / Freelance</h4>
                     <p class="about-articles-text-style" >Ainsi, je souhaite travailler sur vos projets en tant qu'<em>Intégratrice web</em>.</p>
                 </section>
             </article>
@@ -79,13 +87,13 @@
         </section> 
     </section>
     <!-- Skills -->
-    <section id="skills">
+    <section class="skills">
         <header>
             <h2>Mes compétences</h2>
             <p>Grâce à mes expériences professionnelles, j'ai développé des compétences telles que l'autonomie, la minutie et la préoccupation pour la sécurité.</p>
-            <p>Voici un aperçu de mes compétences acquises par passion et par auto-formation.</p>
+            <p class="small">Voici un aperçu de mes compétences acquises par passion et par auto-formation.</p>
         </header>
-        <div class="itemskills">
+        <section class="skills-items">
             <h3>Domaines de compétences</h3>
             <ul role="list">
                 <li role="listitem">
@@ -102,8 +110,8 @@
                     <p>Imagination débordante, œuvres uniques et originales</p>
                 </li>
             </ul>
-        </div>
-        <div class="item">
+        </section>
+        <section class="skills-tools">
             <h3>Outils de développement</h3>
             <p>L'apprentissage continu est au cœur de mon parcours, car l'évolution des outils et des pratiques ne s'arrête jamais.</p>
             <div class="imgskills">
@@ -121,7 +129,7 @@
                     </div>
                 {/each}
             </div>
-        </div>
+        </section>
     </section>
 </main>
 
@@ -264,6 +272,7 @@
 
     // ====  About  ==== //
     .about {
+        background-color: var(--background-entete);
         padding: 1.5rem 0;
         display: flex;
         align-items: center;
@@ -306,6 +315,37 @@
                     padding: 0.8rem 0 1rem 1.5rem;
                 }
 
+                // h4 {
+                //     text-align: left;
+                //     margin-left: 1rem;
+                //     font-size: 0.9rem;
+                //     margin-top: 0.2rem;
+                //     font-style: italic;
+                //     max-width: 20rem;
+                //     padding-left: 0.5rem;
+                //     border: 0.2rem solid var(--color-hero);
+                //     border-image: linear-gradient(to right, var(--color-hero), transparent) 1;
+                // }
+
+                h4 {
+                    position: relative;
+                    padding: 0.5rem; /* Ajouter un espace intérieur */
+                    border-radius: 5rem; /* Arrondir les coins */
+                    background: linear-gradient(to right, var(--color-hero), #5480728c, #54807249, transparent);
+                }
+
+                h4::before {
+                    content: " ";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    border-radius: 5rem;
+                    background: white; /* Couleur de fond interne (ou autre couleur) */
+                    z-index: -1;
+                }
+
                 &-style { 
                     text-align: justify;
                     hyphens: auto;
@@ -313,6 +353,7 @@
                     letter-spacing: 0.02rem;
                     word-spacing: 0.2rem;
                     font-size: 1rem;
+                    margin: 0 1rem 0.8rem ;
 
                     @media (min-width: 1300px) { /*PC*/
                         font-size: 1.2rem;
@@ -327,26 +368,31 @@
     }
 
     // ====  Skills  ==== //
-    #skills {
-        background-color: var(--background-clair);
+    .skills {
         padding-bottom: 0.02rem;
+        margin: 0 1rem;
 
-        header p {
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 1.2rem;
-        }
-
-        .itemskills {
-            padding: 1rem 0;
-
+        header {
+        
             p {
+                font-weight: bold;
                 text-align: center;
+                letter-spacing: 0.02rem;
             }
+
+            .small {
+                font-size: 0.8rem;
+            }
+
         }
 
-        // ====  logicels  ==== //
-        .item {
+        // ====  Compétences  ==== // 
+        &-items {
+            padding: 1rem 0;
+        }
+
+        // ====  Logiciels  ==== //
+        &-tools {
             margin: 1rem;
 
             h3 {
@@ -368,7 +414,6 @@
                     height: 7rem;
                     border-radius: 50%;
                     border: 1rem solid transparent;
-                    background-color: var(--background-clair);
                     margin: 0.5rem;
                     display: flex;
                     justify-content: center;
