@@ -35,7 +35,6 @@
             <h1>Intégratrice Web - Freelance</h1>
             <p>Wendy Alverde</p>
             <p>Passionnée par la création et l'optimisation d'interface utilisateur, je suis à la recherche de nouveaux projets de sites à créer ou à améliorer.</p>
-            
         </div>
         <div class="hero-right">
             <div class="hero-right-troisPhotos mobile">
@@ -148,12 +147,18 @@
         }
 
         &-left {
+            
+            
             @media (min-width: 991px) { /*PC*/
+                display: flex;
+                flex-direction: column;
+                align-items: center;
                 width: 70%; 
             }
             
             p {
                 color: var(--text-black);
+                max-width: 50rem;
             }  
         }
 
@@ -162,7 +167,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding-right: 4rem;
 
             @media (min-width: 991px) { /*PC*/
                 width: 50%; 
@@ -196,6 +200,11 @@
                     }
                 }  
             }
+
+            .mobile {
+                display: flex;
+
+            }
             
             .pc {
                 display: none;
@@ -213,17 +222,19 @@
                     
                     &-photo1 {
                         position: absolute;
-                        top: -4rem;
-                        right: -6rem;
+                        top: -5rem;
+                        right: -4rem;
                         z-index: 1;
                     }
                     &-photo2 {
                         position: relative;
+                        top: -1rem;
+                        right: 2rem;
                     }
                     &-photo3 {
                         position: absolute;
-                        bottom: -4rem;
-                        right: -6rem;
+                        bottom: -3rem;
+                        right: -4rem;
                     }
                 }
             }
@@ -242,14 +253,14 @@
                 
                 @media (min-width: 991px) { /*PC*/
                     position: absolute;
-                    bottom: 3.5rem;
-                    right: 5rem;
+                    bottom: 12.55rem;
+                    right: 2.5rem;
                     font-size: 1rem;
                 }
             }  
         } 
     }
-  
+
     // ====  About  ==== //
     #about {
         padding: 1.5rem 0;

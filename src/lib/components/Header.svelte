@@ -136,6 +136,7 @@
         align-items: flex-end;
         justify-content: space-between;
         padding: 0.5rem 1rem;
+        z-index: 2;
 
         @media (min-width: 770px) { /*PC*/
             padding: 0.8rem 2rem;
