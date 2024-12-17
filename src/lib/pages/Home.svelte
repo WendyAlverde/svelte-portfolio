@@ -268,9 +268,12 @@
         display: flex;
         align-items: center;
         flex-direction: column;
+        
 
         @media (min-width: 991px) { /*PC*/
             flex-direction: row;
+            align-items: flex-start;
+            position: relative;
             padding: 2rem;
         }
         
@@ -279,6 +282,9 @@
 
             @media (min-width: 991px) { /*PC*/
                 width: 24rem;
+                flex-shrink: 0; /*Empêche l'image de rétrécir*/
+                position: sticky;
+                top: 6rem; /*Pour laisser de l'espace entre le header et la photo*/
             }
         }
 
@@ -295,6 +301,10 @@
 
             &-text {
                 padding: 1rem;
+
+                @media (min-width: 991px) { /*PC*/
+                    padding: 0.8rem 0 1rem 1.5rem;
+                }
 
                 &-style { 
                     text-align: justify;
