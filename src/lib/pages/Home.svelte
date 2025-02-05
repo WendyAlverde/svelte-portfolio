@@ -354,6 +354,7 @@
                     word-spacing: 0.2rem;
                     font-size: 1rem;
                     margin: 0 1rem 0.8rem ;
+                    padding-top: 0.3rem;
 
                     @media (min-width: 1300px) { /*PC*/
                         font-size: 1.2rem;
@@ -370,7 +371,7 @@
     // ====  Skills  ==== //
     .skills {
         padding-bottom: 0.02rem;
-        margin: 0 1rem;
+        margin: 0 0.5rem;
 
         header {
         

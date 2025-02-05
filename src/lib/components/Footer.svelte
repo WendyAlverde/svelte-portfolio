@@ -41,7 +41,6 @@
         border-bottom: 1px solid #eee;
         border-radius: 0.2rem;
         box-shadow: 0 0 5px #548072; 
-        margin-bottom: 1rem;
         text-align: center;
     }
 
