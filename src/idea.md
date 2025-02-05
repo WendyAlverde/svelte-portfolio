@@ -45,4 +45,10 @@ Voir le code plus tard.
 @media (min-width: 991px) { /*PC*/
     
 }
+
+@media (min-width: 1300px) { /*PC*/
+
+}
 ```
+
+&nbsp; pour simuler un espace mais garder les éléments sur la même ligne
