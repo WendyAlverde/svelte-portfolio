@@ -31,7 +31,7 @@
     </div>
     <a class="red" href="/legal-notices" use:link>Mentions légales</a>
     <div class="item">
-        <p>Copyright 2024 Wendy Alverde - Tous droits réservés.</p>
+        <p>Copyright 2025 Wendy Alverde - Tous droits réservés.</p>
     </div>
 </footer>
 

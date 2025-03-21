@@ -36,9 +36,6 @@
         <div class="column">
             <h3 id="cookies-heading" aria-describedby="description des cookies">Cookies</h3>
             <p id="description des cookies">Ce site n'utilise aucun cookie.</p>
-
-            <h3 id="warning-heading" aria-describedby="description d'avertissement">Mise en garde</h3>
-            <p id="description d'avertissement">Les informations fournies sur ce site sont données à titre indicatif et ne doivent pas se substituer à un avis professionnel.</p>
         </div>
     </section>
 </main>
@@ -64,10 +61,6 @@
         text-align: center;
     }
 
-    
-
-    
-
     @media screen and (min-width: 426px) and (max-width: 768px) { /*Tablette*/
         section {
             display: flex;
@@ -79,10 +72,5 @@
             border-right: groove #548072 1px;
         }
     }
-
-    @media screen and (min-width: 769px) { /*PC*/
-
-    }
-
 </style>
 
