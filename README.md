@@ -1,6 +1,6 @@
 # Mon portfolio
 
-Je me présente tout en vous montrant mes projets.
+Je me présente tout en vous montrant mes projets de création de site web.
 
 ## Marche à suivre
 
@@ -16,7 +16,7 @@ Je me présente tout en vous montrant mes projets.
 - On fait un ```git pull``` pour récupérer le travail de la branche
 - On créer une branche de la nouvelle fonctionnalité : ```git checkout -b nom-de-la-fonctionnalite```
 - On lancer la commande ```npm run dev``` à partir du repo
-- Quand on push la branche on fait un ```git push origin nom-de-la-branche```
+- Quand on push la branche on fait un ```git push -u origin nom-de-la-branche```
 - Si la fonctionnalité fonctionne on fait une Pull-Request sur GitHub
 
 ### Pull Request
@@ -30,5 +30,5 @@ Je me présente tout en vous montrant mes projets.
 - On nomme les **dossiers** en minuscule et on évite les acronymes
 - On nomme les **fichiers** en camel case => conventionDeNommage
 - On nomme les **commits** en anglais et en kebab case => convention-de-nommage
-- On écrit les **commentaires** de code en anglais
+- On écrit les **commentaires** de code en français
 - On écrit les descriptions des Pull Request clairement en français
