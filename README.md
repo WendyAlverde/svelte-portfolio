@@ -1,6 +1,6 @@
 # Mon portfolio
 
-Je me présente tout en vous montrant mes projets.
+Je me présente tout en vous montrant mes projets de création de site web.
 
 ## Marche à suivre
 
