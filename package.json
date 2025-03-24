@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "emailjs-com": "^3.2.0",
     "svelte-spa-router": "~3.3.0"
   }
 }

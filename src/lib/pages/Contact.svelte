@@ -41,14 +41,11 @@
 
     // Fonction pour envoyer le formulaire
     function sendForm() {
-        console.log("Formulaire envoyé");
         firstname = sanitizeInput(firstname);
         companyName = sanitizeInput(companyName);
         email = sanitizeInput(email);
         subject = sanitizeInput(subject);
         commentaire = sanitizeInput(commentaire);
-
-        console.log("Données après nettoyage:", { firstname, companyName, email, subject, commentaire });
 
         if (!autorization) {
             alert("Vous devez consentir à la collecte de vos données.");
@@ -57,9 +54,6 @@
 
         validateEmail();
         validateCommentaire();
-
-        // Vérification des erreurs avant envoi
-        console.log("Vérification des erreurs:", { errorMessageEmail, errorMessageCommentaire });
 
         if (!errorMessageEmail && !errorMessageCommentaire && autorization) {
             // Informations à envoyer
@@ -73,22 +67,19 @@
             };
 
             // Envoi via EmailJS
-            console.log("Tentative d'envoi via EmailJS avec les paramètres :", templateParams);
             emailjs.send(
                 "service_portfolio",
-                "template_4t4x0fe",
+                "template_zf7vnhr",
                 templateParams,
                 "cwKfKOEJdoC7dFLV1"
             )
             .then(function(response) {
-                console.log("Réponse EmailJS:", response);
                 alert("Formulaire envoyé avec succès !");
             }, function(error) {
-                console.log("Erreur EmailJS:", error);
                 alert("Échec de l'envoi.");
             });
         } else {
-            console.log("Erreur dans le formulaire !", { errorMessageEmail, errorMessageCommentaire, autorization });
+            console.log("Erreur dans le formulaire !");
         }
     }
 
@@ -101,54 +92,139 @@
 
 <main>
     <h1>Contact</h1>
-    <p>Formulaire de contact pas encore fonctionnel, à venir</p>
-    <section id="contact">
-        <div class="section-header">
-            <p>Je suis à la recherche d'une entreprise dynamique où je pourrai mettre mes compétences d'intégratrice web au service de projets innovants. Titulaire du titre professionnel de développeur web et web mobile depuis juin 2024.</p>
-            <p>Utilisable prochainement</p>
+    <p>Vous avez un projet de site web ou d'application ? Que vous soyez un particulier, une association ou une entreprise, je suis là pour vous accompagner dans sa réalisation. N'hésitez pas à me contacter pour en discuter !</p>
+
+    <form class="form" on:submit|preventDefault={sendForm}>
+
+        <!-- Nom et Prénom -->
+        <label for="firstname">Nom, Prénom <span aria-hidden="true">*</span></label>
+        <input type="text" name="firstname" id="firstname" placeholder="Nom, Prénom" bind:value={firstname} required>
+    
+        <!-- Nom de l'entreprise / Association -->
+        <label for="companyName">Nom de l'entreprise ou association</label>
+        <input type="text" name="companyName" id="companyName" placeholder="Nom de l'entreprise, association" bind:value={companyName}>
+    
+        <!-- Email -->
+        <label for="email">Email <span aria-hidden="true">*</span></label>
+        <input type="email" name="email" id="email" placeholder="Email" bind:value={email} on:blur={validateEmail} required>
+        {#if errorMessageEmail}
+            <p class="error-message" aria-live="polite">{errorMessageEmail}</p>
+        {/if}
+    
+        <!-- Objet -->
+        <label for="subject">Objet</label>
+        <input type="text" name="subject" id="subject" placeholder="Objet" bind:value={subject}>
+    
+        <!-- commentaire -->
+        <label for="commentaire">Message <span aria-hidden="true">*</span></label>
+        <textarea name="commentaire" id="commentaire" placeholder="Message" bind:value={commentaire} on:input={adjustSize} required></textarea>
+        {#if errorMessageCommentaire}
+            <p class="error-message" aria-live="polite">{errorMessageCommentaire}</p>
+        {/if}
+
+        <div>
+            <p class="obligatoire">Les champs marqués d'une astérisque (<span aria-hidden="true">*</span>) sont obligatoires.</p>
+            <label class="autorization" for="autorization">
+                <input type="checkbox" name="autorization" id="autorization" bind:checked={autorization} required>
+                Je consens à la collecte de mes données personnelles conformément à la politique de confidentialité.
+            </label>
         </div>
-        <form class="form" on:submit|preventDefault={sendForm}>
-
-            <!-- Nom et Prénom -->
-            <label for="firstname">Nom, Prénom <span aria-hidden="true">*</span></label>
-            <input type="text" name="firstname" id="firstname" placeholder="Nom, Prénom" bind:value={firstname} required>
-        
-            <!-- Nom de l'entreprise / Association -->
-            <label for="companyName">Nom de l'entreprise ou association</label>
-            <input type="text" name="companyName" id="companyName" placeholder="Nom de l'entreprise, association" bind:value={companyName}>
-        
-            <!-- Email -->
-            <label for="email">Email <span aria-hidden="true">*</span></label>
-            <input type="email" name="email" id="email" placeholder="Email" bind:value={email} on:blur={validateEmail} required>
-            {#if errorMessageEmail}
-                <p class="error-message" aria-live="polite">{errorMessageEmail}</p>
-            {/if}
-        
-            <!-- Objet -->
-            <label for="subject">Objet</label>
-            <input type="text" name="subject" id="subject" placeholder="Objet" bind:value={subject}>
-        
-            <!-- commentaire -->
-            <label for="commentaire">Message <span aria-hidden="true">*</span></label>
-            <textarea name="commentaire" id="commentaire" placeholder="Message" bind:value={commentaire} on:input={adjustSize} required></textarea>
-            {#if errorMessageCommentaire}
-                <p class="error-message" aria-live="polite">{errorMessageCommentaire}</p>
-            {/if}
-
-            <div>
-                <p class="obligatoire">Les champs marqués d'une astérisque (*) sont obligatoires.</p>
-                <label class="autorization" for="autorization">
-                    <input type="checkbox" name="autorization" id="autorization" bind:checked={autorization} required>
-                    Je consens à la collecte de mes données personnelles conformément à la politique de confidentialité.
-                </label>
-            </div>
-        
-            <!-- Bouton d'envoi -->
-            <button type="submit" class ={autorization ? "enabled" : "disabled"} disabled={!autorization}>Envoyer</button>
-        </form>
-    </section>
+    
+        <!-- Bouton d'envoi -->
+        <button type="submit" class ={autorization ? "enabled" : "disabled"} disabled={!autorization}>Envoyer</button>
+    </form>
 </main>
 
 <style lang="scss">
+    main {
+        padding: 0 0.5rem;
+        text-align: center;
+        background-color: var(--bleugris-clair);
 
+        p {
+            color: var(--color-text);
+        }
+
+        form {
+            background: var(--background-body);
+            padding: 1.25rem;
+            border-radius: 0.6rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+
+            label {
+                font-weight: bold;
+                color: var(--color-text);
+                display: block;
+                margin: 0.625rem 0 0.312rem;
+
+                span {
+                    color: var(--error);
+                }
+            }
+
+            input, textarea {
+                width: 100%;
+                padding: 0.625rem;
+                border: 0.0625rem solid #548072ab;
+                border-radius: 0.3rem;
+            }
+
+            input:focus, textarea:focus {
+                border-color: var(--blue-green);
+                outline: none;
+            }
+
+            textarea {
+                min-height: 8rem;
+            }
+
+            .error-message {
+                color: var(--error);
+                font-size: 0.9rem;
+                margin: 0;
+                padding: 0.2rem 0.1rem;
+            }
+
+            .obligatoire {
+                font-size: 0.9rem;
+                color: var(--color-text);
+                margin: 0;
+                padding: 0.2rem 0.1rem;
+
+                span {
+                    color: var(--error);
+                }
+            }
+
+            .autorization {
+                display: flex;
+                align-items: center;
+                font-size: 0.9rem;
+                color: var(--color-text);
+            }
+
+            button {
+                width: 100%;
+                background: var(--blue-green);
+                color: #fff;
+                border: none;
+                padding: 12px;
+                font-size: 1rem;
+                border-radius: 5px;
+                cursor: pointer;
+                margin-top: 15px;
+                transition: background 0.3s ease-in-out;
+            }
+
+            button.disabled {
+                background: #ccc;
+                cursor: not-allowed;
+            }
+
+            button.enabled:hover {
+                background: var(--blue-skills);
+            }
+        }
+    }
 </style>
