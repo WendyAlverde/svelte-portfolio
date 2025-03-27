@@ -1,15 +1,16 @@
 <script>
-    import {link} from "svelte-spa-router"
+    import {link} from "svelte-spa-router";
     // import pictures
-    import linkedin from "../../assets/site/socials/linkedin.svg"
-    import github from "../../assets/site/socials/github.svg"
-    import instagram from "../../assets/site/socials/instagram.svg"
+    import logoWa from "../../assets/logo/WA.svg";
+    import linkedin from "../../assets/site/socials/linkedin.svg";
+    import github from "../../assets/site/socials/github.svg";
+    import instagram from "../../assets/site/socials/instagram.svg";
 </script>
 
 <footer>
-    <div class="item">
-        <p>Wendy Alverde</p>
-    </div>
+    <a class="logo" href="/" use:link aria-label="Retour à l'accueil">
+        <img class="logoWa" src={logoWa} loading="lazy" alt="Logo du site de Wendy Alverde">
+    </a>
     <div class="item">
         <ul class="socials list-unstyled">
             <li>
@@ -42,11 +43,28 @@
         border-radius: 0.2rem;
         box-shadow: 0 0 5px #548072; 
         text-align: center;
+
+        .logoWa {
+            margin: 0.3rem 0;
+            width: 2.8rem;
+            height: 1.5rem;
+
+            @media (min-width: 710px) and (max-width: 769px) { /*Tablette*/
+                width: 4.5rem;
+                height: 3rem;
+            }
+            @media (min-width: 770px) { /*PC*/
+                width: 5.5rem;
+                height: 4rem;
+            }
+        }
+
+        .socials {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
     }
 
-    .socials {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
+    
 </style>

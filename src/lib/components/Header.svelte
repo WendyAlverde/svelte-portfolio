@@ -1,7 +1,9 @@
 <script>
     import {link} from "svelte-spa-router";
     import { onMount } from 'svelte';
+
     // import pictures
+    import logoWa from "../../assets/logo/WA.svg";
     import linkedin from "../../assets/site/socials/linkedin.svg";
     import github from "../../assets/site/socials/github.svg";
     import instagram from "../../assets/site/socials/instagram.svg";
@@ -66,7 +68,9 @@
 </script>
 
 <header class="header">
-    <a class="header-logo" href="/" use:link aria-label="Retour à l'accueil">Wendy Alverde</a>
+    <a class="header-logo" href="/" use:link aria-label="Retour à l'accueil">
+        <img class="logoWa" src={logoWa} loading="lazy" alt="Logo du site de Wendy Alverde">
+    </a>
 
     <nav class="header-nav" aria-label="Navigation principale">
         <ul class="header-nav-list">
@@ -120,12 +124,12 @@
 
 <style lang="scss">
     img[title]:hover::after {
-    content: attr(title);
-    position: absolute;
-    top: -100%;
-    left: 0;
-    background-color: #0ace0a;
-}
+        content: attr(title);
+        position: absolute;
+        top: -100%;
+        left: 0;
+        background-color: #0ace0a;
+    }
     .header { 
         background: var(--background-entete);
         border-radius: 0.3rem;
@@ -143,22 +147,19 @@
         }
 
         &-logo {
-            font-family: 'Playfair Display', serif;
-            color: var(--color-text);
-            font-size: 1.2rem;
 
-            &:hover {
-                color: var(--color-passagesouris);
-            }
+            .logoWa {
+                width: 2.8rem;
+                height: 1.5rem;
 
-            @media (min-width: 710px) and (max-width: 769px) { /*Tablette*/
-                font-size: 1.5rem;
-                letter-spacing: 1px;
-            }
-
-            @media (min-width: 770px) { /*PC*/
-                font-size: 2rem;
-                letter-spacing: 2px;
+                @media (min-width: 710px) and (max-width: 769px) { /*Tablette*/
+                    width: 4.5rem;
+                    height: 3rem;
+                }
+                @media (min-width: 770px) { /*PC*/
+                    width: 5.5rem;
+                    height: 4rem;
+                }
             }
         }
 
