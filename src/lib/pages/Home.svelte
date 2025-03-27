@@ -1,31 +1,17 @@
 <script>
     import {link} from "svelte-spa-router";
-    import tools from "../../json/tools.json"
+    import tools from "../../json/tools.json";
     // -------- Import pictures
     // hero
-    import profil from "../../assets/site/home/profil/profil.webp"
+    import profil from "../../assets/site/home/profil/profil.webp";
     // -- mobile
-    import hautbar from "../../assets/site/home/paysages/hautbar.webp"
-    import panier from "../../assets/site/home/paysages/paniersoleil.webp"
-    import montblanc from "../../assets/site/home/paysages/montblanc.webp"
+    import hautbar from "../../assets/site/home/paysages/hautbar.webp";
+    import panier from "../../assets/site/home/paysages/paniersoleil.webp";
+    import montblanc from "../../assets/site/home/paysages/montblanc.webp";
     // -- desktop
-    import nature1 from "../../assets/site/home/paysages/nature1.webp"
-    import lacQuebec from "../../assets/site/home/paysages/lacQuebec.webp"
-    import tourtelegraphe from "../../assets/site/home/paysages/tourtelegraphe.webp"
-    // skills
-    // import figma from "../../assets/site/home/imgskills/figma.webp"
-    // import github from "../../assets/site/home/imgskills/github.webp"
-    // import css from "../../assets/site/home/imgskills/css-3.webp"
-    // import html from "../../assets/site/home/imgskills/html.webp"
-    // import javascript from "../../assets/site/home/imgskills/js.webp"
-    // import svelte from "../../assets/site/home/imgskills/svelte.webp"
-    // import react from "../../assets/site/home/imgskills/react.webp"
-    // import vercel from "../../assets/site/home/imgskills/logo-vercel.svg"
-    // import docker from "../../assets/site/home/imgskills/docker.webp"
-    // import vsc from "../../assets/site/home/imgskills/vsc.webp"
-    // import construct3 from "../../assets/site/home/imgskills/construct3.svg"
-    // import piskel from "../../assets/site/home/imgskills/piskel.webp"
-    // import photoshop from "../../assets/site/home/imgskills/photoshop.webp"
+    import nature1 from "../../assets/site/home/paysages/nature1.webp";
+    import lacQuebec from "../../assets/site/home/paysages/lacQuebec.webp";
+    import tourtelegraphe from "../../assets/site/home/paysages/tourtelegraphe.webp";
 </script>
 
 <main>

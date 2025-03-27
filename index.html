@@ -1,19 +1,77 @@
 <!doctype html>
 <html lang="fr">
 	<head>
+		<!-- Meta généraux au site + title -->
 		<meta charset="UTF-8" />
-		<link rel="icon" href="../../public/favicon.ico" type="image/x-icon">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="description" content="Portfolio de Wendy Alverde - Freelance">
+		<meta name="description" content="Wendy Alverde, développeuse web fullstack freelance, vous accompagne dans la création de sites web et d'applications sur mesure. Découvrez mon portfolio et mes réalisations." />
+		<meta name="robots" content="index, follow">
+		<title>Wendy Alverde - Développeuse Web Fullstack Freelance</title>
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/svg+xml" href="../../public/WA.svg" />
+		<link rel="icon" type="image/x-icon" href="../../public/WA.ico">
+
+		<!-- Open Graph : partage sur réseaux sociaux -->
+		<meta property="og:title" content="Wendy Alverde - Développeuse Web Fullstack Freelance">
+		<meta property="og:description" content="Wendy Alverde, développeuse web fullstack freelance, vous accompagne dans la création de sites web et d'applications sur mesure. Découvrez mon portfolio et mes réalisations." />
+		<meta property="og:image" content="https://wendyalverde-portfolio.vercel.app/WA.png">
+		<meta property="og:url" content="https://wendyalverde-portfolio.vercel.app/">
+		<meta property="og:type" content="website">
+		<meta property="og:locale" content="fr_FR"> 
+		
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="Wendy Alverde - Développeuse Web Fullstack Freelance">
+		<meta name="twitter:description" content="Wendy Alverde, développeuse web fullstack freelance, vous accompagne dans la création de sites web et d'applications sur mesure. Découvrez mon portfolio et mes réalisations." />
+		<meta name="twitter:image" content="https://wendyalverde-portfolio.vercel.app/WA.png">
+		
+		<!-- Localisation géographique -->
 		<meta name="geo.region" content="FR-68">
-		<meta name="location" content="Colmar, France">
-		<meta name="geo.placename" content="Colmar">
-		<meta name="keywords" content="portfolio, intégratrice, développeuse, web, freelance, front-end">
-		<meta name="title" content="Portfolio de Wendy Alverde">
-		<title>Wendy Alverde - Portfolio</title>
+		<meta name="geo.placename" content="Horbourg-Wihr">
+		<meta name="geo.position" content="48.0826, 7.4017"> 
+		
+		<!-- Informations générales -->
+		<meta name="author" content="Wendy Alverde">
+		<meta name="publisher" content="Wendy Alverde">
+
+		<!-- Données structurées : Service Web -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "ProfessionalService",
+				"name": "Wendy Alverde - Développeuse Web Fullstack Freelance",
+				"image": "https://wendyalverde-portfolio.vercel.app/WA.png",
+				"description": "Wendy Alverde, développeuse web fullstack freelance, vous accompagne dans la création de sites web et d'applications sur mesure. Découvrez mon portfolio et mes réalisations.",
+				"address": {
+					"@type": "PostalAddress",
+					"streetAddress": "19 rue des Pommiers",
+					"addressLocality": "Horbourg-Wihr",
+					"postalCode": "68180",
+					"addressCountry": "FR"
+				},
+				"telephone": "+33 784588343",
+				"url": "https://wendyalverde-portfolio.vercel.app/",
+				"sameAs": [
+					"https://www.linkedin.com/in/wendy-alverde/"
+				]
+			}
+		</script>
+	
+		<!-- Données structurées : Organisation -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "Organization",
+				"name": "Wendy Alverde",
+				"url": "https://wendyalverde-portfolio.vercel.app/",
+				"logo": "https://wendyalverde-portfolio.vercel.app/WA.png"
+			}
+		</script>
+		
 	</head>
 	<body>
-		<div id="app"></div>
+		<div id="app" role="main"></div>
 		<script type="module" src="/src/main.js"></script>
 	</body>
 </html>
