@@ -204,6 +204,7 @@
                 color: var(--color-text);
             }
 
+            // Continuer de faire css à partir d'ici
             button {
                 width: 100%;
                 background: var(--blue-green);

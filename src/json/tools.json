@@ -2,74 +2,74 @@
     "devTools": [
         {
             "name": "GitHub",
-            "src": "public/imgskills/github.webp",
+            "src": "src/assets/imgskills/github.webp",
             "alt": "Logo de l'application GitHub, une plateforme de gestion de code source et de collaboration"
         },
         {
             "name": "HTML",
-            "src": "public/imgskills/html.webp",
+            "src": "src/assets/imgskills/html.webp",
             "alt": "Logo du langage HTML, utilisé pour structurer le contenu des pages web"
         },
         {
             "name": "CSS",
-            "src": "public/imgskills/css-3.webp",
+            "src": "src/assets/imgskills/css-3.webp",
             "alt": "Logo du langage CSS, utilisé pour la mise en forme des pages web"
         },
         {
             "name": "Sass",
-            "src": "public/imgskills/sass.webp",
+            "src": "src/assets/imgskills/sass.webp",
             "alt": "Logo du préprocesseur Sass, utilisé pour écrire des feuilles de style CSS de manière plus efficace et maintenable"
         },
         {
             "name": "JavaScript",
-            "src": "public/imgskills/js.webp",
+            "src": "src/assets/imgskills/js.webp",
             "alt": "Logo du langage de programmation JavaScript, utilisé pour rendre les pages web interactives"
         },
         {
             "name": "Svelte",
-            "src": "public/imgskills/svelte.webp",
+            "src": "src/assets/imgskills/svelte.webp",
             "alt": "Logo du framework JavaScript Svelte, utilisé pour le développement d'applications web"
         },
         {
             "name": "React",
-            "src": "public/imgskills/react.webp",
+            "src": "src/assets/imgskills/react.webp",
             "alt": "Logo de la bibliothèque React, utilisé pour la création d'interfaces utilisateur dynamiques"
         },
         {
             "name": "Vercel",
-            "src": "public/imgskills/logo-vercel.svg",
+            "src": "src/assets/imgskills/logo-vercel.svg",
             "alt": "Logo de Vercel, une plateforme de déploiement pour les applications front-end"
         },
         {
             "name": "Docker",
-            "src": "public/imgskills/docker.webp",
+            "src": "src/assets/imgskills/docker.webp",
             "alt": "Logo de Docker, un outil de conteneurisation pour le déploiement d'applications"
         },
         {
             "name": "Virtual Studio Code",
-            "src": "public/imgskills/vsc.webp",
+            "src": "src/assets/imgskills/vsc.webp",
             "alt": "Logo de Visual Studio Code, un éditeur de code source populaire pour le développement web"
         },
         {
             "name": "Construct3",
-            "src": "public/imgskills/construct3.svg",
+            "src": "src/assets/imgskills/construct3.svg",
             "alt": "Logo de Construct 3, une application de développement de jeux vidéo sans code"
         }
     ],
     "designTools": [
         {
             "name": "Figma",
-            "src": "public/imgskills/figma.webp",
+            "src": "src/assets/imgskills/figma.webp",
             "alt": "Logo de Figma, outil de conception d'interface"
         },
         {
             "name": "Piskel",
-            "src": "public/imgskills/piskel.webp",
+            "src": "src/assets/imgskills/piskel.webp",
             "alt": "Logo de Piskel, un éditeur de sprites et d'animations en pixel art"
         },
         {
             "name": "Photoshop",
-            "src": "public/imgskills/photoshop.webp",
+            "src": "src/assets/imgskills/photoshop.webp",
             "alt": "Logo de Photoshop, un logiciel de retouche et de création graphique"
         }
     ]
